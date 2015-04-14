@@ -216,7 +216,27 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Css\DesignScheme.css">
+      <DependentUpon>DesignScheme.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\DesignScheme.min.css">
+      <DependentUpon>DesignScheme.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\GlobalElements.css">
+      <DependentUpon>GlobalElements.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\GlobalElements.min.css">
+      <DependentUpon>GlobalElements.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\Site.css">
+      <DependentUpon>Site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\Site.min.css">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Images\lego-model.jpg" />
+    <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\sebastian-working.jpg" />
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -235,12 +255,24 @@
       <LastGenOutput>Umbraco.Dictionary.cs</LastGenOutput>
     </Content>
     <Content Include="Classes\APE\FileManager.ttinclude" />
-    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Content\Css\Site.scss" />
+    <Content Include="Content\Css\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\GlobalElements.scss" />
+    <Content Include="Content\Css\GlobalElements.css.map">
+      <DependentUpon>GlobalElements.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Css\DesignScheme.scss" />
+    <Content Include="Content\Css\DesignScheme.css.map">
+      <DependentUpon>DesignScheme.css</DependentUpon>
+    </Content>
     <Content Include="Icon.png" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\jquery-1.9.1.js" />
-    <Content Include="scripts\jquery-1.9.1.min.js" />
+    <None Include="scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="scripts\jquery-2.1.3.js" />
+    <Content Include="scripts\jquery-2.1.3.min.js" />
     <Content Include="scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -333,8 +365,8 @@
     <Content Include="App_Data\umbraco.config" />
     <Content Include="Views\FrontPage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Warehouse.cshtml" />
+    <Content Include="scripts\jquery-2.1.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

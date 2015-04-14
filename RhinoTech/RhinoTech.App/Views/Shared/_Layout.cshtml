@@ -5,20 +5,60 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>RhinoTech</title>
-        <meta name="description" content="Description" />
+    <title>RhinoTech</title>
+    <meta name="description" content="Description" />
 
-        <link href="~/Content/bootstrap.css" rel="stylesheet" />
-        <link href="~/Content/Css/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Css/Site.css" rel="stylesheet" />
 
-    </head>
-    <body>
-        @RenderBody()
-    </body>
+</head>
+<body>
+    <div>
+        <header class="container">
+
+            <div class="header-logo">
+                <div class="header-logo-content">
+                    <a href="/" title="Back to frontpage">
+                        <div class="logo-image">
+                            <img src="~/Content/Images/Logo.png" />
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-name">RhinoTech</div>
+                            <div class="logo-slogan">"Rock-steady solutions!"</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="http://google.dk">Google</a></li>
+                    <li><a href="http://google.dk">Google</a></li>
+                    <li><a href="http://google.dk">Google</a></li>
+                    <li><a href="http://google.dk">Google</a></li>
+                    <li><a href="http://google.dk">Google</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            @RenderSection("PreContent", false)
+        </div>
+        <div class="container canvas">
+            @RenderBody()
+        </div>
+    </div>
+    <hr />
+    <footer class="text-center">
+        Svendeprøve Data Tekniker&nbsp;&nbsp;|&nbsp;&nbsp;Projekt af: Mads Tjørnfelt, Christian Skov Roulund, Sebastian Hvenegaard, Mads Jensen&nbsp;&nbsp;|&nbsp;&nbsp;© RhinoTech 2015
+    </footer>
+
+    <script src="~/scripts/jquery-2.1.3.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+</body>
 </html>

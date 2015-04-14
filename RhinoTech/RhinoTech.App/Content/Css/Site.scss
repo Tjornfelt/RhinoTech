@@ -1,0 +1,81 @@
+﻿@import "GlobalElements";
+@import "DesignScheme";
+
+
+
+//Layout styles
+body {
+    color: $empress;
+    background: $white-smoke;
+    header {
+        height: 100px;
+        padding: 20px;
+        .header-logo {
+            float: left;
+            .header-logo-content {
+                width: 240px;
+                .logo-image {
+                    width: 60px;
+                    float: left;
+                    img {
+                        opacity: 0.5;
+                        width: 50px;
+                    }
+                }
+                .logo-text {
+                    padding-top: 5px;
+                    width: 180px;
+                    float: right;
+                    padding-left: 10px;
+                    font-family: $archivo-black;
+                    .logo-name {
+                        font-size: 1.5em;
+
+                    }
+                    .logo-slogan {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+            
+        }
+        nav {
+            float: right;
+            margin-top: 20px;
+            ul {
+                font-size: 0;
+                li {
+                    border-right: 1px solid $composite-border-top;
+                    border-left: 1px solid $composive-border-bottom;
+                    display: inline;
+                    font-size: 1.75rem;
+                    padding: 0 15px;
+                    &:first-child {
+                        border-left: none;
+                    }
+                    &:last-child {
+                        border-right: none;
+                    }
+                    a {
+                        
+                    }
+                }
+            }
+        }
+    }
+    .canvas {
+        min-height: 500px;
+    }
+
+    footer {
+        margin: 20px 0;
+    }
+}
+
+
+
+//Frontpage
+.front-page {
+    
+}
+
