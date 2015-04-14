@@ -1,0 +1,75 @@
+﻿@import "DesignScheme";
+/*Reusable elements not specific for a particular page*/
+
+html {
+    font-size: 12px;
+}
+
+h1, h2, h3 {
+    font-family: $archivo-black;
+}
+
+
+//Force images to behave responsive
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    border-top: 1px solid $composite-border-top;
+    border-bottom: 1px solid $composive-border-bottom;
+    &.no-margin {
+        margin:0;
+    }
+}
+
+a {
+    color: inherit;
+    &:hover {
+        color: inherit;
+    }
+}
+
+//Bootstrap carousel fade
+.carousel.fade
+{
+    opacity: 1;
+
+    .item
+    {
+        -moz-transition: opacity ease-in-out .7s;
+        -o-transition: opacity ease-in-out .7s;
+        -webkit-transition: opacity ease-in-out .7s;
+        transition: opacity ease-in-out .7s;
+        left: 0 !important;
+        opacity: 0;
+        top:0;
+        position:absolute;
+        width: 100%;
+        display:block !important;
+        z-index:1;
+        &:first-child{
+            top:auto;
+            position:relative;
+        }
+
+        &.active
+        {
+            opacity: 1;
+            -moz-transition: opacity ease-in-out .7s;
+            -o-transition: opacity ease-in-out .7s;
+            -webkit-transition: opacity ease-in-out .7s;
+            transition: opacity ease-in-out .7s;
+            z-index:2;
+        }
+    }
+}
+
+.carousel {
+        .item {
+            height: 300px;
+            background-size: cover !important;
+            background-position: top center !important;
+        }
+    }
