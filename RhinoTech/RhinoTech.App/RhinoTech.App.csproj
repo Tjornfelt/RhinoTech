@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="APE.Umbraco">
+      <HintPath>..\packages\APE.Umbraco.2.1.0\lib\net45\APE.Umbraco.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -119,10 +122,12 @@
       <Private>True</Private>
       <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -203,12 +208,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Logs\UmbracoTraceLog.txt" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\grid.editors.config.js" />
+    <Content Include="App_Data\TEMP\ClientDependency\LAPTOP-28204735b117a96fffee41b6fb858eb7-map.xml" />
     <Content Include="Config\grid.editors.config.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\Site.css" />
     <Content Include="default.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Icon.png" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-1.9.1.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\npm.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cms\Frontpage.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\Umbraco.Dictionary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Umbraco.Dictionary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\Umbraco.DictionaryKeys.cs">
+      <DependentUpon>Umbraco.Dictionary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\Umbraco.DocTypes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\Viewmaster.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FrontPageController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Models\ViewModels\FrontPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,12 +288,67 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090255\CopyLogs\UmbracoBinBackup.log" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\404handlers.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\applications.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\BaseRestExtensions.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\ClientDependency.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\Dashboard.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\EmbeddedMedia.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\ExamineIndex.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\ExamineSettings.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\feedProxy.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\FileSystemProviders.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\log4net.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\metablogConfig.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\scripting.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\tinyMceConfig.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\trees.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\umbracoSettings.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Config\UrlRewriting.config" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\CopyLogs\ConfigBackup.log" />
+    <Content Include="App_Data\NuGetBackup\20150414-090256\Web.config" />
+    <Content Include="App_Data\packages\installed\installedPackages.config" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\Index\segments_1" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\segments_1" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\Index\segments_1" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP.hash" />
+    <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.LAPTOP.list" />
+    <Content Include="App_Data\umbraco.config" />
+    <Content Include="Views\FrontPage.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Classes\Cms\Umbraco.DocTypes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Umbraco.DocTypes.cs</LastGenOutput>
+    </Content>
+    <Content Include="Classes\Cms\Umbraco.Dictionary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Umbraco.Dictionary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Classes\APE\FileManager.ttinclude" />
+    <Content Include="scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\NuGetBackup\20150414-090255\bin\" />
+    <Folder Include="App_Data\packages\created\" />
+    <Folder Include="App_Data\preview\" />
+    <Folder Include="App_Data\TEMP\Install\" />
+    <Folder Include="css\" />
+    <Folder Include="masterpages\" />
+    <Folder Include="usercontrols\" />
+    <Folder Include="xslt\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
