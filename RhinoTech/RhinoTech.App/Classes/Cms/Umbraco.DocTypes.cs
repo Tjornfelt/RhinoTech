@@ -23,10 +23,16 @@ namespace RhinoTech.App.Classes.Cms
         {
             get { return _Frontpage ?? (_Frontpage = new Frontpage()); }
         }
+        private static TextPage _TextPage;
+        public static TextPage TextPage
+        {
+            get { return _TextPage ?? (_TextPage = new TextPage()); }
+        }
     }
 }
 
 // Generated helper templates
 // Generated items
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\TextPage.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Frontpage.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Viewmaster.cs

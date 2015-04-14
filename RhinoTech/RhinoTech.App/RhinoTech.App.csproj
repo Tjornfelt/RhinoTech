@@ -226,6 +226,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Classes\Cms\Umbraco.DocTypes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Umbraco.DocTypes.cs</LastGenOutput>
+    </Content>
+    <Content Include="Classes\Cms\Umbraco.Dictionary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Umbraco.Dictionary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Classes\APE\FileManager.ttinclude" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="scripts\bootstrap.js" />
@@ -237,6 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Cms\Frontpage.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\TextPage.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\Cms\Umbraco.Dictionary.cs">
@@ -320,15 +332,6 @@
     <Content Include="App_Data\umbraco.config" />
     <Content Include="Views\FrontPage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Classes\Cms\Umbraco.DocTypes.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Umbraco.DocTypes.cs</LastGenOutput>
-    </Content>
-    <Content Include="Classes\Cms\Umbraco.Dictionary.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Umbraco.Dictionary.cs</LastGenOutput>
-    </Content>
-    <Content Include="Classes\APE\FileManager.ttinclude" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
