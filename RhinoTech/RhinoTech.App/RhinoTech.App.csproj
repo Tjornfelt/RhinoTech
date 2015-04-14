@@ -267,6 +267,7 @@
     <Compile Include="Classes\Cms\Viewmaster.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Models\ViewModels\FrontPageModel.cs" />
@@ -333,6 +334,7 @@
     <Content Include="Views\FrontPage.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Warehouse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
