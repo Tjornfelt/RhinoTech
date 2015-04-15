@@ -28,11 +28,23 @@ namespace RhinoTech.App.Classes.Cms
         {
             get { return _TextPage ?? (_TextPage = new TextPage()); }
         }
+        private static Warehouse _Warehouse;
+        public static Warehouse Warehouse
+        {
+            get { return _Warehouse ?? (_Warehouse = new Warehouse()); }
+        }
+        private static ContactPage _ContactPage;
+        public static ContactPage ContactPage
+        {
+            get { return _ContactPage ?? (_ContactPage = new ContactPage()); }
+        }
     }
 }
 
 // Generated helper templates
 // Generated items
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\ContactPage.cs
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Warehouse.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\TextPage.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Frontpage.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Viewmaster.cs

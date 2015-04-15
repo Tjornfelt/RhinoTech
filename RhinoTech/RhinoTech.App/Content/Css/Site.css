@@ -55,6 +55,17 @@ a {
   background-size: cover !important;
   background-position: top center !important; }
 
+.page-header {
+  margin-bottom: 20px;
+  padding: 0;
+  border: none; }
+
+.grid-section .column > div {
+  margin-bottom: 20px; }
+.grid-section .container {
+  margin: 0;
+  padding: 0; }
+
 /*fonts and colors*/
 body {
   color: #878787;
@@ -103,5 +114,17 @@ body {
   body footer {
     margin: 20px 0; }
 
+.contact-page form .row {
+  margin-bottom: 10px; }
+.contact-page form label {
+  width: 150px;
+  vertical-align: top; }
+.contact-page form input[type="text"] {
+  width: 300px; }
+.contact-page form input[type="submit"] {
+  margin-left: 152px; }
+.contact-page form textarea {
+  width: 300px;
+  height: 150px; }
 
 /*# sourceMappingURL=Site.css.map */

@@ -16,6 +16,8 @@ namespace RhinoTech.App.Classes.Cms
 
 		public TextPage(): base()		
 		{
+			this.BodyText = new StringProperty(){ Alias = "bodyText" };
+			this.Header = new StringProperty(){ Alias = "header" };
 				
 		}
 
@@ -26,6 +28,16 @@ namespace RhinoTech.App.Classes.Cms
 		{
 			return "TextPage";
 		}
-	 
+	 		
+				
+		/// <summary>
+		///		<para>Datatype: Default Editor Grid</para>
+		/// </summary>
+		public StringProperty BodyText { get; private set; }		
+				
+		/// <summary>
+		///		<para>Datatype: Textstring</para>
+		/// </summary>
+		public StringProperty Header { get; private set; }
 	}
 }
