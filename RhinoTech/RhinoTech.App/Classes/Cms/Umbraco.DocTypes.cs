@@ -38,11 +38,35 @@ namespace RhinoTech.App.Classes.Cms
         {
             get { return _ContactPage ?? (_ContactPage = new ContactPage()); }
         }
+        private static IntranetHome _IntranetHome;
+        public static IntranetHome IntranetHome
+        {
+            get { return _IntranetHome ?? (_IntranetHome = new IntranetHome()); }
+        }
+        private static ProductManagement _ProductManagement;
+        public static ProductManagement ProductManagement
+        {
+            get { return _ProductManagement ?? (_ProductManagement = new ProductManagement()); }
+        }
+        private static NewsSection _NewsSection;
+        public static NewsSection NewsSection
+        {
+            get { return _NewsSection ?? (_NewsSection = new NewsSection()); }
+        }
+        private static NewsItem _NewsItem;
+        public static NewsItem NewsItem
+        {
+            get { return _NewsItem ?? (_NewsItem = new NewsItem()); }
+        }
     }
 }
 
 // Generated helper templates
 // Generated items
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewsItem.cs
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewsSection.cs
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\ProductManagement.cs
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\IntranetHome.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\ContactPage.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Warehouse.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\TextPage.cs

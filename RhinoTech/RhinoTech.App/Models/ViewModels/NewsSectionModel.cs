@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RhinoTech.App.Models.ViewModels
 {
-    public class FrontPageModel
+    public class NewsSectionModel
     {
         public string Header { get; set; }
         public IHtmlString BodyText { get; set; }

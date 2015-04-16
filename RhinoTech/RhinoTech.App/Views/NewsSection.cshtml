@@ -1,0 +1,31 @@
+﻿@model RhinoTech.App.Models.ViewModels.NewsSectionModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row news-section">
+    <div class="col-sm-12 page-header">
+        <h1 class="text-center">@Model.Header</h1>
+    </div>
+    <div class="text-center">
+        @Model.BodyText
+    </div>
+    <div class="col-sm-12">
+        <div class="row news-items">
+            @foreach (var item in Model.NewsItems)
+            {
+                <a href="@item.Url">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-item-content">
+                            <span>@item.Date.ToString("dd-MM-yyyy")</span>
+                            <h3>@item.Header</h3>
+                            <p>@item.ShortDescription</p>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+
+</div>

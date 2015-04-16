@@ -5,36 +5,67 @@
 }
 
 @section PreContent {
-<div id="myCarousel" class="carousel fade" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    <div id="myCarousel" class="carousel fade" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active" style="background-image: url('/Content/Images/sebastian-working.jpg')">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active" style="background-image: url('/Content/Images/sebastian-working.jpg')">
+            </div>
+
+            <div class="item" style="background-image: url('/Content/Images/lego-model.jpg')">
+            </div>
+            <div class="item" style="background-image: url('/Content/Images/refrigerator.jpg')">
+            </div>
         </div>
 
-        <div class="item" style="background-image: url('/Content/Images/lego-model.jpg')">
-        </div>
-        <div class="item" style="background-image: url('/Content/Images/refrigerator.jpg')">
-        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
 }
 
-<h1>@Model.Header</h1>
-@Model.BodyText
+
+<div class="row front-page">
+    <div class="col-sm-12">
+        <h1>@Model.Header</h1>
+        <hr />
+    </div>
+    <div class="col-sm-8">
+        @Model.BodyText
+        <h2>Find us here</h2>
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2265.4863833525155!2d10.417596099999997!3d55.4018666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464d201e3e06985d%3A0x46de52496b3c6eba!2sPetersmindevej+1%2C+5000+Odense+C!5e0!3m2!1sda!2sdk!4v1429186397809" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+        <div class="row news-items">
+            <div class="col-sm-12">
+                <h2>Latest news</h2>
+                <hr class="no-margin" />
+            </div>
+            @foreach (var item in Model.NewsItems)
+            {
+                <a href="@item.Url">
+                    <div class="col-sm-12 news-item">
+                        <span>@item.Date.ToString("dd-MM-yyyy")</span>
+                        <h3>@item.Header</h3>
+                        <p>@item.ShortDescription</p>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>

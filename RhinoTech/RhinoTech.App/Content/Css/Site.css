@@ -10,6 +10,16 @@ html {
 h1, h2, h3 {
   font-family: 'Archivo Black'; }
 
+h1 {
+  font-size: 2.5em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.2em;
+  margin: 0 0 5px 0; }
+
 img {
   max-width: 100%;
   height: auto; }
@@ -66,6 +76,19 @@ a {
   margin: 0;
   padding: 0; }
 
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden; }
+
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important; }
+
 /*fonts and colors*/
 body {
   color: #878787;
@@ -74,6 +97,9 @@ body {
   body header {
     height: 100px;
     padding: 20px; }
+    body header .btn {
+      float: right;
+      margin-top: 17px; }
     body header .header-logo {
       float: left; }
       body header .header-logo .header-logo-content {
@@ -109,10 +135,17 @@ body {
             border-left: none; }
           body header nav ul li:last-child {
             border-right: none; }
+          body header nav ul li.active a {
+            text-decoration: underline; }
   body .canvas {
     min-height: 500px; }
   body footer {
     margin: 20px 0; }
+
+.front-page .news-items {
+  background: white; }
+  .front-page .news-items .news-item {
+    padding: 10px 15px 0; }
 
 .contact-page form .row {
   margin-bottom: 10px; }
@@ -126,5 +159,20 @@ body {
 .contact-page form textarea {
   width: 300px;
   height: 150px; }
+
+.news-section .news-items .news-item-content {
+  background: white;
+  padding: 15px 15px 5px; }
+
+.intranet-home-page .section {
+  min-height: 100px;
+  background: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-bottom: 20px; }
+  .intranet-home-page .section p {
+    padding-bottom: 15px; }
 
 /*# sourceMappingURL=Site.css.map */

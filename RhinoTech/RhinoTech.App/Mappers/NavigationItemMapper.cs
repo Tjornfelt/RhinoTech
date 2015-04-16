@@ -1,4 +1,5 @@
-﻿using RhinoTech.App.Models.HelperModels;
+﻿using APE.Umbraco;
+using RhinoTech.App.Models.HelperModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,15 +23,19 @@ namespace RhinoTech.App.Mappers
             {
                 foreach (var child in root.Children)
                 {
-                    NavigationItem navItem = new NavigationItem()
+                    if(UH.UmbracoHelper.MemberHasAccess(child.Id, child.Path))
                     {
-                        Name = child.Name,
-                        Url = child.Url,
-                        Active = currentPage.Id == child.Id,
-                        Children = Map<NavigationItem>(child, currentPage)
-                    };
+                        NavigationItem navItem = new NavigationItem()
+                        {
+                            NodeID = child.Id,
+                            Name = child.Name,
+                            Url = child.Url,
+                            Active = currentPage.Id == child.Id,
+                            Children = Map<NavigationItem>(child, currentPage)
+                        };
 
-                    navigationItems.Add((T)navItem);
+                        navigationItems.Add((T)navItem);
+                    }
                 }
             }
 

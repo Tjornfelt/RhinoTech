@@ -9,6 +9,17 @@ h1, h2, h3 {
     font-family: $archivo-black;
 }
 
+h1 {
+    font-size: 2.5em;
+}
+h2 {
+    font-size: 2em;
+}
+h3 {
+    font-size: 1.2em;
+    margin:0 0 5px 0;
+}
+
 
 //Force images to behave responsive
 img {
@@ -92,4 +103,21 @@ a {
         padding:0;
     }
     
+}
+
+//Make google maps behave responsive
+//http://www.labnol.org/internet/embed-responsive-google-maps/28333/
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }

@@ -7,6 +7,7 @@ namespace RhinoTech.App.Models.HelperModels
 {
     public class NavigationItem
     {
+        public int NodeID { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public bool Active { get; set; }

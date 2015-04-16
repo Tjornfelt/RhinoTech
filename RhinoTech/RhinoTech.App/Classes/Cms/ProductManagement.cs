@@ -11,10 +11,10 @@ using System;
 using APE.Umbraco;
 namespace RhinoTech.App.Classes.Cms
 {
-    public partial class Warehouse : Viewmaster
+    public partial class ProductManagement : Viewmaster
     {
 
-		public Warehouse(): base()		
+		public ProductManagement(): base()		
 		{
 			this.Header = new StringProperty(){ Alias = "header" };
 			this.ShortDescription = new StringProperty(){ Alias = "shortDescription" };
@@ -22,11 +22,11 @@ namespace RhinoTech.App.Classes.Cms
 		}
 
 		[Obsolete("Use the implicit operator... Just remove the .DocTypeAlias")]
-		new public readonly string DocTypeAlias = "Warehouse";
+		new public readonly string DocTypeAlias = "ProductManagement";
 
-		public static implicit operator string(Warehouse doctype)
+		public static implicit operator string(ProductManagement doctype)
 		{
-			return "Warehouse";
+			return "ProductManagement";
 		}
 	 		
 				

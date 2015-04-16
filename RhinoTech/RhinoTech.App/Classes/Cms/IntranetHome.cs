@@ -11,23 +11,22 @@ using System;
 using APE.Umbraco;
 namespace RhinoTech.App.Classes.Cms
 {
-    public partial class ContactPage : Viewmaster
+    public partial class IntranetHome : Viewmaster
     {
 
-		public ContactPage(): base()		
+		public IntranetHome(): base()		
 		{
 			this.Header = new StringProperty(){ Alias = "header" };
 			this.BodyText = new HtmlStringProperty(){ Alias = "bodyText" };
-			this.EmailTemplate = new HtmlStringProperty(){ Alias = "emailTemplate" };
 				
 		}
 
 		[Obsolete("Use the implicit operator... Just remove the .DocTypeAlias")]
-		new public readonly string DocTypeAlias = "ContactPage";
+		new public readonly string DocTypeAlias = "IntranetHome";
 
-		public static implicit operator string(ContactPage doctype)
+		public static implicit operator string(IntranetHome doctype)
 		{
-			return "ContactPage";
+			return "IntranetHome";
 		}
 	 		
 				
@@ -39,12 +38,6 @@ namespace RhinoTech.App.Classes.Cms
 		/// <summary>
 		///		<para>Datatype: Richtext editor</para>
 		/// </summary>
-		public HtmlStringProperty BodyText { get; private set; }		
-				
-		/// <summary>
-		///		<para>Datatype: Richtext editor</para>
-		///		<para>Description: Use the following replace values to mix form data into the reply: ##name## ##email## ##phone## ##address## ##postalcity## ##message##</para>
-		/// </summary>
-		public HtmlStringProperty EmailTemplate { get; private set; }
+		public HtmlStringProperty BodyText { get; private set; }
 	}
 }

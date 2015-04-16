@@ -11,23 +11,24 @@ using System;
 using APE.Umbraco;
 namespace RhinoTech.App.Classes.Cms
 {
-    public partial class ContactPage : Viewmaster
+    public partial class NewsItem : Viewmaster
     {
 
-		public ContactPage(): base()		
+		public NewsItem(): base()		
 		{
 			this.Header = new StringProperty(){ Alias = "header" };
-			this.BodyText = new HtmlStringProperty(){ Alias = "bodyText" };
-			this.EmailTemplate = new HtmlStringProperty(){ Alias = "emailTemplate" };
+			this.ShortDescription = new StringProperty(){ Alias = "shortDescription" };
+			this.Date = new DateTimeProperty(){ Alias = "date" };
+			this.BodyText = new StringProperty(){ Alias = "bodyText" };
 				
 		}
 
 		[Obsolete("Use the implicit operator... Just remove the .DocTypeAlias")]
-		new public readonly string DocTypeAlias = "ContactPage";
+		new public readonly string DocTypeAlias = "NewsItem";
 
-		public static implicit operator string(ContactPage doctype)
+		public static implicit operator string(NewsItem doctype)
 		{
-			return "ContactPage";
+			return "NewsItem";
 		}
 	 		
 				
@@ -37,14 +38,18 @@ namespace RhinoTech.App.Classes.Cms
 		public StringProperty Header { get; private set; }		
 				
 		/// <summary>
-		///		<para>Datatype: Richtext editor</para>
+		///		<para>Datatype: Textbox multiple</para>
 		/// </summary>
-		public HtmlStringProperty BodyText { get; private set; }		
+		public StringProperty ShortDescription { get; private set; }		
 				
 		/// <summary>
-		///		<para>Datatype: Richtext editor</para>
-		///		<para>Description: Use the following replace values to mix form data into the reply: ##name## ##email## ##phone## ##address## ##postalcity## ##message##</para>
+		///		<para>Datatype: Date Picker</para>
 		/// </summary>
-		public HtmlStringProperty EmailTemplate { get; private set; }
+		public DateTimeProperty Date { get; private set; }		
+				
+		/// <summary>
+		///		<para>Datatype: Default Editor Grid</para>
+		/// </summary>
+		public StringProperty BodyText { get; private set; }
 	}
 }

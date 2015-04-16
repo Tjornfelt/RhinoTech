@@ -23,15 +23,16 @@
 </head>
 <body>
 
+    @*This is just a helper to show what size we are currently viewing*@
     <div style="position:fixed; bottom:0; height:20px; width: 100px; z-index: 1000;">
         <div class="hidden-xs hidden-sm" style="background: green;">Desktop</div>
         <div class="hidden-xs hidden-md hidden-lg" style="background:yellow;">Tablet</div>
         <div class="hidden-sm hidden-md hidden-lg" style="background:blue;">Phone</div>
     </div>
 
+
     <div>
         <header class="container">
-
             <div class="header-logo">
                 <div class="header-logo-content">
                     <a href="/" title="Back to frontpage">
@@ -48,17 +49,30 @@
 
             @if(global.MainMenu != null && global.MainMenu.Any())
             {
-
-            <nav>
-                <ul>
-                    @foreach (var item in global.MainMenu)
-                    {
-                        <li><a href="@item.Url" title="@item.Name">@item.Name</a></li>
-                    }
-                </ul>
-            </nav>
+                <nav>
+                    <ul>
+                        @foreach (var item in global.MainMenu)
+                        {
+                            <li @Html.Raw(item.Active?"class=\"active\"":string.Empty)><a href="@item.Url" title="@item.Name">@item.Name</a></li>
+                        }
+                    </ul>
+                </nav>
             }
+            
+            @Html.Action("MemberLogin","MemberLoginSurface")
 
+
+            @*
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>Logged in: @User.Identity.Name</p>
+                <p>@Html.ActionLink("Log out", "MemberLogout", "MemberLoginSurface")</p>
+            }
+            else
+            {
+                <button class="btn btn-default" data-toggle="modal" data-target="#login-form">Login</button>
+            }*@
+            
         </header>
         <hr class="no-margin" />
         <div>
@@ -73,10 +87,15 @@
         Svendeprøve Data Tekniker&nbsp;&nbsp;|&nbsp;&nbsp;Projekt af: Mads Tjørnfelt, Christian Skov Roulund, Sebastian Hvenegaard, Mads Jensen&nbsp;&nbsp;|&nbsp;&nbsp;© RhinoTech 2015
     </footer>
 
+    @*Libraries and frameworks*@
     <script src="~/scripts/jquery-2.1.3.min.js"></script>
     <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/scripts/jquery.validate.min.js"></script>
     <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
+
+    @*Custom*@
+    <script src="~/scripts/Custom/LoginForm.js"></script>
+
 </body>
 </html>

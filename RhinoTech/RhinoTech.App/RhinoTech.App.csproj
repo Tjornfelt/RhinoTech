@@ -282,6 +282,7 @@
       <DependentUpon>ResponsiveMixin.css</DependentUpon>
     </Content>
     <None Include="scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="scripts\Custom\LoginForm.js" />
     <Content Include="scripts\jquery-2.1.3.js" />
     <Content Include="scripts\jquery-2.1.3.min.js" />
     <Content Include="scripts\jquery.unobtrusive-ajax.js" />
@@ -299,6 +300,18 @@
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\Cms\Frontpage.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\IntranetHome.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\NewsItem.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\NewsSection.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\ProductManagement.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\Cms\TextPage.cs">
@@ -323,17 +336,27 @@
     <Compile Include="Classes\Cms\Warehouse.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
     <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\SurfaceControllers\FormsSurfaceController.cs" />
+    <Compile Include="Controllers\SurfaceControllers\MemberLoginSurfaceController.cs" />
+    <Compile Include="Controllers\IntranetHomeController.cs" />
+    <Compile Include="Controllers\NewsSectionController.cs" />
     <Compile Include="Controllers\TextPageController.cs" />
+    <Compile Include="Controllers\ProductManagementController.cs" />
     <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Mappers\NavigationItemMapper.cs" />
     <Compile Include="Models\HelperModels\ContactFormModel.cs" />
     <Compile Include="Models\HelperModels\GlobalModel.cs" />
+    <Compile Include="Models\HelperModels\MemberLoginModel.cs" />
+    <Compile Include="Models\HelperModels\NavigationItemWithTeaser.cs" />
     <Compile Include="Models\HelperModels\NavigationItem.cs" />
+    <Compile Include="Models\HelperModels\NewsItemTeaser.cs" />
     <Compile Include="Models\ViewModels\ContactPageModel.cs" />
+    <Compile Include="Models\ViewModels\IntranetHomeModel.cs" />
+    <Compile Include="Models\ViewModels\NewsSectionModel.cs" />
     <Compile Include="Models\ViewModels\TextPageModel.cs" />
     <Compile Include="Models\ViewModels\FrontPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -403,6 +426,11 @@
     <Content Include="Views\TextPage.cshtml" />
     <Content Include="Views\ContactPage.cshtml" />
     <Content Include="Views\Partials\_ContactForm.cshtml" />
+    <Content Include="Views\Partials\_LoginForm.cshtml" />
+    <Content Include="Views\IntranetHome.cshtml" />
+    <Content Include="Views\ProductManagement.cshtml" />
+    <Content Include="Views\NewsSection.cshtml" />
+    <Content Include="Views\NewsItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

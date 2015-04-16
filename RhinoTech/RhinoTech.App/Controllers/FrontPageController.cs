@@ -1,4 +1,6 @@
 ﻿using RhinoTech.App.Classes.Cms;
+using RhinoTech.App.Classes.Helpers;
+using RhinoTech.App.Models.HelperModels;
 using RhinoTech.App.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -21,9 +23,34 @@ namespace RhinoTech.App.Controllers
             {
                 Header = CurrentPage.GetPropertyValue(DocTypes.Frontpage.Header),
                 BodyText = CurrentPage.GetPropertyValue(DocTypes.Frontpage.BodyText),
+                NewsItems = NewsItemHelpers.GetNewsItems(CurrentPage)
             };
 
             return View(model);
+        }
+        
+        [Obsolete("Use NewsItemHelpers.GetNewsItems(CurrentPage) instead")]
+        private IEnumerable<NewsItemTeaser> GetNewsItems()
+        {
+            var newsSection = CurrentPage.Children.FirstOrDefault(x => x.IsDocumentType(DocTypes.NewsSection));
+
+            if (newsSection != null)
+            {
+                var newsItems = newsSection.Children.Where(x => x.DocumentTypeAlias == DocTypes.NewsItem);
+
+                if(newsItems != null && newsItems.Any())
+
+                foreach (var item in newsItems)
+                {
+                    yield return new NewsItemTeaser()
+                    {
+                        Header = item.GetPropertyValue(DocTypes.NewsItem.Header),
+                        Date = item.GetPropertyValue(DocTypes.NewsItem.Date),
+                        ShortDescription = item.GetPropertyValue(DocTypes.NewsItem.ShortDescription),
+                        Url = item.Url
+                    };
+                }
+            }
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿@model RhinoTech.App.Models.ViewModels.IntranetHomeModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row intranet-home-page">
+    <div class="col-sm-12 page-header">
+        <h1 class="text-center">@Model.Header</h1>
+    </div>
+    <div class="text-center">
+        @Model.BodyText
+    </div>
+
+    @if (Model.Sections != null && Model.Sections.Any())
+    {
+        foreach (var item in Model.Sections)
+        {
+            <a href="@item.Url">
+                <div class="col-sm-6">
+                    <div class="section">
+                        <h2>@item.Header</h2>
+                        <p>@item.ShortDescription</p>
+                    </div>
+                </div>
+            </a>
+        }
+
+    }
+
+
+</div>
