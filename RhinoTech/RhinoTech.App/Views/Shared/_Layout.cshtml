@@ -1,5 +1,8 @@
-﻿@{
+﻿@using RhinoTech.App.Models.HelperModels;
+@{
     Layout = null;
+
+    GlobalModel global = ViewBag.Global;
 }
 
 <!DOCTYPE html>
@@ -43,16 +46,21 @@
                 </div>
             </div>
 
+            @if(global.MainMenu != null && global.MainMenu.Any())
+            {
+
             <nav>
                 <ul>
-                    <li><a href="http://google.dk">Google</a></li>
-                    <li><a href="http://google.dk">Google</a></li>
-                    <li><a href="http://google.dk">Google</a></li>
-                    <li><a href="http://google.dk">Google</a></li>
-                    <li><a href="http://google.dk">Google</a></li>
+                    @foreach (var item in global.MainMenu)
+                    {
+                        <li><a href="@item.Url" title="@item.Name">@item.Name</a></li>
+                    }
                 </ul>
             </nav>
+            }
+
         </header>
+        <hr class="no-margin" />
         <div>
             @RenderSection("PreContent", false)
         </div>
@@ -66,6 +74,9 @@
     </footer>
 
     <script src="~/scripts/jquery-2.1.3.min.js"></script>
+    <script src="~/scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/scripts/bootstrap.min.js"></script>
 </body>
 </html>

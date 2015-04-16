@@ -67,9 +67,29 @@ a {
 }
 
 .carousel {
-        .item {
-            height: 300px;
-            background-size: cover !important;
-            background-position: top center !important;
+    .item {
+        height: 300px;
+        background-size: cover !important;
+        background-position: top center !important;
+    }
+}
+
+.page-header {
+    margin-bottom: 20px;
+    padding:0;
+    border:none;
+}
+
+//umbraco grid
+.grid-section {
+    .column {
+        > div {
+            margin-bottom: 20px;
         }
     }
+    .container {
+        margin:0;
+        padding:0;
+    }
+    
+}

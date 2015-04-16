@@ -53,4 +53,15 @@ a {
   background-size: cover !important;
   background-position: top center !important; }
 
+.page-header {
+  margin-bottom: 20px;
+  padding: 0;
+  border: none; }
+
+.grid-section .column > div {
+  margin-bottom: 20px; }
+.grid-section .container {
+  margin: 0;
+  padding: 0; }
+
 /*# sourceMappingURL=GlobalElements.css.map */
