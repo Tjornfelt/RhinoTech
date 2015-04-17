@@ -94,6 +94,9 @@ body {
   color: #878787;
   background: #f8f8f8;
   font-family: 'Roboto'; }
+  body .mobile-menu-toggle {
+    float: right;
+    margin: 37px 0 0 20px; }
   body header {
     height: 100px;
     padding: 20px; }

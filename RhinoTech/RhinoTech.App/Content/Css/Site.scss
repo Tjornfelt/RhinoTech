@@ -8,6 +8,10 @@ body {
     color: $empress;
     background: $white-smoke;
     font-family: $roboto;
+    .mobile-menu-toggle {
+        float: right;
+        margin: 37px 0 0 20px;
+    }
     header {
         height: 100px;
         padding: 20px;
