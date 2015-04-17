@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhinoTech.App", "RhinoTech.App\RhinoTech.App.csproj", "{160694BE-F64A-4135-955B-1745A090775F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhinoTech.Core", "RhinoTech.Core\RhinoTech.Core.csproj", "{7D8564B2-FCBF-48E3-A06D-0184541C186E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{160694BE-F64A-4135-955B-1745A090775F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{160694BE-F64A-4135-955B-1745A090775F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{160694BE-F64A-4135-955B-1745A090775F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8564B2-FCBF-48E3-A06D-0184541C186E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8564B2-FCBF-48E3-A06D-0184541C186E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8564B2-FCBF-48E3-A06D-0184541C186E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8564B2-FCBF-48E3-A06D-0184541C186E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
