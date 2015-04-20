@@ -26,16 +26,17 @@ namespace RhinoTech.App.Controllers
                 BodyText = CurrentPage.GetPropertyValue(DocTypes.Frontpage.BodyText),
                 NewsItems = NewsItemHelpers.GetNewsItems(CurrentPage)
             };
-            Test();
+            //Test();
             return View(model);
         }
 
+        /*
         private void Test()
         {
             Entities entities = new Entities();
 
             entities.GetProducts();
-        }
+        }*/
 
         [Obsolete("Use NewsItemHelpers.GetNewsItems(CurrentPage) instead")]
         private IEnumerable<NewsItemTeaser> GetNewsItems()

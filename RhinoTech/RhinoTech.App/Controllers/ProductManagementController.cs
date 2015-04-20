@@ -1,5 +1,6 @@
 ﻿using RhinoTech.App.Classes.Cms;
 using RhinoTech.App.Models.ViewModels;
+using RhinoTech.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,18 @@ namespace RhinoTech.App.Controllers
 
         public ActionResult ProductManagement(RenderModel renderModel)
         {
-
+            
 
             return View(renderModel);
         }
+
+        private void Test()
+        {
+            Entities entities = new Entities();
+
+            entities.GetProducts();
+        }
     }
+
+    
 }

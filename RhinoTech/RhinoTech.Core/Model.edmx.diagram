@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b9304407ed964b24a4f6ec1d250495f2" Name="Diagram1">
-        <EntityTypeShape EntityType="RCMSModel.Companys" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Company" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.Customers" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.OrdersItems" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
@@ -16,7 +16,7 @@
         <AssociationConnector Association="RCMSModel.FK__Orders__Salesper__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="RCMSModel.FK__OrdersIte__Order__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="RCMSModel.FK__OrdersIte__Produ__31EC6D26" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="RCMSModel.WarehouseShelfs" Width="2.125" PointX="8.875" PointY="4.75" />
+        <EntityTypeShape EntityType="RCMSModel.WarehouseShelfs" Width="2.125" PointX="9.375" PointY="4.75" />
         <AssociationConnector Association="RCMSModel.FK__Warehouse__Produ__35BCFE0A" />
       </Diagram>
     </edmx:Diagrams>

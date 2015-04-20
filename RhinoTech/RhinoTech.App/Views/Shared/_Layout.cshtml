@@ -58,7 +58,10 @@
                     <ul>
                         @foreach (var item in global.MainMenu)
                         {
-                            <li @Html.Raw(item.Active ? "class=\"active\"" : string.Empty)><a href="@item.Url" title="@item.Name">@item.Name</a></li>
+                            if(item != null)
+                            { 
+                                <li @Html.Raw(item.Active ? "class=\"active\"" : string.Empty)><a href="@item.Url" title="@item.Name">@item.Name</a></li>
+                            }
                         }
                     </ul>
                 </nav>

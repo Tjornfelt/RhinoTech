@@ -10,14 +10,19 @@ namespace RhinoTech.Core
     {
         public void GetProducts()
         {
-            //Student student = null;
-            List<Products> test = null;
-            using (var context = new RCMSEntities())
+            try
             {
-                test = context.Products.ToList();
+                //Student student = null;
+                List<Products> products = null;
+                using (var context = new RCMSEntities())
+                {
+                    products = context.Products.ToList();
+                }
             }
-
-            var testasd = "";
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
         }
     }
 }
