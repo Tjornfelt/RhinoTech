@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            @if (global.MainMenu != null && global.MainMenu.Any())
+            @if (global != null && global.MainMenu != null && global.MainMenu.Any())
             {
                 <nav class="hidden-xs hidden-sm">
                     
@@ -100,9 +100,12 @@
             <button class="btn btn-default" data-toggle="offcanvas">Close X</button>
             <ul>
                 <li><a href="/" title="Forside">Forside</a></li>
-                @foreach (var item in global.MainMenu)
+                @if(global != null)
                 {
-                    <li @Html.Raw(item.Active ? "class=\"active\"" : string.Empty)><a title="@item.Name" href="@item.Url">@item.Name</a></li>
+                    foreach (var item in global.MainMenu)
+                    {
+                        <li @Html.Raw(item.Active ? "class=\"active\"" : string.Empty)><a title="@item.Name" href="@item.Url">@item.Name</a></li>
+                    }
                 }
             </ul>
         </div>

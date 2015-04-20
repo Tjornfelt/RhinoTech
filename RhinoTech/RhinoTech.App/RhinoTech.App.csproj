@@ -315,7 +315,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Classes\Cms\ContactPage.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cms\EditProduct.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\Cms\Frontpage.cs">
@@ -358,6 +362,8 @@
     <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
     <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\NewsItemController.cs" />
+    <Compile Include="Controllers\EditProductController.cs" />
+    <Compile Include="Controllers\SurfaceControllers\EditProductSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\FormsSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\MemberLoginSurfaceController.cs" />
     <Compile Include="Controllers\IntranetHomeController.cs" />
@@ -367,9 +373,13 @@
     <Compile Include="Controllers\WarehouseController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Mappers\NavigationItemMapper.cs" />
     <Compile Include="Models\HelperModels\ContactFormModel.cs" />
     <Compile Include="Models\HelperModels\GlobalModel.cs" />
+    <Compile Include="Models\HelperModels\ManagementProduct.cs" />
     <Compile Include="Models\HelperModels\MemberLoginModel.cs" />
     <Compile Include="Models\HelperModels\NavigationItemWithTeaser.cs" />
     <Compile Include="Models\HelperModels\NavigationItem.cs" />
@@ -378,6 +388,8 @@
     <Compile Include="Models\ViewModels\IntranetHomeModel.cs" />
     <Compile Include="Models\ViewModels\NewsItemModel.cs" />
     <Compile Include="Models\ViewModels\NewsSectionModel.cs" />
+    <Compile Include="Models\ViewModels\EditProductModel.cs" />
+    <Compile Include="Models\ViewModels\ProductManagementModel.cs" />
     <Compile Include="Models\ViewModels\TextPageModel.cs" />
     <Compile Include="Models\ViewModels\FrontPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -452,6 +464,7 @@
     <Content Include="Views\ProductManagement.cshtml" />
     <Content Include="Views\NewsSection.cshtml" />
     <Content Include="Views\NewsItem.cshtml" />
+    <Content Include="Views\EditProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

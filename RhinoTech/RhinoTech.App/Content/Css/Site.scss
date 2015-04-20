@@ -145,3 +145,20 @@ body {
         }
     }
 }
+
+.product-management-page {
+    .product {
+        background: white;
+        margin-bottom: 20px;
+    }
+}
+
+.edit-product-page {
+    input {
+        margin-bottom: 15px;
+    }
+    textarea {
+        height: 300px;
+        margin-bottom: 15px;
+    }
+}

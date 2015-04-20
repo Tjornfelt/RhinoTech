@@ -1,7 +1,71 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model RhinoTech.App.Models.ViewModels.ProductManagementModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="text-center">
-    <h1>Product management section</h1>
+<div class="row product-management-page">
+    <div class="col-sm-12 page-header">
+        <h1 class="text-center">Product management</h1>
+    </div>
+
+    <div class="col-sm-12">
+
+        <div class="row">
+            <div class="col-sm-1">
+                ID
+            </div>
+            <div class="col-sm-1">
+                SKU
+            </div>
+            <div class="col-sm-1">
+                Shelf
+            </div>
+            <div class="col-sm-2">
+                Name
+            </div>
+            <div class="col-sm-1">
+                Price
+            </div>
+            <div class="col-sm-1">
+                Type
+            </div>
+            <div class="col-sm-4">
+                Description
+            </div>
+        </div>
+
+        @foreach (var p in Model.Products)
+        {
+            <div class="row product">
+                <div class="col-sm-1">
+                    @p.ID
+                </div>
+                <div class="col-sm-1">
+                    @p.SKU
+                </div>
+                <div class="col-sm-1">
+                    @p.Shelf
+                </div>
+                <div class="col-sm-2">
+                    @p.Name
+                </div>
+                <div class="col-sm-1">
+                    @p.Price
+                </div>
+                <div class="col-sm-1">
+                    @p.Type
+                </div>
+                <div class="col-sm-4">
+                    @Html.Raw(p.Description)
+                </div>
+                <div class="col-sm-1">
+                    @*Html.ActionLink("Edit", "Edit", "ProductManagement")*@
+                    @*Html.ActionLink("Link text", "TestAction", "ProductManagement", new { id = 2 }, new { @class = "btn btn-default" })*@
+
+                    <a href="@Model.EditProductPage.Url?id=@p.ID" title="@Model.EditProductPage.Name" class="btn btn-default">
+                        Edit
+                    </a>
+            </div>
+        </div>
+        }
+    </div>
 </div>

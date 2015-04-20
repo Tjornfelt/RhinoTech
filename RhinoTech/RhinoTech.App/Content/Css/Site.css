@@ -178,4 +178,14 @@ body {
   .intranet-home-page .section p {
     padding-bottom: 15px; }
 
+.product-management-page .product {
+  background: white;
+  margin-bottom: 20px; }
+
+.edit-product-page input {
+  margin-bottom: 15px; }
+.edit-product-page textarea {
+  height: 300px;
+  margin-bottom: 15px; }
+
 /*# sourceMappingURL=Site.css.map */
