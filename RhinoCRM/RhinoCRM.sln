@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhinoCRM", "RhinoCRM\RhinoCRM.csproj", "{FA787EE7-4E4C-40B2-91DB-9D3446557D0D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{200C066B-AD67-4F79-BE5C-CBB4866D1B89}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\GeneralUtillites.dll = Lib\GeneralUtillites.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
