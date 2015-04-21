@@ -58,7 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\GUI\GenericTSMI.cs" />
     <Compile Include="Forms\Companys.cs">
       <SubType>Form</SubType>
     </Compile>

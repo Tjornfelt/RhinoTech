@@ -9,13 +9,13 @@ namespace RhinoCRM.Core.Entityframework
     {
         // 10.13.37.151 - sa/radmin - Rhino2015
 
-        internal RCredentials.securitytoken GetUserSecuretoken(string Initials)
+        internal RCredentials.securitytoken GetUserSecuretokenbyID(int ID)
         {
 
                 Users user = null;
                 using (var context = new RCMSEntities())
                 {
-                    user = context.Users.FirstOrDefault(x => x.Initials == Initials);
+                    user = context.Users.FirstOrDefault(x => x.ID == ID);
                   
                     if (user.isSalesPerson) return RCredentials.securitytoken.isSales;
                     if (user.isAdmin) return RCredentials.securitytoken.isAdmin;
@@ -41,7 +41,6 @@ namespace RhinoCRM.Core.Entityframework
             }
             return null;
         }
-
         internal Products GetProductByID(int productID)
         {
             try
@@ -59,7 +58,6 @@ namespace RhinoCRM.Core.Entityframework
             }
             return null;
         }
-
         internal string GetShelfByProductID(int productID)
         {
             try
@@ -72,6 +70,21 @@ namespace RhinoCRM.Core.Entityframework
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+            }
+            return null;
+        }
+        internal Users VerifySQLUserByLogin(string Init,string pswrd)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                     return context.Users.FirstOrDefault(x => x.Initials == Init && x.Password == pswrd);                    
+                }
+            }
+            catch (Exception)
+            {
+               
             }
             return null;
         }
