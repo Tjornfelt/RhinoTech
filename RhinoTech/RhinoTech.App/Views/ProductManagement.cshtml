@@ -7,68 +7,187 @@
         <h1 class="text-center">Product management</h1>
     </div>
     <div class="col-sm-12 text-center">
-        <a href="@Model.NewProductPage.Url" class="btn btn-default" >@Model.NewProductPage.Name</a>
+        <a href="@Model.NewProductPage.Url" class="btn btn-default">@Model.NewProductPage.Name</a>
         <br /><br /><br />
     </div>
     <div class="col-sm-12">
 
-        <div class="row">
-            <div class="col-sm-1">
-                ID
+
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Active products
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+
+                        <div class="row ">
+                            <div class="col-sm-1 bol">
+                                ID
+                            </div>
+                            <div class="col-sm-1">
+                                SKU
+                            </div>
+                            <div class="col-sm-1">
+                                Shelf
+                            </div>
+                            <div class="col-sm-2">
+                                Name
+                            </div>
+                            <div class="col-sm-1">
+                                Price
+                            </div>
+                            <div class="col-sm-1">
+                                Type
+                            </div>
+                            <div class="col-sm-4">
+                                Description
+                            </div>
+                        </div>
+                        <hr />
+                        @foreach (var p in Model.Products.Where(x => x.Discontinued == false))
+                        {
+                            <div class="row product">
+                                <div class="col-sm-1">
+                                    @p.ID
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.SKU
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Shelf
+                                </div>
+                                <div class="col-sm-2">
+                                    @p.Name
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Price
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Type
+                                </div>
+                                <div class="col-sm-4">
+                                    @Html.Raw(p.Description.Replace("\\r", "<br />"))
+                                </div>
+                                <div class="col-sm-1">
+                                    @*Html.ActionLink("Edit", "Edit", "ProductManagement")*@
+                                    @*Html.ActionLink("Link text", "TestAction", "ProductManagement", new { id = 2 }, new { @class = "btn btn-default" })*@
+
+                                    <a href="@Model.EditProductPage.Url?id=@p.ID" title="@Model.EditProductPage.Name" class="btn btn-default">
+                                        Edit
+                                    </a>
+                                </div>
+
+                            </div>
+                            <hr />
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-1">
-                SKU
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Discontinued products
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-sm-1">
+                                ID
+                            </div>
+                            <div class="col-sm-1">
+                                SKU
+                            </div>
+                            <div class="col-sm-1">
+                                Shelf
+                            </div>
+                            <div class="col-sm-2">
+                                Name
+                            </div>
+                            <div class="col-sm-1">
+                                Price
+                            </div>
+                            <div class="col-sm-1">
+                                Type
+                            </div>
+                            <div class="col-sm-4">
+                                Description
+                            </div>
+                        </div>
+                        <hr />
+                        @foreach (var p in Model.Products.Where(x => x.Discontinued == true))
+                        {
+                            <div class="row product">
+                                <div class="col-sm-1">
+                                    @p.ID
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.SKU
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Shelf
+                                </div>
+                                <div class="col-sm-2">
+                                    @p.Name
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Price
+                                </div>
+                                <div class="col-sm-1">
+                                    @p.Type
+                                </div>
+                                <div class="col-sm-4">
+                                    @Html.Raw(p.Description.Replace("\\r", "<br />"))
+                                </div>
+                                <div class="col-sm-1">
+                                    @*Html.ActionLink("Edit", "Edit", "ProductManagement")*@
+                                    @*Html.ActionLink("Link text", "TestAction", "ProductManagement", new { id = 2 }, new { @class = "btn btn-default" })*@
+
+                                    <a href="@Model.EditProductPage.Url?id=@p.ID" title="@Model.EditProductPage.Name" class="btn btn-default">
+                                        Edit
+                                    </a>
+                                </div>
+                            </div>
+    <hr />
+                        }
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-1">
-                Shelf
-            </div>
-            <div class="col-sm-2">
-                Name
-            </div>
-            <div class="col-sm-1">
-                Price
-            </div>
-            <div class="col-sm-1">
-                Type
-            </div>
-            <div class="col-sm-4">
-                Description
-            </div>
+
         </div>
 
-        @foreach (var p in Model.Products)
-        {
-            <div class="row product">
-                <div class="col-sm-1">
-                    @p.ID
-                </div>
-                <div class="col-sm-1">
-                    @p.SKU
-                </div>
-                <div class="col-sm-1">
-                    @p.Shelf
-                </div>
-                <div class="col-sm-2">
-                    @p.Name
-                </div>
-                <div class="col-sm-1">
-                    @p.Price
-                </div>
-                <div class="col-sm-1">
-                    @p.Type
-                </div>
-                <div class="col-sm-4">
-                    @Html.Raw(p.Description.Replace("\\r", "<br />"))
-                </div>
-                <div class="col-sm-1">
-                    @*Html.ActionLink("Edit", "Edit", "ProductManagement")*@
-                    @*Html.ActionLink("Link text", "TestAction", "ProductManagement", new { id = 2 }, new { @class = "btn btn-default" })*@
 
-                    <a href="@Model.EditProductPage.Url?id=@p.ID" title="@Model.EditProductPage.Name" class="btn btn-default">
-                        Edit
-                    </a>
-                </div>
-            </div>
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
+
+

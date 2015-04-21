@@ -84,36 +84,28 @@ namespace RhinoTech.Core
         {
             try
             {
-                Product dbProduct = null;
                 using (var context = new RCMSEntities())
                 {
-                    dbProduct = context.Products.FirstOrDefault(x => x.ID == product.ID);
+                    /*
+                    WarehouseShelf shelf = new WarehouseShelf()
+                    {
+                        Amount = product.WarehouseShelfs.FirstOrDefault().Amount,
+                        Shelf = product.WarehouseShelfs.FirstOrDefault().Shelf
+                    };
 
-                    //1) Create the product first
-                    //Map the editted product to the dbProduct
-                    dbProduct.SKU = product.SKU;
-                    dbProduct.Name = product.Name;
-                    dbProduct.Price = product.Price;
-                    dbProduct.Type = product.Type;
-                    dbProduct.Description = product.Description;
+                    product.WarehouseShelfs.Add(shelf);
+                    */
+                    context.Products.Add(product);
 
-                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+                    // 4) Then save the changes
                     context.SaveChanges();
-
-                    //2) Then create the warehouse shelf to put the product on
-                    //WarehouseShelfs
-
-
-                    //Technically, a product can have many shelf locations. For this exercise though, we always have 1. Select the first and update the values.
-                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = product.WarehouseShelfs.FirstOrDefault().Amount;
-                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = product.WarehouseShelfs.FirstOrDefault().Shelf;
 
                     
 
                     return true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Making sure app doesn't crash if connection fails.
             }
@@ -150,6 +142,58 @@ namespace RhinoTech.Core
                 //Making sure app doesn't crash if connection fails.
             }
             return 0;
+        }
+
+        public bool DeleteProduct(int productID)
+        {
+            try
+            {
+                Product dbProduct = null;
+                using (var context = new RCMSEntities())
+                {
+                    dbProduct = context.Products.FirstOrDefault(x => x.ID == productID);
+
+                    //Mark the product as discontinued - we dont ever delete products
+                    dbProduct.Discontinued = true;
+
+                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return false;
+        }
+
+        public bool EnableProduct(int productID)
+        {
+            try
+            {
+                Product dbProduct = null;
+                using (var context = new RCMSEntities())
+                {
+                    dbProduct = context.Products.FirstOrDefault(x => x.ID == productID);
+
+                    //Mark the product as discontinued - we dont ever delete products
+                    dbProduct.Discontinued = false;
+
+                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return false;
         }
     }
 }

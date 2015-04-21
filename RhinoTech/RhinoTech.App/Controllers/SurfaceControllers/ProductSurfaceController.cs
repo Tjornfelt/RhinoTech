@@ -63,10 +63,20 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 
         [HttpPost]
         [ActionName("DeleteProduct")]
-        public ActionResult DeleteProduct(int ID)
+        public JsonResult DeleteProduct(int ID)
         {
+            Entities e = new Entities();
 
-            return PartialView("~/Views/EditProduct.cshtml");
+            return Json(e.DeleteProduct(ID));
+        }
+
+        [HttpPost]
+        [ActionName("EnableProduct")]
+        public JsonResult EnableProduct(int ID)
+        {
+            Entities e = new Entities();
+
+            return Json(e.EnableProduct(ID));
         }
 
         [HttpPost]
@@ -97,10 +107,9 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 
                 newProduct.Price = Double.Parse(p.Price.Replace('.', ','));
 
-
                 Entities e = new Entities();
 
-                e.UpdateProduct(newProduct);
+                e.CreateProduct(newProduct);
 
                 return Json(true);
             }

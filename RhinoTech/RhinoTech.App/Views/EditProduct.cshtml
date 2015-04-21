@@ -13,7 +13,7 @@
 
 
 
-@using (Ajax.BeginForm("EditProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
+    @using (Ajax.BeginForm("EditProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
 {
     HttpMethod = "POST",
     OnComplete = "onEditSuccess"
@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.SKU)
-                        @Html.TextBoxFor(m => m.SKU, new {@class = "form-control" })
+                        @Html.TextBoxFor(m => m.SKU, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="row">
@@ -71,20 +71,35 @@
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </div>
     }
 
-    @using (Ajax.BeginForm("DeleteProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
-{
-    HttpMethod = "POST"
-},
-    null))
-    {
-        <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
-    }
 
+    @if (Model.Discontinued)
+    {
+        using (Ajax.BeginForm("EnableProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            OnComplete = "onEnableSuccess"
+        }, null))
+        {
+            <input type="submit" value="Enable" class="btn btn-default" onclick="return confirm('This will remove the discontinued state, re-enabling the product again - are you sure?')" />
+        }
+    }
+    else
+    {
+
+        using (Ajax.BeginForm("DeleteProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            OnComplete = "onDeleteSuccess"
+        }, null))
+        {
+            <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
+        }
+    }
 
 
 </div>
@@ -93,9 +108,45 @@
     <script type='text/javascript'>
 
         function onEditSuccess(data, status, xhr) {
-            
+
             if (data.responseJSON) {
                 alert("Product data updated!")
+            }
+            else {
+                alert("Something went wrong. Please hit the responsible developer with something hard!")
+            }
+
+            console.log("data", data);
+            console.log("status", status);
+            console.log("xhr", xhr);
+
+            // Here's where you use the JSON object
+            //doSomethingUseful(data);
+        }
+
+        function onDeleteSuccess(data, status, xhr) {
+
+            if (data.responseJSON) {
+                alert("Product marked as discontinued");
+                location.reload();
+            }
+            else {
+                alert("Something went wrong. Please hit the responsible developer with something hard!")
+            }
+
+            console.log("data", data);
+            console.log("status", status);
+            console.log("xhr", xhr);
+
+            // Here's where you use the JSON object
+            //doSomethingUseful(data);
+        }
+
+        function onEnableSuccess(data, status, xhr) {
+
+            if (data.responseJSON) {
+                alert("Product no longer discontinued!");
+                location.reload();
             }
             else {
                 alert("Something went wrong. Please hit the responsible developer with something hard!")
