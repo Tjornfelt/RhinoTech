@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<RhinoTech.App.Models.HelperModels.NavigationItem>
 
-<ul>
+<ul class="breadcrumbs">
     @foreach (var item in Model)
     {
         <li>
-            @item.Name
+            <a href="@item.Url" title="@item.Name">@item.Name &raquo;</a>
         </li>
     }
 </ul>

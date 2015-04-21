@@ -46,6 +46,36 @@ namespace RhinoTech.App.Mappers
             return null;
         }
 
+        public static IEnumerable<T> Map<T>(IEnumerable<IPublishedContent> items, IPublishedContent currentPage) where T : NavigationItem
+        {
+            List<T> navigationItems = new List<T>();
+            if (items != null && items.Any())
+            {
+                foreach (var item in items)
+                {
+                    if (UH.UmbracoHelper.MemberHasAccess(item.Id, item.Path))
+                    {
+                        NavigationItem navItem = new NavigationItem()
+                        {
+                            NodeID = item.Id,
+                            Name = item.Name,
+                            Url = item.Url,
+                            Active = currentPage.Id == item.Id,
+                            Children = Map<NavigationItem>(item, currentPage)
+                        };
+
+                        navigationItems.Add((T)navItem);
+                    }
+                }
+            }
+
+            if (navigationItems.Any())
+            {
+                return navigationItems;
+            }
+            return null;
+        }
+
         /*
         public static IEnumerable<T> Map<T>(IEnumerable<IPublishedContent> content, IPublishedContent currentNode)
             where T : NavigationItem, new()

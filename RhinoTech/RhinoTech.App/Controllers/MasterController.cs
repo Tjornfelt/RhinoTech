@@ -24,10 +24,10 @@ namespace RhinoTech.App.Controllers
             ViewBag.Global = new GlobalModel
             {
                 MainMenu = NavigationItemMapper.Map<NavigationItem>(frontPage, CurrentPage),
-                //BreadCrumbs = NavigationItemMapper.Map<NavigationItem>(CurrentPage.AncestorsOrSelf(), CurrentPage)
-            };
 
-            //IEnumerable<NavigationItem> test = NavigationItemMapper.Map<NavigationItem>(CurrentPage.AncestorsOrSelf(), CurrentPage).ToList();
+                //Only add breadcrumb items if we are not on frontpage
+                BreadCrumbs = CurrentPage.Id != frontPage.Id? NavigationItemMapper.Map<NavigationItem>(CurrentPage.AncestorsOrSelf(), CurrentPage).Reverse() : null
+            };
 
             return base.View(viewName, masterName, model);
         }

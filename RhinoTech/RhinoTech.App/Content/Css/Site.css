@@ -144,6 +144,12 @@ body {
     min-height: 500px; }
   body footer {
     margin: 20px 0; }
+  body .breadcrumbs {
+    list-style: none;
+    margin: 10px 0 0 0;
+    padding: 0; }
+    body .breadcrumbs li {
+      display: inline; }
 
 .front-page .news-items {
   background: white; }

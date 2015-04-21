@@ -87,9 +87,11 @@
             @RenderSection("PreContent", false)
         </div>
 
-        @Html.Partial("_BreadCrumbs", global.BreadCrumbs)
-
         <div class="container canvas">
+            @if (global.BreadCrumbs != null)
+            {
+                @Html.Partial("_BreadCrumbs", global.BreadCrumbs)
+            }
             @RenderBody()
         </div>
 
