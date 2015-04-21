@@ -361,13 +361,13 @@
             <End Role="Products" EntitySet="Products" />
             <End Role="OrdersItems" EntitySet="OrdersItems" />
           </AssociationSet>
-          <EntitySet Name="WarehouseShelfs" EntityType="RCMSModel.WarehouseShelfs" />
+          <EntitySet Name="WarehouseShelfs" EntityType="RCMSModel.WarehouseShelf" />
           <AssociationSet Name="FK__Warehouse__Produ__35BCFE0A" Association="RCMSModel.FK__Warehouse__Produ__35BCFE0A">
             <End Role="Products" EntitySet="Products" />
             <End Role="WarehouseShelfs" EntitySet="WarehouseShelfs" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="WarehouseShelfs">
+        <EntityType Name="WarehouseShelf">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -379,7 +379,7 @@
         </EntityType>
         <Association Name="FK__Warehouse__Produ__35BCFE0A">
           <End Type="RCMSModel.Product" Role="Products" Multiplicity="1" />
-          <End Type="RCMSModel.WarehouseShelfs" Role="WarehouseShelfs" Multiplicity="*" />
+          <End Type="RCMSModel.WarehouseShelf" Role="WarehouseShelfs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
               <PropertyRef Name="ID" />
@@ -472,7 +472,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WarehouseShelfs">
-            <EntityTypeMapping TypeName="RCMSModel.WarehouseShelfs">
+            <EntityTypeMapping TypeName="RCMSModel.WarehouseShelf">
               <MappingFragment StoreEntitySet="WarehouseShelfs">
                 <ScalarProperty Name="Shelf" ColumnName="Shelf" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />

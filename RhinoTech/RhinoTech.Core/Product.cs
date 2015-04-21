@@ -17,7 +17,7 @@ namespace RhinoTech.Core
         public Product()
         {
             this.OrdersItems = new HashSet<OrdersItems>();
-            this.WarehouseShelfs = new HashSet<WarehouseShelfs>();
+            this.WarehouseShelfs = new HashSet<WarehouseShelf>();
         }
     
         public int ID { get; set; }
@@ -29,6 +29,6 @@ namespace RhinoTech.Core
         public bool Discontinued { get; set; }
     
         public virtual ICollection<OrdersItems> OrdersItems { get; set; }
-        public virtual ICollection<WarehouseShelfs> WarehouseShelfs { get; set; }
+        public virtual ICollection<WarehouseShelf> WarehouseShelfs { get; set; }
     }
 }

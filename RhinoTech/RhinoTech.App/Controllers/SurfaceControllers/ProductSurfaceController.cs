@@ -12,28 +12,25 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 {
     //http://24days.in/umbraco/2012/creating-a-login-form-with-umbraco-mvc-surfacecontroller/
 
-
-    /// <summary>
-    /// Not used anyway...keeping it in case i need functionality not thought of...
-    /// </summary>
-    public class EditProductSurfaceController : Umbraco.Web.Mvc.SurfaceController
+    public class ProductSurfaceController : Umbraco.Web.Mvc.SurfaceController
     {
+        /*
         [HttpGet]
         [ActionName("EditProduct")]
         public ActionResult EditProduct(int id)
         {
             return PartialView("~/Views/EditProduct.cshtml");
-        }
+        }*/
 
         [HttpPost]
         [ActionName("EditProduct")]
-        public JsonResult EditProduct(EditProductModel p)
+        public JsonResult EditProduct(ManagementProduct p)
         {
             try
             {
-                List<WarehouseShelfs> shelves = new List<WarehouseShelfs>();
+                List<WarehouseShelf> shelves = new List<WarehouseShelf>();
 
-                shelves.Add(new WarehouseShelfs()
+                shelves.Add(new WarehouseShelf()
                 {
                     Amount = p.Amount,
                     Shelf = p.Shelf
@@ -70,6 +67,47 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
         {
 
             return PartialView("~/Views/EditProduct.cshtml");
+        }
+
+        [HttpPost]
+        [ActionName("NewProduct")]
+        public JsonResult NewProduct(ManagementProduct p)
+        {
+            try
+            {
+                // Products always have exactly one shelf entity associated with it in order to distinguish amount.
+                // The shelf identifier (not the pk) is allowed to be the same as another row, since multiple products can occupy the same shelf space.
+
+                List<WarehouseShelf> shelves = new List<WarehouseShelf>();
+
+                shelves.Add(new WarehouseShelf()
+                {
+                    Amount = p.Amount,
+                    Shelf = p.Shelf
+                });
+
+                Product newProduct = new Product()
+                {
+                    Name = p.Name,
+                    SKU = p.SKU,
+                    Type = p.Type,
+                    Description = p.Description,
+                    WarehouseShelfs = shelves
+                };
+
+                newProduct.Price = Double.Parse(p.Price.Replace('.', ','));
+
+
+                Entities e = new Entities();
+
+                e.UpdateProduct(newProduct);
+
+                return Json(true);
+            }
+            catch (Exception)
+            {
+                return Json(false);
+            }
         }
     }
 }

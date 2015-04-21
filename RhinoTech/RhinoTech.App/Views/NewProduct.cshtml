@@ -1,32 +1,25 @@
-﻿@model RhinoTech.App.Models.ViewModels.EditProductModel
+﻿@model RhinoTech.App.Models.ViewModels.NewProductModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row edit-product-page">
+<div class="row new-product-page">
     <div class="col-sm-12 page-header">
         <h1 class="text-center">@Model.Header</h1>
-        <div class="text-center">You are editing product: @Model.Name</div>
-        <div class="text-center">ID: @Model.ID</div>
     </div>
 
-
-
-
-@using (Ajax.BeginForm("EditProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
-{
-    HttpMethod = "POST",
-    OnComplete = "onEditSuccess"
-},
-    null))
+    @using (Ajax.BeginForm("NewProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
     {
-        @Html.HiddenFor(m => m.ID)
+        HttpMethod = "POST",
+        OnComplete = "onCreateSuccess"
+    }, null))
+    {
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.SKU)
-                        @Html.TextBoxFor(m => m.SKU, new {@class = "form-control" })
+                        @Html.TextBoxFor(m => m.SKU, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="row">
@@ -71,29 +64,15 @@
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     }
-
-    @using (Ajax.BeginForm("DeleteProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
-{
-    HttpMethod = "POST"
-},
-    null))
-    {
-        <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
-    }
-
-
-
 </div>
 
 @section scripts {
     <script type='text/javascript'>
 
-        function onEditSuccess(data, status, xhr) {
-            
+        function onCreateSuccess(data, status, xhr) {
+
             if (data.responseJSON) {
                 alert("Product data updated!")
             }

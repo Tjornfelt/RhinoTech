@@ -19,10 +19,26 @@ namespace RhinoTech.App.Controllers
             ProductManagementModel model = new ProductManagementModel()
             {
                 Products = GetProducts(),
-                EditProductPage = GetEditPage()
+                EditProductPage = GetEditPage(),
+                NewProductPage = GetNewProductPage()
             };
 
             return View(model);
+        }
+
+        private NavigationItem GetNewProductPage()
+        {
+            var editNode = CurrentPage.Children.FirstOrDefault(x => x.DocumentTypeAlias == DocTypes.NewProduct);
+
+            if (editNode != null)
+            {
+                return new NavigationItem()
+                {
+                    Name = editNode.Name,
+                    Url = editNode.Url
+                };
+            }
+            return null;
         }
 
         private NavigationItem GetEditPage()

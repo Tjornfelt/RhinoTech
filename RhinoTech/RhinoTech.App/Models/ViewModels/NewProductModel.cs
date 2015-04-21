@@ -8,9 +8,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RhinoTech.App.Models.ViewModels
 {
-    public class EditProductModel : ManagementProduct
+    public class NewProductModel : ManagementProduct
     {
         public string Header { get; set; }
-        public NavigationItem NewProductPage { get; set; }
     }
 }

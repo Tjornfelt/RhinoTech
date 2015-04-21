@@ -16,7 +16,7 @@
         <AssociationConnector Association="RCMSModel.FK__Orders__Salesper__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="RCMSModel.FK__OrdersIte__Order__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="RCMSModel.FK__OrdersIte__Produ__31EC6D26" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="RCMSModel.WarehouseShelfs" Width="2.125" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="RCMSModel.WarehouseShelf" Width="2.125" PointX="9.375" PointY="4.75" />
         <AssociationConnector Association="RCMSModel.FK__Warehouse__Produ__35BCFE0A" />
       </Diagram>
     </edmx:Diagrams>

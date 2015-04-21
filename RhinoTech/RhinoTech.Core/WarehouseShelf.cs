@@ -12,7 +12,7 @@ namespace RhinoTech.Core
     using System;
     using System.Collections.Generic;
     
-    public partial class WarehouseShelfs
+    public partial class WarehouseShelf
     {
         public int ID { get; set; }
         public int ProductID { get; set; }

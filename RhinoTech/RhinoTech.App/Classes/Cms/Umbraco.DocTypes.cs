@@ -63,11 +63,17 @@ namespace RhinoTech.App.Classes.Cms
         {
             get { return _EditProduct ?? (_EditProduct = new EditProduct()); }
         }
+        private static NewProduct _NewProduct;
+        public static NewProduct NewProduct
+        {
+            get { return _NewProduct ?? (_NewProduct = new NewProduct()); }
+        }
     }
 }
 
 // Generated helper templates
 // Generated items
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewProduct.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\EditProduct.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewsItem.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewsSection.cs

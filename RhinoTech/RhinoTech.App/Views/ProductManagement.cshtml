@@ -6,7 +6,10 @@
     <div class="col-sm-12 page-header">
         <h1 class="text-center">Product management</h1>
     </div>
-
+    <div class="col-sm-12 text-center">
+        <a href="@Model.NewProductPage.Url" class="btn btn-default" >@Model.NewProductPage.Name</a>
+        <br /><br /><br />
+    </div>
     <div class="col-sm-12">
 
         <div class="row">
@@ -64,8 +67,8 @@
                     <a href="@Model.EditProductPage.Url?id=@p.ID" title="@Model.EditProductPage.Name" class="btn btn-default">
                         Edit
                     </a>
+                </div>
             </div>
-        </div>
         }
     </div>
 </div>

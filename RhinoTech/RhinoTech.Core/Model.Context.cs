@@ -31,6 +31,6 @@ namespace RhinoTech.Core
         public virtual DbSet<OrdersItems> OrdersItems { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<WarehouseShelfs> WarehouseShelfs { get; set; }
+        public virtual DbSet<WarehouseShelf> WarehouseShelfs { get; set; }
     }
 }

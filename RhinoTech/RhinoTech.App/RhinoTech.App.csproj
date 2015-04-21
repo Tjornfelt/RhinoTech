@@ -328,6 +328,9 @@
     <Compile Include="Classes\Cms\IntranetHome.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Cms\NewProduct.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Cms\NewsItem.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
@@ -361,9 +364,10 @@
     </Compile>
     <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
     <Compile Include="Controllers\ContactPageController.cs" />
+    <Compile Include="Controllers\NewProductController.cs" />
     <Compile Include="Controllers\NewsItemController.cs" />
     <Compile Include="Controllers\EditProductController.cs" />
-    <Compile Include="Controllers\SurfaceControllers\EditProductSurfaceController.cs" />
+    <Compile Include="Controllers\SurfaceControllers\ProductSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\FormsSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\MemberLoginSurfaceController.cs" />
     <Compile Include="Controllers\IntranetHomeController.cs" />
@@ -385,6 +389,7 @@
     <Compile Include="Models\HelperModels\NavigationItem.cs" />
     <Compile Include="Models\HelperModels\NewsItemTeaser.cs" />
     <Compile Include="Models\ViewModels\ContactPageModel.cs" />
+    <Compile Include="Models\ViewModels\NewProductModel.cs" />
     <Compile Include="Models\ViewModels\IntranetHomeModel.cs" />
     <Compile Include="Models\ViewModels\NewsItemModel.cs" />
     <Compile Include="Models\ViewModels\NewsSectionModel.cs" />
@@ -467,6 +472,7 @@
     <Content Include="Views\EditProduct.cshtml" />
     <Content Include="Views\Partials\_KeypadForm.cshtml" />
     <Content Include="Views\Partials\_BreadCrumbs.cshtml" />
+    <Content Include="Views\NewProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

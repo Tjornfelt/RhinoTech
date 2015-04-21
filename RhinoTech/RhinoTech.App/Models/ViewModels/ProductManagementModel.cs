@@ -11,5 +11,6 @@ namespace RhinoTech.App.Models.ViewModels
     {
         public IEnumerable<ManagementProduct> Products { get; set; }
         public NavigationItem EditProductPage { get; set; }
+        public NavigationItem NewProductPage { get; set; }
     }
 }

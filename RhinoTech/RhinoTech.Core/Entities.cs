@@ -80,6 +80,46 @@ namespace RhinoTech.Core
             return false;
         }
 
+        public bool CreateProduct(Product product)
+        {
+            try
+            {
+                Product dbProduct = null;
+                using (var context = new RCMSEntities())
+                {
+                    dbProduct = context.Products.FirstOrDefault(x => x.ID == product.ID);
+
+                    //1) Create the product first
+                    //Map the editted product to the dbProduct
+                    dbProduct.SKU = product.SKU;
+                    dbProduct.Name = product.Name;
+                    dbProduct.Price = product.Price;
+                    dbProduct.Type = product.Type;
+                    dbProduct.Description = product.Description;
+
+                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+
+                    //2) Then create the warehouse shelf to put the product on
+                    //WarehouseShelfs
+
+
+                    //Technically, a product can have many shelf locations. For this exercise though, we always have 1. Select the first and update the values.
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = product.WarehouseShelfs.FirstOrDefault().Amount;
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = product.WarehouseShelfs.FirstOrDefault().Shelf;
+
+                    
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return false;
+        }
+
         public string GetShelfByProductID(int productID)
         {
             try
