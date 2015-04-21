@@ -20,19 +20,19 @@ namespace RhinoTech.App.Controllers
 
             var dbProduct = entities.GetProductByID(id);
 
-
-
             EditProductModel model = new EditProductModel() {
-                Header = "test! hardcoded!",
+                Header = "Edit product",
 
                 ID = dbProduct.ID,
                 Name = dbProduct.Name,
                 SKU = dbProduct.SKU,
+                
                 Price = dbProduct.Price.ToString(),
                 Type = dbProduct.Type,
-                Description = dbProduct.Description,
+                Description = dbProduct.Description.Replace("\\r", Environment.NewLine),
                 Discontinued = dbProduct.Discontinued,
-                Shelf = entities.GetShelfByProductID(dbProduct.ID)
+                Shelf = entities.GetShelfByProductID(dbProduct.ID),
+                Amount = entities.GetShelfAmountByProductID(dbProduct.ID)
             };
 
             return View(model);

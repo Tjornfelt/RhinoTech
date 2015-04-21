@@ -47,6 +47,17 @@ namespace RhinoTech.App.Mappers
         }
 
         /*
+        public static IEnumerable<T> Map<T>(IEnumerable<IPublishedContent> content, IPublishedContent currentNode)
+            where T : NavigationItem, new()
+        {
+            
+            foreach (var item in content)
+            {
+                yield return Map<IEnumerable<T>>(item, currentNode);
+            }
+        }*/
+
+        /*
         /// <summary>
         /// Returns a single NavigationItem mapped from the node provided.
         /// </summary>

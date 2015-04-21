@@ -246,7 +246,7 @@
           <NavigationProperty Name="Orders" Relationship="Self.FK__OrdersIte__Order__30F848ED" FromRole="OrdersItems" ToRole="Orders" />
           <NavigationProperty Name="Products" Relationship="Self.FK__OrdersIte__Produ__31EC6D26" FromRole="OrdersItems" ToRole="Products" />
         </EntityType>
-        <EntityType Name="Products">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -323,7 +323,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__OrdersIte__Produ__31EC6D26">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="Products" Type="RCMSModel.Product" Multiplicity="1" />
           <End Role="OrdersItems" Type="Self.OrdersItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
@@ -339,7 +339,7 @@
           <EntitySet Name="Customers" EntityType="Self.Customers" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="OrdersItems" EntityType="Self.OrdersItems" />
-          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="Products" EntityType="RCMSModel.Product" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="FK__Customers__Compa__267ABA7A" Association="Self.FK__Customers__Compa__267ABA7A">
             <End Role="Companys" EntitySet="Companys" />
@@ -378,7 +378,7 @@
           <NavigationProperty Name="Products" Relationship="RCMSModel.FK__Warehouse__Produ__35BCFE0A" FromRole="WarehouseShelfs" ToRole="Products" />
         </EntityType>
         <Association Name="FK__Warehouse__Produ__35BCFE0A">
-          <End Type="RCMSModel.Products" Role="Products" Multiplicity="1" />
+          <End Type="RCMSModel.Product" Role="Products" Multiplicity="1" />
           <End Type="RCMSModel.WarehouseShelfs" Role="WarehouseShelfs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Products">
@@ -445,7 +445,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="RCMSModel.Products">
+            <EntityTypeMapping TypeName="RCMSModel.Product">
               <MappingFragment StoreEntitySet="Products">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SKU" ColumnName="SKU" />

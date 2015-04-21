@@ -1,0 +1,10 @@
+﻿@model IEnumerable<RhinoTech.App.Models.HelperModels.NavigationItem>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @item.Name
+        </li>
+    }
+</ul>

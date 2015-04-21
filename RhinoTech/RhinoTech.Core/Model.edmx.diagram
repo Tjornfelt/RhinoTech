@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="RCMSModel.Customers" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.OrdersItems" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCMSModel.Products" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCMSModel.Product" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="RCMSModel.Users" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <AssociationConnector Association="RCMSModel.FK__Customers__Compa__267ABA7A" ManuallyRouted="false" />
         <AssociationConnector Association="RCMSModel.FK__Orders__Customer__2E1BDC42" ManuallyRouted="false" />

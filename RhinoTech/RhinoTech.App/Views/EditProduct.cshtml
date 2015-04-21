@@ -5,24 +5,18 @@
 }
 <div class="row edit-product-page">
     <div class="col-sm-12 page-header">
-        <h1 class="text-center">Edit product</h1>
+        <h1 class="text-center">@Model.Header</h1>
         <div class="text-center">You are editing product: @Model.Name</div>
         <div class="text-center">ID: @Model.ID</div>
     </div>
 
-@using (Ajax.BeginForm("DeleteProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
-{
-    HttpMethod = "POST"
-},
-    null))
-{
-    <input type="submit" value="Delete" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
-}
 
 
-    @using (Ajax.BeginForm("EditProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
+
+@using (Ajax.BeginForm("EditProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
 {
-    HttpMethod = "POST"
+    HttpMethod = "POST",
+    OnComplete = "onTestSuccess"
 },
     null))
     {
@@ -39,6 +33,12 @@
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Shelf)
                         @Html.TextBoxFor(m => m.Shelf, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        @Html.LabelFor(m => m.Amount)
+                        @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
                     </div>
                 </div>
                 <div class="row">
@@ -76,6 +76,36 @@
         </div>
     }
 
+    @using (Ajax.BeginForm("DeleteProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
+{
+    HttpMethod = "POST"
+},
+    null))
+    {
+        <input type="submit" value="Delete" class="btn btn-default" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
+    }
+
 
 
 </div>
+
+@section scripts {
+    <script type='text/javascript'>
+
+        function onTestSuccess(data, status, xhr) {
+            
+            if (data.responseJSON)
+            {
+                alert("Product data updated! Refreshing page")
+                location.reload(true);
+            }
+
+            console.log("data", data);
+            console.log("status", status);
+            console.log("xhr", xhr);
+
+            // Here's where you use the JSON object
+            //doSomethingUseful(data);
+        }
+</script>
+    }

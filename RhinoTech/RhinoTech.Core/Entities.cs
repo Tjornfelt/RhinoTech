@@ -10,11 +10,11 @@ namespace RhinoTech.Core
     {
         // 10.13.37.151 - sa/radmin - Rhino2015
 
-        public List<Products> GetProducts()
+        public List<Product> GetProducts()
         {
             try
             {
-                List<Products> products = null;
+                List<Product> products = null;
                 using (var context = new RCMSEntities())
                 {
                     products = context.Products.ToList();
@@ -28,11 +28,11 @@ namespace RhinoTech.Core
             return null;
         }
 
-        public Products GetProductByID(int productID)
+        public Product GetProductByID(int productID)
         {
             try
             {
-                Products product = null;
+                Product product = null;
                 using (var context = new RCMSEntities())
                 {
                     product = context.Products.FirstOrDefault(x => x.ID == productID);
@@ -44,6 +44,40 @@ namespace RhinoTech.Core
                 //Making sure app doesn't crash if connection fails.
             }
             return null;
+        }
+
+        public bool UpdateProduct(Product edittedProduct)
+        {
+            try
+            {
+                Product dbProduct = null;
+                using (var context = new RCMSEntities())
+                {
+                    dbProduct = context.Products.FirstOrDefault(x => x.ID == edittedProduct.ID);
+
+                    //Map the editted product to the dbProduct
+                    dbProduct.SKU = edittedProduct.SKU;
+                    dbProduct.Name = edittedProduct.Name;
+                    dbProduct.Price = edittedProduct.Price;
+                    dbProduct.Type = edittedProduct.Type;
+                    dbProduct.Description = edittedProduct.Description;
+
+                    //Technically, a product can have many shelf locations. For this exercise though, we always have 1. Select the first and update the values.
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = edittedProduct.WarehouseShelfs.FirstOrDefault().Amount;
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = edittedProduct.WarehouseShelfs.FirstOrDefault().Shelf;
+
+                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return false;
         }
 
         public string GetShelfByProductID(int productID)
@@ -60,6 +94,22 @@ namespace RhinoTech.Core
                 //Making sure app doesn't crash if connection fails.
             }
             return null;
+        }
+
+        public int GetShelfAmountByProductID(int productID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.WarehouseShelfs.FirstOrDefault(x => x.ProductID == productID).Amount;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return 0;
         }
     }
 }
