@@ -40,17 +40,22 @@ namespace RhinoCRM.Forms
                 lLoginTo.Text = _DefaultDomain;
             }
 
-        }
+        }    
+        private void PerformSQLLogin()
+        {
+            Log.System(string.Format("User typed in correct Creds"));
+            _Credentials = new RCredentials(_Username, tbPassword.Text, GetSQLCredentials());
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }   
 
         [Obsolete("Proper AD Handling and Async")]
         private RCredentials.securitytoken GetSQLCredentials()
         {
-
             Entities e = new Entities();
             return e.GetUserSecuretoken(_Username);
         }
         [Obsolete("Proper AD Handling and Async")]
-        private void PerformLogin()
+        private void PerformADLogin()
         {
             // create a "principal context" - e.g. your domain (could be machine, too)
             using (PrincipalContext pc = new PrincipalContext(ContextType.Domain, _Domain))
@@ -77,11 +82,19 @@ namespace RhinoCRM.Forms
                     MessageBox.Show("Failed to log");
                 }
             }
+        }
+        private void PerformADLoginAsync()
+        {
+            Task t = Task.Factory.StartNew((Action)PerformADLogin);
+            t.Wait();
         }     
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            PerformLogin();
-        }          
+            PerformADLoginAsync();
+        }
+
+       
         private void tbUsername_TextChanged(object sender, EventArgs e)
         {
             if(tbUsername.Text.Contains(@"\\"))            
