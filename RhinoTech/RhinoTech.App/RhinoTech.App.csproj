@@ -465,6 +465,7 @@
     <Content Include="Views\NewsSection.cshtml" />
     <Content Include="Views\NewsItem.cshtml" />
     <Content Include="Views\EditProduct.cshtml" />
+    <Content Include="Views\Partials\_KeypadForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
