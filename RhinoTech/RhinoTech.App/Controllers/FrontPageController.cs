@@ -40,7 +40,7 @@ namespace RhinoTech.App.Controllers
 
                 if(newsItems != null && newsItems.Any())
 
-                foreach (var item in newsItems)
+                foreach (var item in newsItems.OrderBy(x => x.GetPropertyValue(DocTypes.NewsItem.Date)).Take(3))
                 {
                     yield return new NewsItemTeaser()
                     {

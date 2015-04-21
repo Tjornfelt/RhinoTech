@@ -55,7 +55,7 @@
                     @p.Type
                 </div>
                 <div class="col-sm-4">
-                    @Html.Raw(p.Description)
+                    @Html.Raw(p.Description.Replace("\\r", "<br />"))
                 </div>
                 <div class="col-sm-1">
                     @*Html.ActionLink("Edit", "Edit", "ProductManagement")*@

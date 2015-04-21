@@ -9,12 +9,24 @@
         <div class="text-center">You are editing product: @Model.Name</div>
         <div class="text-center">ID: @Model.ID</div>
     </div>
+
+@using (Ajax.BeginForm("DeleteProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
+{
+    HttpMethod = "POST"
+},
+    null))
+{
+    <input type="submit" value="Delete" onclick="return confirm('This will mark product as discontinued - are you sure?')" />
+}
+
+
     @using (Ajax.BeginForm("EditProduct", "EditProductSurface", new { ID = Model.ID }, new AjaxOptions
 {
     HttpMethod = "POST"
 },
     null))
     {
+        @Html.HiddenFor(m => m.ID)
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
@@ -63,5 +75,7 @@
             
         </div>
     }
+
+
 
 </div>

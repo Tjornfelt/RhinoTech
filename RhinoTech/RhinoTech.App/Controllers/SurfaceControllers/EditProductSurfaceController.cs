@@ -35,5 +35,13 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 
             return PartialView("~/Views/EditProduct.cshtml");
         }
+
+        [HttpPost]
+        [ActionName("DeleteProduct")]
+        public ActionResult DeleteProduct(int ID)
+        {
+
+            return PartialView("~/Views/EditProduct.cshtml");
+        }
     }
 }
