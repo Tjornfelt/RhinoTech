@@ -76,7 +76,7 @@
     <Compile Include="OrdersItems.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Products.cs">
+    <Compile Include="Product.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -19,6 +19,6 @@ namespace RhinoTech.Core
         public int Amount { get; set; }
         public string Shelf { get; set; }
     
-        public virtual Products Products { get; set; }
+        public virtual Product Products { get; set; }
     }
 }

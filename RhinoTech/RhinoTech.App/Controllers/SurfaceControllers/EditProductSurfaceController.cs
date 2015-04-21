@@ -1,5 +1,6 @@
 ﻿using RhinoTech.App.Models.HelperModels;
 using RhinoTech.App.Models.ViewModels;
+using RhinoTech.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,14 +27,41 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 
         [HttpPost]
         [ActionName("EditProduct")]
-        public ActionResult EditProduct(EditProductModel form)
+        public JsonResult EditProduct(EditProductModel p)
         {
+            try
+            {
+                List<WarehouseShelfs> shelves = new List<WarehouseShelfs>();
 
-            //form.Name
+                shelves.Add(new WarehouseShelfs()
+                {
+                    Amount = p.Amount,
+                    Shelf = p.Shelf
+                });
 
-            //form.Price.Replace(',', '.');
+                Product edittedProduct = new Product()
+                {
+                    ID = p.ID,
+                    Name = p.Name,
+                    SKU = p.SKU,
+                    Type = p.Type,
+                    Description = p.Description,
+                    WarehouseShelfs = shelves
+                };
 
-            return PartialView("~/Views/EditProduct.cshtml");
+                edittedProduct.Price = Double.Parse(p.Price.Replace('.', ','));
+
+
+                Entities e = new Entities();
+
+                e.UpdateProduct(edittedProduct);
+
+                return Json(true);
+            }
+            catch(Exception)
+            {
+                return Json(false);
+            }
         }
 
         [HttpPost]

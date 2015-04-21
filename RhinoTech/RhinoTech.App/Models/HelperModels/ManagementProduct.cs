@@ -15,5 +15,6 @@ namespace RhinoTech.App.Models.HelperModels
         public string Type { get; set; }
         public bool Discontinued { get; set; }
         public string Shelf { get; set; }
+        public int Amount { get; set; }
     }
 }

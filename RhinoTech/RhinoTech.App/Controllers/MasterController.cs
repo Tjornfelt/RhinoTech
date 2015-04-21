@@ -19,17 +19,15 @@ namespace RhinoTech.App.Controllers
     {
         protected override ViewResult View(string viewName, string masterName, object model)
         {
-            //Set APP culture, for number formats and such.
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-
-
             IPublishedContent frontPage = CurrentPage.AncestorOrSelf(1);
 
             ViewBag.Global = new GlobalModel
             {
-                MainMenu = NavigationItemMapper.Map<NavigationItem>(frontPage, CurrentPage)
+                MainMenu = NavigationItemMapper.Map<NavigationItem>(frontPage, CurrentPage),
+                //BreadCrumbs = NavigationItemMapper.Map<NavigationItem>(CurrentPage.AncestorsOrSelf(), CurrentPage)
             };
 
+            //IEnumerable<NavigationItem> test = NavigationItemMapper.Map<NavigationItem>(CurrentPage.AncestorsOrSelf(), CurrentPage).ToList();
 
             return base.View(viewName, masterName, model);
         }

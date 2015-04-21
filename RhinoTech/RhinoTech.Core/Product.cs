@@ -12,9 +12,9 @@ namespace RhinoTech.Core
     using System;
     using System.Collections.Generic;
     
-    public partial class Products
+    public partial class Product
     {
-        public Products()
+        public Product()
         {
             this.OrdersItems = new HashSet<OrdersItems>();
             this.WarehouseShelfs = new HashSet<WarehouseShelfs>();
