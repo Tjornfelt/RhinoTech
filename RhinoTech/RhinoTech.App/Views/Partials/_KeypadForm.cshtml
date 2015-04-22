@@ -2,18 +2,53 @@
     Layout = null;
 }
 
-<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="keypadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">
-                    Login
+                    Passcode
                 </h4>
             </div>
             <div class="modal-body">
-                <p>Test</p>
-               
+
+                <div class="text-center">
+                    <div class="numeric-keypad">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">1</button>
+                            <button type="button" class="btn btn-default">2</button>
+                            <button type="button" class="btn btn-default">3</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">4</button>
+                            <button type="button" class="btn btn-default">5</button>
+                            <button type="button" class="btn btn-default">6</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">7</button>
+                            <button type="button" class="btn btn-default">8</button>
+                            <button type="button" class="btn btn-default">9</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">*</button>
+                            <button type="button" class="btn btn-default">0</button>
+                            <button type="button" class="btn btn-default">#</button>
+                        </div>
+                    </div>
+                </div>
+                
+                    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+                        simple collapsible
+                    </button>
+
+                    <div id="demo" class="collapsing">
+                        Buttons here
+                    </div>
+                
 
             </div>
             <div class="modal-footer">
