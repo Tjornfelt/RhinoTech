@@ -252,10 +252,12 @@
     <Content Include="Content\Css\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="Content\Images\dead-link.jpg" />
     <Content Include="Content\Images\lego-model.jpg" />
     <Content Include="Content\Images\Logo.png" />
     <Content Include="Content\Images\refrigerator.jpg" />
     <Content Include="Content\Images\sebastian-working.jpg" />
+    <Content Include="Content\Images\thisisfine.jpg" />
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -322,6 +324,9 @@
     <Compile Include="Classes\Cms\EditProduct.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Cms\Error404.cs">
+      <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Cms\Frontpage.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
@@ -362,7 +367,9 @@
     <Compile Include="Classes\Cms\Warehouse.cs">
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Helpers\LogHelpers.cs" />
     <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
+    <Compile Include="Classes\Helpers\SessionHelpers.cs" />
     <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\NewProductController.cs" />
     <Compile Include="Controllers\NewsItemController.cs" />
@@ -473,6 +480,7 @@
     <Content Include="Views\Partials\_KeypadForm.cshtml" />
     <Content Include="Views\Partials\_BreadCrumbs.cshtml" />
     <Content Include="Views\NewProduct.cshtml" />
+    <Content Include="Views\Error404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

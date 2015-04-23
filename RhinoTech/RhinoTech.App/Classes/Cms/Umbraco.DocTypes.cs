@@ -68,11 +68,17 @@ namespace RhinoTech.App.Classes.Cms
         {
             get { return _NewProduct ?? (_NewProduct = new NewProduct()); }
         }
+        private static Error404 _Error404;
+        public static Error404 Error404
+        {
+            get { return _Error404 ?? (_Error404 = new Error404()); }
+        }
     }
 }
 
 // Generated helper templates
 // Generated items
+// RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\Error404.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewProduct.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\EditProduct.cs
 // RhinoTech\RhinoTech\RhinoTech.App\Classes\Cms\NewsItem.cs

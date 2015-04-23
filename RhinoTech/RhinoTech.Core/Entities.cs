@@ -195,5 +195,20 @@ namespace RhinoTech.Core
             }
             return false;
         }
+
+        public bool AddLogEntry(string name, DateTime timestamp, string type, string message)
+        {
+            try
+            {
+                throw new NotImplementedException();
+                return true; //In preparation for implementation
+            }
+            catch(Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+                return false;
+            }
+            
+        }
     }
 }

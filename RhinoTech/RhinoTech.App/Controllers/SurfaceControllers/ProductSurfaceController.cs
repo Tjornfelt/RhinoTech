@@ -1,4 +1,5 @@
-﻿using RhinoTech.App.Models.HelperModels;
+﻿using RhinoTech.App.Classes.Helpers;
+using RhinoTech.App.Models.HelperModels;
 using RhinoTech.App.Models.ViewModels;
 using RhinoTech.Core;
 using System;
@@ -7,21 +8,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Umbraco.Core.Models;
+using Umbraco.Core.Services;
 
 namespace RhinoTech.App.Controllers.SurfaceControllers
 {
-    //http://24days.in/umbraco/2012/creating-a-login-form-with-umbraco-mvc-surfacecontroller/
 
     public class ProductSurfaceController : Umbraco.Web.Mvc.SurfaceController
     {
-        /*
-        [HttpGet]
-        [ActionName("EditProduct")]
-        public ActionResult EditProduct(int id)
-        {
-            return PartialView("~/Views/EditProduct.cshtml");
-        }*/
-
         [HttpPost]
         [ActionName("EditProduct")]
         public JsonResult EditProduct(ManagementProduct p)
@@ -48,10 +42,14 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
 
                 edittedProduct.Price = Double.Parse(p.Price.Replace('.', ','));
 
-
                 Entities e = new Entities();
 
                 e.UpdateProduct(edittedProduct);
+
+                //Add entry to log about user activity
+                IMember member = SessionHelpers.GetCurrentMember(ApplicationContext.Services.MemberService);
+                string logMessage = "Member updated product:" + "ID: " + p.ID + ", SKU: " + p.SKU + ", Name: " + p.Name + ", Price: " + p.Price + ", Type: " + p.Type + ", Description: " + p.Description + ", Shelf: " + p.Shelf + ", Amount: " + p.Amount;
+                e.AddLogEntry(member.Name, DateTime.Now, LogHelpers.TypeUpdate, logMessage);
 
                 return Json(true);
             }
@@ -67,7 +65,17 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
         {
             Entities e = new Entities();
 
-            return Json(e.DeleteProduct(ID));
+            var result = e.DeleteProduct(ID);
+
+            if (result)
+            {
+                //Add entry to log about user activity
+                IMember member = SessionHelpers.GetCurrentMember(ApplicationContext.Services.MemberService);
+                string logMessage = "Member marked product as discontinued, ProductID: " + ID;
+                e.AddLogEntry(member.Name, DateTime.Now, LogHelpers.TypeDelete, logMessage);
+                return Json(true);
+            }
+            return Json(false);
         }
 
         [HttpPost]
@@ -76,7 +84,18 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
         {
             Entities e = new Entities();
 
-            return Json(e.EnableProduct(ID));
+            var result = e.EnableProduct(ID);
+
+            if (result)
+            {
+                //Add entry to log about user activity
+                IMember member = SessionHelpers.GetCurrentMember(ApplicationContext.Services.MemberService);
+                string logMessage = "Member re-enabled product to active state, ProductID: " + ID;
+                e.AddLogEntry(member.Name, DateTime.Now, LogHelpers.TypeUpdate, logMessage);
+                return Json(true);
+            }
+
+            return Json(false);
         }
 
         [HttpPost]
@@ -110,6 +129,11 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
                 Entities e = new Entities();
 
                 e.CreateProduct(newProduct);
+
+                //Add entry to log about user activity
+                IMember member = SessionHelpers.GetCurrentMember(ApplicationContext.Services.MemberService);
+                string logMessage = "Member created a new product:" + "ID: " + p.ID + ", SKU: " + p.SKU + ", Name: " + p.Name + ", Price: " + p.Price + ", Type: " + p.Type + ", Description: " + p.Description + ", Shelf: " + p.Shelf + ", Amount: " + p.Amount;
+                e.AddLogEntry(member.Name, DateTime.Now, LogHelpers.TypeCreate, logMessage);
 
                 return Json(true);
             }
