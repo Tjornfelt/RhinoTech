@@ -194,4 +194,25 @@ body {
   height: 300px;
   margin-bottom: 15px; }
 
+.keypad .modal-dialog {
+  width: 100%;
+  margin-top: 0; }
+  .keypad .modal-dialog input {
+    max-width: 300px;
+    margin: 0 auto; }
+  .keypad .modal-dialog .numeric-keypad {
+    margin-top: 10px; }
+    .keypad .modal-dialog .numeric-keypad .btn-group {
+      margin-top: 10px; }
+      .keypad .modal-dialog .numeric-keypad .btn-group button {
+        width: 100px; }
+.keypad .door-status {
+  width: 200px;
+  height: 10px;
+  margin: 10px auto; }
+  .keypad .door-status.locked {
+    background: red; }
+  .keypad .door-status.open {
+    background: green; }
+
 /*# sourceMappingURL=Site.css.map */

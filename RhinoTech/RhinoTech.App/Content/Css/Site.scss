@@ -172,3 +172,34 @@ body {
         margin-bottom: 15px;
     }
 }
+
+.keypad {
+    .modal-dialog {
+        width: 100%;
+        margin-top:0;
+        input {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .numeric-keypad {
+            margin-top: 10px;
+            .btn-group {
+                margin-top: 10px;
+                button {
+                    width: 100px;
+                }
+            }
+        }
+    }
+    .door-status {
+        width: 200px;
+        height: 10px;
+        margin: 10px auto;
+        &.locked {
+            background: red;
+        }
+        &.open {
+            background: green;
+        }
+    }
+}

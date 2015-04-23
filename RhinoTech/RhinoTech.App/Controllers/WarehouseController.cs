@@ -19,13 +19,14 @@ namespace RhinoTech.App.Controllers
 
         public ActionResult Warehouse()
         {
+            //1) Instantiering af primære view model
             WarehouseModel model = new WarehouseModel()
             {
-                WarehouseDoors = GetWarehouseDoors()
-                //KeypadModel  = new Models.HelperModels.KeypadModel()
+                //2) View modellen skal vise et antal døre - indeholder en liste af døre vi kan udskrive
+                WarehouseDoors = GetWarehouseDoors() //3) Logikken der opretter dørene smides ud i privat funktion for at holde Warehouse() mere overskuelig
             };
 
-            return View(model);
+            return View(model); //4) Returner view modellen til view'et svarande til navnet på metoden (Warehouse)
         }
 
         private IEnumerable<WarehouseDoor> GetWarehouseDoors()

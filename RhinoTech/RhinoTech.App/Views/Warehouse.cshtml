@@ -1,4 +1,7 @@
 ﻿@model RhinoTech.App.Models.ViewModels.WarehouseModel
+@* 6) Dette view kræver en model af typen WarehouseModel *@
+           
+ 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -14,19 +17,17 @@
 
         <ul class="nav nav-pills nav-stacked">
 
-            @{
-                int counter = 0;
-
-                foreach (var door in Model.WarehouseDoors) //"door objekt instansieres så man kan hente Name og KeyPadForm fra vores WarehouseModel.  
+            @{                
+                //--- door objekt instansieres så man kan hente Name og KeyPadForm fra vores WarehouseModel.
+                //Objektet er allerede instantieret i controlleren - vi tilgår properties på objektet leveret via controlleren.
+                foreach (var door in Model.WarehouseDoors) 
                 {
-                    counter++; //counter da vi har fire døre.
-                    
-                    <!-- Da vi har fire døre i vores WarehouseModel hentes der fire frem i viewet. Dette giver muligheden for nemt at udvide med flere døre. -->
+                    // Da vi har fire døre i vores WarehouseModel hentes der fire frem i viewet. Dette giver muligheden for nemt at udvide med flere døre.
                     <li>
                         <div class="text-center"><h3>@door.Name</h3>
                             <div class="btn-group">
-                                <!-- Target den keypadform.ID der vælges ud fra Manage Door knapperne på sitet, så vi har en Modal per ID..-->
 
+                                <!-- Target den keypadform.ID der vælges ud fra Manage Door knapperne på sitet, så vi har en Modal per ID..-->
                                 <button class="btn btn-default" data-toggle="modal" data-target="#@door.KeypadForm.Id">Manage Door</button>
                             </div> 
                         </div>
