@@ -20,6 +20,7 @@
                     }, null))
                     {
                         @Html.TextBoxFor(m => m.Password, new { id = "PasscodeBox" + Model.Id, @readonly="readonly"})
+                        
                         @*<input type="submit" value="Enable" class="btn btn-default" onclick="return confirm('This will remove the discontinued state, re-enabling the product again - are you sure?')" />*@
 
                         @Html.HiddenFor(m => m.Id)
@@ -51,6 +52,11 @@
                             </div>
                         </div>
 
+    <span class="alert alert-danger">Door is currently locked</span>
+    <span class="alert alert-success">Door is currently unlocked</span>
+                        
+                        <div class="clearfix"></div>
+
     <input type="button" value="Red On" onclick="red('on')" style="font-size:200%;"><br />
     <input type="button" value="Red Off" onclick="red('off')" style="font-size:200%;">
                     }
@@ -58,14 +64,6 @@
                     @*<input type="text" readonly="readonly" id="PasscodeBox" />*@
 
 
-                </div>
-
-                <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
-                    simple collapsible
-                </button>
-
-                <div id="demo" class="collapsing">
-                    Buttons here
                 </div>
 
 
