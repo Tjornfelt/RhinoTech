@@ -12,6 +12,7 @@
             <div class="modal-body">
 
 
+<<<<<<< HEAD
                 @* Indbygget MVC helper der kalder en action i en controller, med valgfrie parametre *@
                 @using (Ajax.BeginForm("ToggleDoor", "WarehouseSurface", null, new AjaxOptions
                 {
@@ -22,6 +23,17 @@
                     <div class="text-center">
                         <div class="door-status locked"></div>
                         @Html.TextBoxFor(m => m.Password, new { id = "PasscodeBox" + Model.Id, @readonly = "readonly", @class = "form-control" })
+=======
+                    @using (Ajax.BeginForm("ToggleDoor", "WarehouseSurface", null, new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        OnComplete = "validatePasswordComplete"
+                    }, null))
+                    {
+                        @Html.TextBoxFor(m => m.Password, new { id = "PasscodeBox" + Model.Id, @readonly="readonly"})
+                        
+                        @*<input type="submit" value="Enable" class="btn btn-default" onclick="return confirm('This will remove the discontinued state, re-enabling the product again - are you sure?')" />*@
+>>>>>>> origin/master
 
                         @Html.HiddenFor(m => m.Id)
                         @{
@@ -53,18 +65,32 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
                         <input type="button" value="Red On" onclick="red('on')" style="font-size:200%;"><br />
                         <input type="button" value="Red Off" onclick="red('off')" style="font-size:200%;">
                     </div>
                 }
 
                 @*<input type="text" readonly="readonly" id="PasscodeBox" />*@
+=======
+    <span class="alert alert-danger">Door is currently locked</span>
+    <span class="alert alert-success">Door is currently unlocked</span>
+                        
+                        <div class="clearfix"></div>
+
+    <input type="button" value="Red On" onclick="red('on')" style="font-size:200%;"><br />
+    <input type="button" value="Red Off" onclick="red('off')" style="font-size:200%;">
+                    }
+>>>>>>> origin/master
 
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 
             </div>
         </div>
