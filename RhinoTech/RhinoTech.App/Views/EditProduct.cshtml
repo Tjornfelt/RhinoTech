@@ -14,10 +14,10 @@
 
 
     @using (Ajax.BeginForm("EditProduct", "ProductSurface", new { ID = Model.ID }, new AjaxOptions
-{
-    HttpMethod = "POST",
-    OnComplete = "onEditSuccess"
-},
+    {
+        HttpMethod = "POST",
+        OnComplete = "onEditSuccess"
+    },
     null))
     {
         @Html.HiddenFor(m => m.ID)
@@ -27,42 +27,49 @@
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.SKU)
                         @Html.TextBoxFor(m => m.SKU, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SKU)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Shelf)
                         @Html.TextBoxFor(m => m.Shelf, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Shelf)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Amount)
                         @Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Amount)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Name)
                         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Price)
                         @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Price)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Type)
                         @Html.TextBoxFor(m => m.Type, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Type)
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         @Html.LabelFor(m => m.Description)
                         @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Description)
                     </div>
                 </div>
                 <div class="row">

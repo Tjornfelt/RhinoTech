@@ -1,4 +1,5 @@
 ﻿using APE.Umbraco;
+using RhinoTech.App.Classes.Cms;
 using RhinoTech.App.Models.HelperModels;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace RhinoTech.App.Mappers
             List<T> navigationItems = new List<T>();
             if (root != null)
             {
-                foreach (var child in root.Children)
+                foreach (var child in root.Children.Where(x => x.DocumentTypeAlias != DocTypes.Error404))
                 {
                     if(UH.UmbracoHelper.MemberHasAccess(child.Id, child.Path))
                     {
