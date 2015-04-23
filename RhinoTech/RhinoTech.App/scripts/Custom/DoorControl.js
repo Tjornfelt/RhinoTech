@@ -1,4 +1,28 @@
-﻿function red(query) {
+﻿function validatePasswordComplete(data, status, xhr) {
+
+    alert(data.responseJSON)
+    alert(data.responseJSON.door)
+    alert(data.responseJSON.result)
+
+    switch (data.responseJSON.door) {
+        case "door-1":
+
+        default:
+
+    }
+
+    // Here's where you use the JSON object
+    //doSomethingUseful(data);
+}
+
+
+
+
+
+
+
+
+function red(query) {
 
     $.ajax(
         {

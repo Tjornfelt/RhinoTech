@@ -373,10 +373,12 @@
       <DependentUpon>Umbraco.DocTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
+    <Compile Include="Classes\Helpers\WarehouseHelpers.cs" />
     <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\NewProductController.cs" />
     <Compile Include="Controllers\NewsItemController.cs" />
     <Compile Include="Controllers\EditProductController.cs" />
+    <Compile Include="Controllers\SurfaceControllers\WarehouseSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\ProductSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\FormsSurfaceController.cs" />
     <Compile Include="Controllers\SurfaceControllers\MemberLoginSurfaceController.cs" />
@@ -393,11 +395,13 @@
     <Compile Include="Mappers\NavigationItemMapper.cs" />
     <Compile Include="Models\HelperModels\ContactFormModel.cs" />
     <Compile Include="Models\HelperModels\GlobalModel.cs" />
+    <Compile Include="Models\HelperModels\KeypadModel.cs" />
     <Compile Include="Models\HelperModels\ManagementProduct.cs" />
     <Compile Include="Models\HelperModels\MemberLoginModel.cs" />
     <Compile Include="Models\HelperModels\NavigationItemWithTeaser.cs" />
     <Compile Include="Models\HelperModels\NavigationItem.cs" />
     <Compile Include="Models\HelperModels\NewsItemTeaser.cs" />
+    <Compile Include="Models\HelperModels\WarehouseDoor.cs" />
     <Compile Include="Models\ViewModels\ContactPageModel.cs" />
     <Compile Include="Models\ViewModels\NewProductModel.cs" />
     <Compile Include="Models\ViewModels\IntranetHomeModel.cs" />
@@ -405,6 +409,7 @@
     <Compile Include="Models\ViewModels\NewsSectionModel.cs" />
     <Compile Include="Models\ViewModels\EditProductModel.cs" />
     <Compile Include="Models\ViewModels\ProductManagementModel.cs" />
+    <Compile Include="Models\ViewModels\WarehouseModel.cs" />
     <Compile Include="Models\ViewModels\TextPageModel.cs" />
     <Compile Include="Models\ViewModels\FrontPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

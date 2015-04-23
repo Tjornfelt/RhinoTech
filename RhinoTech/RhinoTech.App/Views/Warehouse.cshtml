@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@model RhinoTech.App.Models.ViewModels.WarehouseModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -9,69 +9,35 @@
     <div class="text-center"><h2>Door Controlpanel</h2></div>
 
 
-    
+
     <div class="col-xs-12">
-        
+
         <ul class="nav nav-pills nav-stacked">
-            <li>
-                <div class="text-center"><h3>Door 1</h3></div>
-                <div class="btn-group">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#keypadModal">Manage Door 1</button>
-                </div>
 
-                <div class="btn-group btn-toggle">
-                    <button class="btn btn btn-default" onclick="green('on'), red('off')">Door is Open</button>
-                    <button class="btn btn btn-succes active" onclick=" red('on'), green('off')">Door is Locked</button>
-                </div>
+            @{
+                int counter = 0;
 
-            </li>
+                foreach (var door in Model.WarehouseDoors) //"door objekt instansieres så man kan hente Name og KeyPadForm fra vores WarehouseModel.  
+                {
+                    counter++; //counter da vi har fire døre.
+                    
+                    <!-- Da vi har fire døre i vores WarehouseModel hentes der fire frem i viewet. Dette giver muligheden for nemt at udvide med flere døre. -->
+                    <li>
+                        <div class="text-center"><h3>@door.Name</h3>
+                            <div class="btn-group">
+                                <!-- Target den keypadform.ID der vælges ud fra Manage Door knapperne på sitet, så vi har en Modal per ID..-->
 
-            <li class="nav-divider"></li>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#@door.KeypadForm.Id">Manage Door</button>
+                            </div> 
+                        </div>
 
-            <li>
 
-                <div class="text-center"><h3>Door 2</h3></div>
-                <div class="btn-group">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#keypadModal">Manage Door 2</button>
-                </div>
+                        @Html.Partial("_KeypadForm", door.KeypadForm)
+                    </li>
+                }
+            }
 
-                <div class="btn-group btn-toggle">
-                    <button class="btn btn btn-default" onclick="green2('on'), red2('off')">Door is Open</button>
-                    <button class="btn btn btn-succes active" onclick=" red2('on'), green2('off')">Door is Locked</button>
-                </div>
-
-            </li>
-
-            <li class="nav-divider"></li>
-
-            <li>
-                <div class="text-center"><h3>Door 3</h3></div>
-                <div class="btn-group">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#keypadModal">Manage Door 3</button>
-                </div>
-
-                <div class="btn-group btn-toggle">
-                    <button class="btn btn btn-default" onclick="green3('on'), red3('off')">Door is Open</button>
-                    <button class="btn btn btn-succes active" onclick=" red3('on'), green3('off')">Door is Locked</button>
-                </div>
-            </li>
-
-            <li class="nav-divider"></li>
-
-            <li>
-                <div class="text-center"><h3>Door 4</h3></div>
-                <div class="btn-group">
-                    <button class="btn btn-default" data-toggle="modal" data-target="#keypadModal">Manage Door 4</button>
-                </div>
-
-                <div class="btn-group btn-toggle">
-                    <button class="btn btn btn-default" onclick="green4('on'), red4('off')">Door is Open</button>
-                    <button class="btn btn btn-succes active" onclick=" red4('on'), green4('off')">Door is Locked</button>
-                </div>
-
-            </li>
-
-            <li class="nav-divider"></li>
+            
 
         </ul>
 
@@ -79,12 +45,11 @@
 
 </div>
 
-@Html.Partial("_KeypadForm")
 
-    @section scripts {
 
-        @*Insert scripts here!*@
-        <script src="~/scripts/Custom/DoorControl.js"></script>
-        <script src="~/scripts/Custom/Toggle.js"></script>
-    }
+@section scripts {
 
+    @*Insert scripts here!*@
+    <script src="~/scripts/Custom/DoorControl.js"></script>
+    <script src="~/scripts/Custom/Toggle.js"></script>
+}
