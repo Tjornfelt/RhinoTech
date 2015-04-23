@@ -379,11 +379,8 @@
     </Compile>
     <Compile Include="Classes\Helpers\LogHelpers.cs" />
     <Compile Include="Classes\Helpers\NewsItemHelpers.cs" />
-<<<<<<< HEAD
     <Compile Include="Classes\Helpers\SessionHelpers.cs" />
-=======
     <Compile Include="Classes\Helpers\WarehouseHelpers.cs" />
->>>>>>> origin/master
     <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\NewProductController.cs" />
     <Compile Include="Controllers\NewsItemController.cs" />
