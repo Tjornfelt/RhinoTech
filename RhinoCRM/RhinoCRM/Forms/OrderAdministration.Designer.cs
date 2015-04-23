@@ -1,6 +1,6 @@
 ﻿namespace RhinoCRM.Forms
 {
-    partial class Customers
+    partial class OrderAdministration
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderAdministration));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.spcCostumerInfo = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -51,6 +51,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbCustomerID = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcCostumerInfo)).BeginInit();
             this.spcCostumerInfo.Panel1.SuspendLayout();
@@ -63,16 +67,40 @@
             this.spcCompanyInfo.SuspendLayout();
             this.SuspendLayout();
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 223);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(493, 387);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Productes";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(480, 361);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.spcCostumerInfo);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(5, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 218);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.Size = new System.Drawing.Size(493, 218);
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
@@ -86,41 +114,21 @@
             // 
             // spcCostumerInfo.Panel1
             // 
-            this.spcCostumerInfo.Panel1.Controls.Add(this.comboBox1);
+            this.spcCostumerInfo.Panel1.Controls.Add(this.cbCustomerID);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label1);
             this.spcCostumerInfo.Panel1.Controls.Add(this.textBox6);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label2);
             this.spcCostumerInfo.Panel1.Controls.Add(this.textBox1);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label7);
-            this.spcCostumerInfo.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // spcCostumerInfo.Panel2
             // 
             this.spcCostumerInfo.Panel2.Controls.Add(this.btnNew);
             this.spcCostumerInfo.Panel2.Controls.Add(this.label6);
             this.spcCostumerInfo.Panel2.Controls.Add(this.textBox5);
-            this.spcCostumerInfo.Size = new System.Drawing.Size(430, 85);
-            this.spcCostumerInfo.SplitterDistance = 215;
+            this.spcCostumerInfo.Size = new System.Drawing.Size(480, 85);
+            this.spcCostumerInfo.SplitterDistance = 216;
             this.spcCostumerInfo.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Customer ID";
             // 
             // textBox6
             // 
@@ -128,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.Location = new System.Drawing.Point(87, 55);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 20);
+            this.textBox6.Size = new System.Drawing.Size(126, 20);
             this.textBox6.TabIndex = 3;
             // 
             // label2
@@ -146,7 +154,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(87, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
+            this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 3;
             // 
             // label7
@@ -180,9 +188,9 @@
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(67, 30);
+            this.textBox5.Location = new System.Drawing.Point(67, 33);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(136, 20);
+            this.textBox5.Size = new System.Drawing.Size(188, 20);
             this.textBox5.TabIndex = 3;
             // 
             // groupBox3
@@ -195,7 +203,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(7, 110);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(430, 100);
+            this.groupBox3.Size = new System.Drawing.Size(480, 100);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
@@ -203,7 +211,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(368, 13);
+            this.button1.Location = new System.Drawing.Point(418, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 21);
             this.button1.TabIndex = 7;
@@ -217,7 +225,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(99, 13);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(265, 21);
+            this.comboBox2.Size = new System.Drawing.Size(315, 21);
             this.comboBox2.TabIndex = 7;
             // 
             // spcCompanyInfo
@@ -239,8 +247,8 @@
             // 
             this.spcCompanyInfo.Panel2.Controls.Add(this.label5);
             this.spcCompanyInfo.Panel2.Controls.Add(this.textBox4);
-            this.spcCompanyInfo.Size = new System.Drawing.Size(424, 58);
-            this.spcCompanyInfo.SplitterDistance = 212;
+            this.spcCompanyInfo.Size = new System.Drawing.Size(474, 58);
+            this.spcCompanyInfo.SplitterDistance = 214;
             this.spcCompanyInfo.TabIndex = 6;
             // 
             // label4
@@ -267,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(96, 3);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(112, 20);
+            this.textBox3.Size = new System.Drawing.Size(114, 20);
             this.textBox3.TabIndex = 5;
             // 
             // textBox7
@@ -276,7 +284,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.Location = new System.Drawing.Point(96, 29);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(112, 20);
+            this.textBox7.Size = new System.Drawing.Size(114, 20);
             this.textBox7.TabIndex = 3;
             // 
             // label5
@@ -294,7 +302,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(68, 3);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(136, 20);
+            this.textBox4.Size = new System.Drawing.Size(159, 20);
             this.textBox4.TabIndex = 5;
             // 
             // label3
@@ -306,19 +314,37 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Company Name";
             // 
-            // Customers
+            // cbCustomerID
+            // 
+            this.cbCustomerID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbCustomerID.FormattingEnabled = true;
+            this.cbCustomerID.Location = new System.Drawing.Point(87, 3);
+            this.cbCustomerID.Name = "cbCustomerID";
+            this.cbCustomerID.Size = new System.Drawing.Size(126, 21);
+            this.cbCustomerID.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Customer ID";
+            // 
+            // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 236);
+            this.ClientSize = new System.Drawing.Size(517, 622);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(395, 261);
-            this.Name = "Customers";
-            this.Text = "Customers";
-            this.Activated += new System.EventHandler(this.Customers_Activated);
-            this.Load += new System.EventHandler(this.Customers_Load);
-            this.Leave += new System.EventHandler(this.Customers_Leave);
+            this.Name = "Order";
+            this.Text = "Order";
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.spcCostumerInfo.Panel1.ResumeLayout(false);
             this.spcCostumerInfo.Panel1.PerformLayout();
@@ -340,17 +366,20 @@
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer spcCostumerInfo;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.SplitContainer spcCompanyInfo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
@@ -359,8 +388,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbCustomerID;
+        private System.Windows.Forms.Label label1;
+
     }
 }

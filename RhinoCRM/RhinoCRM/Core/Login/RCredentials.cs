@@ -14,8 +14,7 @@ namespace RhinoCRM.Core.Login
        {
            isWorker,
            isSales,
-           isAdmin,
-           isNoOne
+           isAdmin
        }
         public RCredentials(string Usr, string Pswrd,securitytoken secure)
         {

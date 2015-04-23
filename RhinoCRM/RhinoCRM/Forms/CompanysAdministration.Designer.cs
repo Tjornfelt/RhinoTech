@@ -1,6 +1,6 @@
 ﻿namespace RhinoCRM.Forms
 {
-    partial class Companys
+    partial class CompanysAdministration
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Companys));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanysAdministration));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -206,8 +206,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Companys";
             this.Text = "Companys";
-            this.Activated += new System.EventHandler(this.Companys_Activated);
-            this.Leave += new System.EventHandler(this.Companys_Leave);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.spcCompany.Panel1.ResumeLayout(false);

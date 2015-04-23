@@ -41,92 +41,47 @@ namespace RhinoCRM.Forms
                 switch(_Credentials.SecurityToken)
                 {
                     case RCredentials.securitytoken.isAdmin:
+                        EnableAdminPreviliges();
                         break;
                     case RCredentials.securitytoken.isSales:
+                        EnableSalesPreviliges();
                         break;
                     case RCredentials.securitytoken.isWorker:
-                        AddWorkerPreviliges();
+                        EnableWorkerPreviliges();
                         break;
                     default:
                         Log.Error("Unreconized Secure Token.");
                         break;
                 }
             }
-        }
-        private void AddWorkerPreviliges()
+        } 
+        private void EnableAdminPreviliges()
         {
-            // main menu item, the root.
-            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
-            // 
-            ToolStripMenuItem tsmiOpenStock = new ToolStripMenuItem("Open Stock");
-            tsmiOpenStock.Click += OpenStock_Click;
-            ToolStripMenuItem tsmiOpenCustomers = new ToolStripMenuItem("Open Customers");
-            tsmiOpenCustomers.Click += OpenCustomers_Click; 
-            tsmiMain.DropDownItems.Add(tsmiOpenStock);
-            tsmiMain.DropDownItems.Add(tsmiOpenCustomers);
-            MainMenu.Items.Add(tsmiMain);
-        }
-        private void AddAdminPreviliges()
+            EnableSalesPreviliges();
+            EnableWorkerPreviliges();
+            MainMenu.Items.Add(MenuAdmin());
+        }  
+        private void EnableSalesPreviliges()
         {
-            MainMenu.Items.Add(AddWarehoueseMenu());
+            MainMenu.Items.Add(MenuSales());
         }
-        // TSMI Generation Methods
-        // -----------------------------------------------------------------------
-        private ToolStripMenuItem AddWarehoueseMenu()
-        {   // main menu item, the root.
-            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
-            // Menu items
-            tsmiMain.DropDownItems.Add(AddOpenStockMenuItem());
-            tsmiMain.DropDownItems.Add(AddOpenCustomersMenuItem());
-            return tsmiMain;
-        }
-        private ToolStripMenuItem AddSalesMenu()
-        {   
-            // main menu item, the root.
-            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Sales");
-            // Menu items
-            tsmiMain.DropDownItems.Add(AddOpenStockMenuItem());
-            tsmiMain.DropDownItems.Add(AddOpenCustomersMenuItem());
-            return tsmiMain;
-        }
-        private ToolStripMenuItem AddOpenStockMenuItem()
+        private void EnableWorkerPreviliges()
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Stock");
-            tsmi.Click += OpenStock_Click;
-            return tsmi;
-        }
-        private ToolStripMenuItem AddOpenCustomersMenuItem()
+            MainMenu.Items.Add(MenuWarehouese());
+        }   
+        private void Lockdown()
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Customers");
-            tsmi.Click += OpenCustomers_Click;
-            return tsmi;
-        }
-        private ToolStripMenuItem AddOpenCurrentActiveOrdersMenuItem()
-        {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Current Orders");
-            tsmi.Click += OpenCurrentActiveOrders_Click;
-            return tsmi;
-        }
-        private  bool EnableFilesMenuItems
-        {
-            set
+            // skip the first that one we like :3 remove the rest
+            while (MainMenu.Items.Count != 1)
             {
-                /*  tsmiNewCompany.Enabled = value;
-                tsmOpenOrder.Enabled = value;
-                tsmiNewCustomer.Enabled = value;
-                 */
+                MainMenu.Items.RemoveAt(1);
+            }
+            while (this.MdiChildren.Count() != 0)
+            {
+                this.MdiChildren[0].Close();
             }
         }
-        // MDI Methods
-        // -----------------------------------------------------------------------
-        private void AddChildMdi(Form form)
-        {
-            form.MdiParent = this;
-            form.Show();
-        }
-        // EventHandlers
-        // -----------------------------------------------------------------------
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login()
         {
             Log.System(string.Format("Showing Logon Screen"));
             Login l = new Login();
@@ -135,7 +90,7 @@ namespace RhinoCRM.Forms
             l.Location = new Point((this.ClientRectangle.Width - l.Width) / 2, (this.ClientRectangle.Height - l.Height) / 2);
             //l.WindowState = FormWindowState.Maximized;
             System.Windows.Forms.DialogResult dr = l.ShowDialog();
-           
+
             if (dr == System.Windows.Forms.DialogResult.Cancel)
             {
                 Log.System(string.Format("User Canceled, Closing RhinoCRM"));
@@ -152,33 +107,138 @@ namespace RhinoCRM.Forms
                 Log.System(string.Format("Un Expected Imput"));
             }
         }
+        // TSMI Generation Methods
+        // -----------------------------------------------------------------------
+        private ToolStripMenuItem MenuWarehouese()
+        {   // main menu item, the root.
+            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
+            // Menu items
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
+            return tsmiMain;
+        }
+        private ToolStripMenuItem MenuSales()
+        {   
+            // main menu item, the root.
+            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Sales");
+            // Menu items
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
+            tsmiMain.DropDownItems.Add(MenuItemOpenCompanyes());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
+            tsmiMain.DropDownItems.Add(MenuItemOpenOrders());
+            return tsmiMain;
+        }
+        private ToolStripMenuItem MenuAdmin()
+        {   // main menu item, the root.
+            ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Admin");
+            // Menu items
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenUsers());       
+            return tsmiMain;
+        }
+        private ToolStripMenuItem MenuItemAddOpenOrders()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Stock");
+            tsmi.Click += OpenStock_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemAddOpenStock()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Stock");
+            tsmi.Click += OpenStock_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemAddOpenCustomers()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Customers");
+            tsmi.Click += OpenCustomers_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemAddOpenCurrentActiveOrders()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Current Orders");
+            tsmi.Click += OpenCurrentActiveOrders_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemAddOpenUsers()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Administre Users");
+            tsmi.Click += OpenUsers_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemOpenCompanyes()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Companys");
+            tsmi.Click += OpenCurrentActiveOrders_Click;
+            return tsmi;
+        }
+        private ToolStripMenuItem MenuItemOpenOrders()
+        {
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Orders");
+            tsmi.Click += NewOrder_Click;
+            return tsmi;
+        }
+
+
+        // MDI Methods
+        // -----------------------------------------------------------------------
+        private void AddChildMdi(Form form)
+        {
+            form.MdiParent = this;
+            form.Show();
+        }
+        // EventHandlers
+        // -----------------------------------------------------------------------
+        private void MainLoad(object sender, EventArgs e)
+        {
+            Log.System("Opening Login Form");
+            Login();
+        }
         private void OpenStock_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Log.System("Opening Orders Administration Form");
+            AddChildMdi(new WareHouse());
         }
         private void NewOrder_Click(object sender, EventArgs e)
         {
-            AddChildMdi(new Order());
+            Log.System("Opening Orders Administration Form");
+            AddChildMdi(new OrderAdministration());
         }
         private void NewCustomer_Click(object sender, EventArgs e)
         {
-            AddChildMdi(new Customers());
+            Log.System("Opening Orders Administration Form");
+            AddChildMdi(new CustomersAdministration());
         }
         private void NewCompany_Click(object sender, EventArgs e)
         {
-            AddChildMdi(new Companys());
+            Log.System("Opening Company Administration Form");
+            AddChildMdi(new CompanysAdministration());
         } 
         private void OpenCustomers_Click(object sender, EventArgs e)
         {
-            AddChildMdi(new Customers());
+            Log.System("Opening Customers Administration Form");
+            AddChildMdi(new CustomersAdministration());
         }
         private void OpenCurrentActiveOrders_Click(object sender, EventArgs e)
         {
-            AddChildMdi(new Customers());
+            Log.System("Opening Customers Administration Form");
+            AddChildMdi(new CustomersAdministration());
+        }
+        private void OpenUsers_Click(object sender, EventArgs e)
+        {
+            Log.System("Opening Users Administration Form");
+            AddChildMdi(new UsersAdministration());
         }
         private void Quit_Click(object sender, EventArgs e)
         {
             this.Close();
-        } 
+        }
+        private void tsmiLogOut_Click(object sender, EventArgs e)
+        {
+            _Credentials = null;
+            Lockdown();
+            Log.System("Logging out");
+            Login();
+        }
     }
 }

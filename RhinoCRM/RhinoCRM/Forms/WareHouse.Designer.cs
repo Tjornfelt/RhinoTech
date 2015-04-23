@@ -28,58 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WareHouse));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.RigthClickMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.rCMSDataSet = new RhinoCRM.RCMSDataSet();
+            this.DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TableAddabter = new RhinoCRM.RCMSDataSetTableAdapters.GetTotalProductInfoTableAdapter();
+            this.tbProducts = new System.Windows.Forms.TabPage();
+            this.dgvData = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tpTemplate = new System.Windows.Forms.TabPage();
+            this.iDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKUColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shelfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discontinuedColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.RigthClickMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataBindingSource)).BeginInit();
+            this.tbProducts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // RigthClickMenu
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.RigthClickMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEdit});
+            this.RigthClickMenu.Name = "contextMenuStrip1";
+            this.RigthClickMenu.Size = new System.Drawing.Size(95, 26);
+            // 
+            // tsmiEdit
+            // 
+            this.tsmiEdit.Name = "tsmiEdit";
+            this.tsmiEdit.Size = new System.Drawing.Size(94, 22);
+            this.tsmiEdit.Text = "Edit";
+            this.tsmiEdit.Click += new System.EventHandler(this.tsmiEdit_Click);
+            // 
+            // rCMSDataSet
+            // 
+            this.rCMSDataSet.DataSetName = "RCMSDataSet";
+            this.rCMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DataBindingSource
+            // 
+            this.DataBindingSource.DataMember = "GetTotalProductInfo";
+            this.DataBindingSource.DataSource = this.rCMSDataSet;
+            // 
+            // TableAddabter
+            // 
+            this.TableAddabter.ClearBeforeFill = true;
+            // 
+            // tbProducts
+            // 
+            this.tbProducts.AutoScroll = true;
+            this.tbProducts.Controls.Add(this.dgvData);
+            this.tbProducts.Location = new System.Drawing.Point(4, 22);
+            this.tbProducts.Name = "tbProducts";
+            this.tbProducts.Padding = new System.Windows.Forms.Padding(3);
+            this.tbProducts.Size = new System.Drawing.Size(731, 345);
+            this.tbProducts.TabIndex = 0;
+            this.tbProducts.Text = "Products";
+            this.tbProducts.UseVisualStyleBackColor = true;
+            // 
+            // dgvData
+            // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(384, 371);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Productes";
+            this.dgvData.AutoGenerateColumns = false;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDColumn,
+            this.sKUColumn,
+            this.NameColumn,
+            this.TypeColumn,
+            this.descriptionColumn,
+            this.PriceColumn,
+            this.amountColumn,
+            this.shelfColumn,
+            this.discontinuedColumn});
+            this.dgvData.ContextMenuStrip = this.RigthClickMenu;
+            this.dgvData.DataSource = this.DataBindingSource;
+            this.dgvData.Location = new System.Drawing.Point(7, 7);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.RowHeadersWidth = 20;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(718, 332);
+            this.dgvData.TabIndex = 0;
             // 
-            // dataGridView1
+            // tabControl1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(371, 345);
-            this.dataGridView1.TabIndex = 0;
+            this.tabControl1.Controls.Add(this.tbProducts);
+            this.tabControl1.Controls.Add(this.tpTemplate);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(739, 371);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tpTemplate
+            // 
+            this.tpTemplate.Location = new System.Drawing.Point(4, 22);
+            this.tpTemplate.Name = "tpTemplate";
+            this.tpTemplate.Padding = new System.Windows.Forms.Padding(3);
+            this.tpTemplate.Size = new System.Drawing.Size(731, 345);
+            this.tpTemplate.TabIndex = 1;
+            this.tpTemplate.Text = "tpTemplate";
+            this.tpTemplate.UseVisualStyleBackColor = true;
+            // 
+            // iDColumn
+            // 
+            this.iDColumn.DataPropertyName = "ID";
+            this.iDColumn.FillWeight = 20F;
+            this.iDColumn.HeaderText = "ID";
+            this.iDColumn.Name = "iDColumn";
+            this.iDColumn.Width = 20;
+            // 
+            // sKUColumn
+            // 
+            this.sKUColumn.DataPropertyName = "SKU";
+            this.sKUColumn.HeaderText = "SKU";
+            this.sKUColumn.Name = "sKUColumn";
+            this.sKUColumn.Width = 50;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.DataPropertyName = "Name";
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.Name = "NameColumn";
+            // 
+            // TypeColumn
+            // 
+            this.TypeColumn.DataPropertyName = "Type";
+            this.TypeColumn.HeaderText = "Type";
+            this.TypeColumn.Name = "TypeColumn";
+            // 
+            // descriptionColumn
+            // 
+            this.descriptionColumn.DataPropertyName = "Description";
+            this.descriptionColumn.HeaderText = "Description";
+            this.descriptionColumn.Name = "descriptionColumn";
+            // 
+            // PriceColumn
+            // 
+            this.PriceColumn.DataPropertyName = "Price";
+            this.PriceColumn.HeaderText = "Price";
+            this.PriceColumn.Name = "PriceColumn";
+            // 
+            // amountColumn
+            // 
+            this.amountColumn.DataPropertyName = "Amount";
+            this.amountColumn.FillWeight = 50F;
+            this.amountColumn.HeaderText = "Amount";
+            this.amountColumn.Name = "amountColumn";
+            this.amountColumn.Width = 50;
+            // 
+            // shelfColumn
+            // 
+            this.shelfColumn.DataPropertyName = "Shelf";
+            this.shelfColumn.HeaderText = "Shelf";
+            this.shelfColumn.Name = "shelfColumn";
+            // 
+            // discontinuedColumn
+            // 
+            this.discontinuedColumn.DataPropertyName = "Discontinued";
+            this.discontinuedColumn.HeaderText = "Discontinued";
+            this.discontinuedColumn.Name = "discontinuedColumn";
+            this.discontinuedColumn.Width = 75;
             // 
             // WareHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 395);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(763, 395);
+            this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WareHouse";
             this.Text = "WareHouse";
             this.Activated += new System.EventHandler(this.WareHouse_Activated);
+            this.Load += new System.EventHandler(this.WareHouse_Load);
             this.Leave += new System.EventHandler(this.WareHouse_Leave);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.RigthClickMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataBindingSource)).EndInit();
+            this.tbProducts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+
+        private System.Windows.Forms.ContextMenuStrip RigthClickMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEdit;
+        private RCMSDataSet rCMSDataSet;
+        private System.Windows.Forms.BindingSource DataBindingSource;
+        private RCMSDataSetTableAdapters.GetTotalProductInfoTableAdapter TableAddabter;
+        private System.Windows.Forms.TabPage tbProducts;
+        private System.Windows.Forms.DataGridView dgvData;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tpTemplate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sKUColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shelfColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn discontinuedColumn;
+      
+
 
     }
 }

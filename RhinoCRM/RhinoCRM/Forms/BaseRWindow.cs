@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace RhinoCRM.Forms
 {
-    public partial class Companys : Form
+    public partial class BaseRWindow : Form
     {
-        public Companys()
+        public BaseRWindow()
         {
             InitializeComponent();
         }
 
-        private void Companys_Activated(object sender, EventArgs e)
-        {
-            this.Icon = Properties.Resources.Openbook;
-        }
-
-        private void Companys_Leave(object sender, EventArgs e)
+        private void BaseRWindow_Leave(object sender, EventArgs e)
         {
             this.Icon = Properties.Resources.Closedbook;
+        }
+
+        private void BaseRWindow_Activated(object sender, EventArgs e)
+        {
+            this.Icon = Properties.Resources.Openbook;
         }
     }
 }

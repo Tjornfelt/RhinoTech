@@ -1,4 +1,6 @@
 ﻿using RhinoTech.App.Classes.Cms;
+using RhinoTech.App.Classes.Helpers;
+using RhinoTech.App.Models.HelperModels;
 using RhinoTech.App.Models.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,11 +17,57 @@ namespace RhinoTech.App.Controllers
         //
         // GET: /FrontPage/
 
-        public ActionResult Warehouse(RenderModel renderModel)
+        public ActionResult Warehouse()
         {
+            WarehouseModel model = new WarehouseModel()
+            {
+                WarehouseDoors = GetWarehouseDoors()
+                //KeypadModel  = new Models.HelperModels.KeypadModel()
+            };
 
+            return View(model);
+        }
 
-            return View(renderModel);
+        private IEnumerable<WarehouseDoor> GetWarehouseDoors()
+        {
+            int i = 0;
+            while (i < 4) //loop så længe i er under 4 (0,1,2,3)
+	        {
+                string id = string.Empty;
+                string password = string.Empty;
+                string name = string.Empty;
+                if (i == 0)
+                {
+                    name = "Storage / Stock Door";    //assign name baseret på loop.
+                    id = "door-1";      //assign id baseret på loop.
+                }
+                else if (i == 1)
+                {
+                    name = "Office Door";
+                    id = "door-2";
+                }
+                else if (i == 2)
+                {
+                    name = "Accessories Door";
+                    id = "door-3";
+                }
+                else if (i == 3)
+                {
+                    name = "Power Supply Door";
+                    id = "door-4";
+                }
+
+                i++; 
+
+                yield return new WarehouseDoor()
+                {
+                    KeypadForm = new KeypadModel()
+                    {
+                        Id = id
+                    },
+                    Name = name
+                };
+	        }
         }
     }
 }

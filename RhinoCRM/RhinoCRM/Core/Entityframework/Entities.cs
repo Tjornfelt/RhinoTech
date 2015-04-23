@@ -1,4 +1,5 @@
 ﻿using RhinoCRM.Core.Login;
+using SHUtils.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,22 +10,21 @@ namespace RhinoCRM.Core.Entityframework
     {
         // 10.13.37.151 - sa/radmin - Rhino2015
 
-        internal RCredentials.securitytoken GetUserSecuretokenbyID(int ID)
+        internal static RCredentials.securitytoken GetUserSecuretokenbyID(int ID)
         {
 
-                Users user = null;
-                using (var context = new RCMSEntities())
-                {
-                    user = context.Users.FirstOrDefault(x => x.ID == ID);
-                  
-                    if (user.isSalesPerson) return RCredentials.securitytoken.isSales;
-                    if (user.isAdmin) return RCredentials.securitytoken.isAdmin;
-                    if (user.isWorker) return RCredentials.securitytoken.isWorker;
-                }
-                throw new NullReferenceException();
-            
+            Users user = null;
+            using (var context = new RCMSEntities())
+            {
+                user = context.Users.FirstOrDefault(x => x.ID == ID);
+
+                if (user.isSalesPerson) return RCredentials.securitytoken.isSales;
+                if (user.isAdmin) return RCredentials.securitytoken.isAdmin;
+                if (user.isWorker) return RCredentials.securitytoken.isWorker;
+            }
+            throw new NullReferenceException();
         }
-        internal List<Products> GetProducts()
+        internal static List<Products> GetProducts()
         {
             try
             {
@@ -35,13 +35,47 @@ namespace RhinoCRM.Core.Entityframework
                     return products;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //Making sure app doesn't crash if connection fails.
+                Log.Error(e.Message);
             }
             return null;
         }
-        internal Products GetProductByID(int productID)
+        internal static List<Users> GetUsers()
+        {
+            try
+            {
+                List<Users> Users = null;
+                using (var context = new RCMSEntities())
+                {
+                    Users = context.Users.ToList();
+                    return Users;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static List<Customers> GetCustomers()
+        {
+            try
+            {
+                List<Customers> Customers = null;
+                using (var context = new RCMSEntities())
+                {
+                    Customers = context.Customers.ToList();
+                    return Customers;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static Products GetProductByID(int productID)
         {
             try
             {
@@ -52,13 +86,13 @@ namespace RhinoCRM.Core.Entityframework
                     return product;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //Making sure app doesn't crash if connection fails.
+                Log.Error(e.Message);
             }
             return null;
         }
-        internal string GetShelfByProductID(int productID)
+        internal static string GetShelfByProductID(int productID)
         {
             try
             {
@@ -67,26 +101,82 @@ namespace RhinoCRM.Core.Entityframework
                     return context.WarehouseShelfs.FirstOrDefault(x => x.ProductID == productID).Shelf;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //Making sure app doesn't crash if connection fails.
+                Log.Error(e.Message);
             }
             return null;
         }
-        internal Users VerifySQLUserByLogin(string Init,string pswrd)
+        internal static Users VerifySQLUserByLogin(string Init, string pswrd)
         {
             try
             {
                 using (var context = new RCMSEntities())
                 {
-                     return context.Users.FirstOrDefault(x => x.Initials == Init && x.Password == pswrd);                    
+                    return context.Users.FirstOrDefault(x => x.Initials == Init && x.Password == pswrd);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-               
+                Log.Error(e.Message);
             }
             return null;
         }
+        internal static Users GetUserByID(int ID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.Users.FirstOrDefault(x => x.ID == ID);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static Customers GetCustomersByID(int ID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.Customers.FirstOrDefault(x => x.ID == ID);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static async void UpdateUserByID(int ID,Users user)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    Users u = context.Users.FirstOrDefault(x => x.ID == ID);
+                    u.FirstName = user.FirstName;
+                    u.LastName = user.LastName;
+                    u.Initials = user.Initials;
+                    u.Password = user.Password;
+                    u.isAdmin = user.isAdmin;
+                    u.isSalesPerson = user.isSalesPerson;
+                    u.isWorker = user.isWorker;
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+        }
     }
 }
+    
+
