@@ -38,22 +38,22 @@ namespace RhinoTech.App.Controllers
                 string name = string.Empty;
                 if (i == 0)
                 {
-                    name = "Storage / Stock Door";    //assign name baseret på loop.
+                    name = "Storage 1 Door";    //assign name baseret på loop.
                     id = "door-1";      //assign id baseret på loop.
                 }
                 else if (i == 1)
                 {
-                    name = "Office Door";
+                    name = "Storage 2 Door";
                     id = "door-2";
                 }
                 else if (i == 2)
                 {
-                    name = "Accessories Door";
+                    name = "Office Door";
                     id = "door-3";
                 }
                 else if (i == 3)
                 {
-                    name = "Power Supply Door";
+                    name = "Accessories Door";
                     id = "door-4";
                 }
 
