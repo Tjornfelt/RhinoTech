@@ -21,7 +21,6 @@ namespace RhinoCRM.Forms
     public partial class Login : Form
     {
         internal RCredentials _Credentials;
-        Entities _e = new Entities();
         public Login()
         {
             InitializeComponent();
@@ -32,10 +31,11 @@ namespace RhinoCRM.Forms
             string Username = tbUsername.Text;
             if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password))
             {
-                Users u = _e.VerifySQLUserByLogin(Username, Password);
+                Users u = Entities.VerifySQLUserByLogin(Username, Password);
                 if (u != null)
                 {
                     Log.System(string.Format("User typed in correct Creds"));
+                    // Creates the Credentials class that will be used to grant user acces to the dynamic menu.
                     _Credentials = new RCredentials(Username, Password, GetSQLCredentials(u.ID));
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     return;
@@ -50,7 +50,7 @@ namespace RhinoCRM.Forms
         }   
         private RCredentials.securitytoken GetSQLCredentials(int ID)
         {
-            return _e.GetUserSecuretokenbyID(ID);
+            return Entities.GetUserSecuretokenbyID(ID);
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
