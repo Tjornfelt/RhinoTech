@@ -195,11 +195,9 @@ body {
         width: 200px;
         height: 10px;
         margin: 10px auto;
+        background: green;
         &.locked {
             background: red;
-        }
-        &.open {
-            background: green;
         }
     }
 }

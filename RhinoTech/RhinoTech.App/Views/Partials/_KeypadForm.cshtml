@@ -18,7 +18,7 @@
                 }, null))
                 {
                     <div class="text-center">
-                        <div class="door-status locked"></div>
+                        <div class="door-status @Model.Id"></div>
                         
                         @Html.TextBoxFor(m => m.Password, new { id = "PasscodeBox" + Model.Id, @readonly="readonly"})
                         @Html.HiddenFor(m => m.Id)
@@ -50,9 +50,6 @@
                                 <button type="submit" class="btn btn-success">Enter</button>
                             </div>
                         </div>
-
-                        <input type="button" value="Red On" onclick="red('on')" style="font-size:200%;"><br />
-                        <input type="button" value="Red Off" onclick="red('off')" style="font-size:200%;">
                     </div>
                 }
 

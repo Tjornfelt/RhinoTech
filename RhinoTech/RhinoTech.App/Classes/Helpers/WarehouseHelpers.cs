@@ -8,9 +8,9 @@ namespace RhinoTech.App.Classes.Helpers
     public static class WarehouseHelpers
     {
         //Hardcoded passcodes til de enkelte døre
-        public const string Door1Password = "1234";
-        public const string Door2Password = "1334";
-        public const string Door3Password = "1434";
-        public const string Door4Password = "1534";
+        public const string Door1Password = "1111";
+        public const string Door2Password = "2222";
+        public const string Door3Password = "3333";
+        public const string Door4Password = "4444";
     }
 }

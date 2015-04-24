@@ -209,10 +209,9 @@ body {
 .keypad .door-status {
   width: 200px;
   height: 10px;
-  margin: 10px auto; }
+  margin: 10px auto;
+  background: green; }
   .keypad .door-status.locked {
     background: red; }
-  .keypad .door-status.open {
-    background: green; }
 
 /*# sourceMappingURL=Site.css.map */
