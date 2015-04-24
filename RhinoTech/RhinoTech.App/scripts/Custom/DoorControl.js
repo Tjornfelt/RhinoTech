@@ -6,9 +6,18 @@
 
     switch (data.responseJSON.door) {
         case "door-1":
+            {
+                if (red = 'on')
+                {
+                    green('on')
+                    red('off')
+                }
+                    
+                    
+            }
 
          
-          
+ 
 
     }
 
