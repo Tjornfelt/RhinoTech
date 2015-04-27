@@ -259,11 +259,16 @@
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="Content\Images\dead-link.jpg" />
+    <Content Include="Content\Images\Infastructure.jpg" />
     <Content Include="Content\Images\lego-model.jpg" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\piLed.jpg" />
+    <Content Include="Content\Images\piLight.jpg" />
     <Content Include="Content\Images\refrigerator.jpg" />
     <Content Include="Content\Images\sebastian-working.jpg" />
+    <Content Include="Content\Images\steadySolutions.jpg" />
     <Content Include="Content\Images\thisisfine.jpg" />
+    <Content Include="Content\Images\Warehouse.jpg" />
     <Content Include="default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
