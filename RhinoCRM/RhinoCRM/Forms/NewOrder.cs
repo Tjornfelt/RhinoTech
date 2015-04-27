@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RhinoCRM.Core.Entityframework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,13 @@ using System.Windows.Forms;
 
 namespace RhinoCRM.Forms
 {
-    public partial class CompanysAdministration : BaseRWindow
+    public partial class NewOrder : BaseRWindow
     {
-        public CompanysAdministration()
+        public NewOrder()
         {
             InitializeComponent();
         }
+       
+
     }
 }

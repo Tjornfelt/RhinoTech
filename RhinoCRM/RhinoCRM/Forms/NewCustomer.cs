@@ -13,48 +13,19 @@ using System.Windows.Forms;
 
 namespace RhinoCRM.Forms
 {
-    public partial class CustomersAdministration : BaseRWindow
+    public partial class NewCustomer : BaseRWindow
     {
         Customers _CurrentCustomer;
         Companys _CurrentCompany;
-        public CustomersAdministration()
+        public NewCustomer()
         {
             InitializeComponent();
             LoadCompanies();
-            LoadCustomers();
-        }
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void LoadSelectedCustomer(int ID)
-        {
-            _CurrentCustomer = Entities.GetCustomersByID(ID);
-            tbFirstName.Text = _CurrentCustomer.FirstName;
-            tbLastname.Text = _CurrentCustomer.LastName;
-            tbPhoneACode.Text = _CurrentCustomer.PhoneAreaCode;
-            tbPhoneNumber.Text = _CurrentCustomer.PhonenNumber.ToString();
-            cbCompany.SelectedIndex = _CurrentCustomer.CompanyID - 1;
         }
         private void LoadSelectedCompany(int ID)
         {
             _CurrentCompany = Entities.GetCompanyByID(ID);
             _CurrentCustomer.CompanyID = ID;
-            tbAddress.Text = _CurrentCompany.Address;
-            tbCity.Text = _CurrentCompany.City;
-            tbCountry.Text = _CurrentCompany.Country;
-            tbPostalCode.Text = _CurrentCompany.Postalcode.ToString();
-            tbState.Text = _CurrentCompany.State;
-        }
-        private void LoadCustomers()
-        {
-            // clear so that we dont get a new list in the end of it other.
-            cbCustomerID.Items.Clear();
-            Customers[] customers = Entities.GetCustomers().ToArray();
-            foreach (Customers customer in customers)
-            {
-                cbCustomerID.Items.Add(string.Format("{0}", customer.ID));
-            }
         }
         private void LoadCompanies()
         {
@@ -88,9 +59,9 @@ namespace RhinoCRM.Forms
 
             }
         }
-        private void UpdateUser()
+        private void CreateCustomer()
         {
-            Log.System(string.Format("Updating Customer: {0} {1} with ID {3}", tbFirstName.Text, tbLastname.Text,cbCustomerID.Text));
+            Log.System(string.Format("Creating Customer: {0} {1}", tbFirstName.Text, tbLastname.Text));
 
             if (_CurrentCustomer != null)
             {
@@ -109,6 +80,7 @@ namespace RhinoCRM.Forms
                     try
                     {
                         Entities.UpdateCustomer(_CurrentCustomer);
+                        DialogResult = System.Windows.Forms.DialogResult.OK;
                     }
                     catch
                     {
@@ -122,41 +94,18 @@ namespace RhinoCRM.Forms
 
             }
         }
-        private void cbCustomerID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadSelectedCustomer(cbCustomerID.SelectedIndex + 1);
-        }
         private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (_CurrentCustomer != null) { LoadSelectedCompany(cbCompany.SelectedIndex + 1); }
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateUser();
+            CreateCustomer();
         }
-        private void btnNewCustomer_Click(object sender, EventArgs e)
-        {
-            Log.System("Opening new Customer page.");
-            DialogResult dr = new NewCustomer().ShowDialog();
-            if (dr == System.Windows.Forms.DialogResult.Cancel)
-            {
-                Log.System("user Canceled the action");
-            }
-            else if (dr == System.Windows.Forms.DialogResult.OK)
-            {
-                LoadCustomers();
-                LoadCompanies();
-                // Select the newly created one.
-                cbCustomerID.SelectedIndex = cbCustomerID.Items.Count - 1;
-            }
-            else
-            {
-                Log.System("Do not reconice the action");
-            }
-        }  
     }
 }

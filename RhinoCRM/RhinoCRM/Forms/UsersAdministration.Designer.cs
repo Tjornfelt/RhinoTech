@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersAdministration));
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnIsSales = new System.Windows.Forms.RadioButton();
             this.rbtnIsWorker = new System.Windows.Forms.RadioButton();
             this.rbtnIsAdmin = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNewUser = new System.Windows.Forms.Button();
             this.cbUserID = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -51,31 +51,32 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
+            // btnUpdate
             // 
-            this.button3.Location = new System.Drawing.Point(250, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 21);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(250, 188);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(69, 21);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Up/new";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(325, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 21);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(325, 188);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(69, 21);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnNewUser);
             this.groupBox1.Controls.Add(this.cbUserID);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbPassword);
@@ -138,14 +139,15 @@
             this.rbtnIsAdmin.Text = "is Admin";
             this.rbtnIsAdmin.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNewUser
             // 
-            this.button1.Location = new System.Drawing.Point(307, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 21);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewUser.Location = new System.Drawing.Point(307, 13);
+            this.btnNewUser.Name = "btnNewUser";
+            this.btnNewUser.Size = new System.Drawing.Size(69, 21);
+            this.btnNewUser.TabIndex = 4;
+            this.btnNewUser.Text = "New";
+            this.btnNewUser.UseVisualStyleBackColor = true;
+            this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
             // 
             // cbUserID
             // 
@@ -171,6 +173,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPassword.Location = new System.Drawing.Point(215, 91);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(161, 20);
             this.tbPassword.TabIndex = 3;
             // 
@@ -237,11 +240,13 @@
             // 
             // UsersAdministration
             // 
+            this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(406, 219);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsersAdministration";
@@ -267,12 +272,12 @@
         private System.Windows.Forms.RadioButton rbtnIsSales;
         private System.Windows.Forms.RadioButton rbtnIsWorker;
         private System.Windows.Forms.RadioButton rbtnIsAdmin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNewUser;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbInitias;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

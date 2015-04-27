@@ -1,6 +1,6 @@
 ﻿namespace RhinoCRM.Forms
 {
-    partial class OrderAdministration
+    partial class NewOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderAdministration));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOrder));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,7 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnNewCompany = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.spcCompanyInfo = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,6 +74,8 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 223);
             this.groupBox2.Name = "groupBox2";
@@ -86,9 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 361);
+            this.dataGridView1.Size = new System.Drawing.Size(480, 327);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
@@ -187,9 +191,9 @@
             // 
             // btnNewCustomer
             // 
-            this.btnNewCustomer.Location = new System.Drawing.Point(0, 2);
+            this.btnNewCustomer.Location = new System.Drawing.Point(6, 3);
             this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.Size = new System.Drawing.Size(62, 22);
+            this.btnNewCustomer.Size = new System.Drawing.Size(62, 21);
             this.btnNewCustomer.TabIndex = 6;
             this.btnNewCustomer.Text = "New";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
@@ -207,7 +211,7 @@
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(67, 33);
+            this.textBox5.Location = new System.Drawing.Point(67, 30);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(188, 20);
             this.textBox5.TabIndex = 3;
@@ -216,7 +220,7 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.btnNewCompany);
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.comboBox2);
             this.groupBox3.Controls.Add(this.spcCompanyInfo);
             this.groupBox3.Controls.Add(this.label3);
@@ -227,15 +231,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
-            // btnNewCompany
+            // button1
             // 
-            this.btnNewCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewCompany.Location = new System.Drawing.Point(418, 13);
-            this.btnNewCompany.Name = "btnNewCompany";
-            this.btnNewCompany.Size = new System.Drawing.Size(56, 21);
-            this.btnNewCompany.TabIndex = 7;
-            this.btnNewCompany.Text = "New";
-            this.btnNewCompany.UseVisualStyleBackColor = true;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(418, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 21);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "New";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
@@ -333,6 +337,24 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Company Name";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(62, 21);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "New";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(75, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(62, 21);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "New";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // OrderAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +364,7 @@
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderAdministration";
-            this.Text = "Order";
+            this.Text = "NewOrder";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -374,12 +396,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnNewCustomer;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnNewCompany;
-        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.SplitContainer spcCompanyInfo;
         private System.Windows.Forms.Label label4;
@@ -391,6 +412,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCustomerID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
 
     }
 }

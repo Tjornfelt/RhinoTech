@@ -86,7 +86,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
             this.Name = "Main";
-            this.Text = "RhinoRCM";
+            this.Text = "RhinoCRM";
             this.Load += new System.EventHandler(this.MainLoad);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();

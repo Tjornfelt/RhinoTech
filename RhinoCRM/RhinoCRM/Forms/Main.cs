@@ -24,6 +24,7 @@ namespace RhinoCRM.Forms
         {
             Log.AddLapsTimesInSysLog = false;
             Log.AddTimeStampsToSyslog = true;
+            Log.ReturnTagsInMethods = false;
             Log.LogPrefix = "RCMR";
             Log.PathSysLog = Log.PathLapstimeLog = @"C:\Temp\Log";
             Log.ReturnTagsInMethods = false;
@@ -169,7 +170,7 @@ namespace RhinoCRM.Forms
         private ToolStripMenuItem MenuItemOpenCompanyes()
         {
             ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Companys");
-            tsmi.Click += OpenCurrentActiveOrders_Click;
+            tsmi.Click += OpenCompanies_Click;
             return tsmi;
         }
         private ToolStripMenuItem MenuItemOpenOrders()
@@ -202,7 +203,7 @@ namespace RhinoCRM.Forms
         private void NewOrder_Click(object sender, EventArgs e)
         {
             Log.System("Opening Orders Administration Form");
-            AddChildMdi(new OrderAdministration());
+            AddChildMdi(new NewOrder());
         }
         private void NewCustomer_Click(object sender, EventArgs e)
         {
@@ -218,6 +219,11 @@ namespace RhinoCRM.Forms
         {
             Log.System("Opening Customers Administration Form");
             AddChildMdi(new CustomersAdministration());
+        }
+        private void OpenCompanies_Click(object sender, EventArgs e)
+        {
+            Log.System("Opening Companies Administration Form");
+            AddChildMdi(new CompanysAdministration());
         }
         private void OpenCurrentActiveOrders_Click(object sender, EventArgs e)
         {
