@@ -178,7 +178,6 @@ function Storage1(action) {
 }
 
 function Storage2(action) {
-    debugger;
     if (action == "close") {
         red2("on");
         green2("off")
