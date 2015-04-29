@@ -14,7 +14,7 @@ namespace RhinoTech.App.Controllers
 {
     public class ProductManagementController : MasterController
     {
-        public ActionResult ProductManagement(RenderModel renderModel)
+        public ActionResult ProductManagement()
         {
             ProductManagementModel model = new ProductManagementModel()
             {

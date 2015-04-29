@@ -14,7 +14,7 @@ namespace RhinoTech.App.Controllers
     public class NewsItemController : MasterController
     {
 
-        public ActionResult NewsItem(RenderModel renderModel)
+        public ActionResult NewsItem()
         {
             NewsItemModel model = new NewsItemModel()
             {

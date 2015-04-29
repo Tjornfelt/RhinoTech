@@ -14,7 +14,7 @@ namespace RhinoTech.App.Controllers
     public class NewsSectionController : MasterController
     {
 
-        public ActionResult NewsSection(RenderModel renderModel)
+        public ActionResult NewsSection()
         {
             NewsSectionModel model = new NewsSectionModel()
             {

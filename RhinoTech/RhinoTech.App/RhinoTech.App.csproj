@@ -314,6 +314,7 @@
     <Content Include="Content\Css\Christian.css.map">
       <DependentUpon>Christian.css</DependentUpon>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="scripts\jquery-2.1.3.intellisense.js" />
     <Content Include="scripts\Custom\DoorControl.js" />
     <Content Include="scripts\Custom\LoginForm.js" />

@@ -18,7 +18,7 @@ namespace RhinoTech.App.Controllers
         //
         // GET: /FrontPage/
 
-        public ActionResult FrontPage(RenderModel renderModel)
+        public ActionResult FrontPage()
         {
             FrontPageModel model = new FrontPageModel()
             {
@@ -26,6 +26,7 @@ namespace RhinoTech.App.Controllers
                 BodyText = CurrentPage.GetPropertyValue(DocTypes.Frontpage.BodyText),
                 NewsItems = NewsItemHelpers.GetNewsItems(CurrentPage)
             };
+
             return View(model);
         }
 

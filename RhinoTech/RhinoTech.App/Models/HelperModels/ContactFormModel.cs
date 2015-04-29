@@ -10,26 +10,26 @@ namespace RhinoTech.App.Models.HelperModels
     {
         public string ID { get; set; }
 
-        [Required(ErrorMessage = "Feltet må ikke være tomt")]
-        [Display(Name = "Indtast navn*")]
+        [Required(ErrorMessage = "Field must not be empty")]
+        [Display(Name = "Name*")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Feltet må ikke være tomt")]
-        [EmailAddress(ErrorMessage = "Din e-mail adresse er i et forkert format")]
-        [Display(Name = "E-mail adresse*")]
+        [Required(ErrorMessage = "Field must not be empty")]
+        [EmailAddress(ErrorMessage = "Wrong email format")]
+        [Display(Name = "Email*")]
         public string Email { get; set; }
 
-        [Display(Name = "Telefon nr.")]
+        [Display(Name = "Phone")]
         public string Phone { get; set; }
 
-        [Display(Name = "Adresse")]
+        [Display(Name = "Address")]
         public string Address { get; set; }
 
-        [Display(Name = "Postnr/By")]
+        [Display(Name = "Postal code + City")]
         public string PostalCity { get; set; }
 
-        [Required(ErrorMessage = "Feltet må ikke være tomt")]
-        [Display(Name = "Besked*")]
+        [Required(ErrorMessage = "Field must not be empty")]
+        [Display(Name = "Message*")]
         public string Message { get; set; }
 
         public string ThanksText { get; set; }

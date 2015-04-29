@@ -16,7 +16,7 @@ namespace RhinoTech.App.Controllers
         //
         // GET: /FrontPage/
 
-        public ActionResult ContactPage(RenderModel renderModel)
+        public ActionResult ContactPage()
         {
             ContactPageModel model = new ContactPageModel()
             {

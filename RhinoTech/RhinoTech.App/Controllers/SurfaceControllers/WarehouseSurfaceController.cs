@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Umbraco.Core.Models;
 
 namespace RhinoTech.App.Controllers.SurfaceControllers
 {
@@ -35,6 +36,15 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
                 default:
                     return Json(false); // Hvis passwordet ikke matcher returnér false
             }
+
+            /*
+            Entities e = new Entities();
+
+            //Add entry to log about user activity
+            IMember member = SessionHelpers.GetCurrentMember(ApplicationContext.Services.MemberService);
+            string logMessage = "Member updated product:" + "ID: " + p.ID + ", SKU: " + p.SKU + ", Name: " + p.Name + ", Price: " + p.Price + ", Type: " + p.Type + ", Description: " + p.Description + ", Shelf: " + p.Shelf + ", Amount: " + p.Amount;
+            e.AddLogEntry(member.Name, DateTime.Now, LogHelpers.TypeUpdate, logMessage);*/
+
         }
 
     }

@@ -15,7 +15,7 @@ namespace RhinoTech.App.Controllers
     public class IntranetHomeController : MasterController
     {
 
-        public ActionResult IntranetHome(RenderModel renderModel)
+        public ActionResult IntranetHome()
         {
             IntranetHomeModel model = new IntranetHomeModel()
             {

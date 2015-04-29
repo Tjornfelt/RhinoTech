@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RhinoTech.App.App_Start.RouteConfig" Collapsed="true">
+    <Position X="31.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.Dictionary" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\Umbraco.Dictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.DictionaryKeys" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\Umbraco.DictionaryKeys.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.ContactPage" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\ContactPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.EditProduct" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\EditProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.Error404" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\Error404.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.Frontpage" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\Frontpage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.IntranetHome" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\IntranetHome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.NewProduct" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\NewProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.NewsItem" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAgAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\NewsItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.NewsSection" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\NewsSection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.ProductManagement" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\ProductManagement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.TextPage" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Classes\Cms\TextPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.DocTypes" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIiEAAAHAAIpAAAIgIICAEBEAAAUAAACAAQAAAAIAA=</HashCode>
+      <FileName>Classes\Cms\Umbraco.DocTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.Viewmaster" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\Viewmaster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Cms.Warehouse" Collapsed="true">
+    <Position X="24" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAIAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Cms\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Helpers.LogHelpers" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAQAAgAAAQAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Helpers\LogHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Helpers.NewsItemHelpers" Collapsed="true">
+    <Position X="31.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Helpers\NewsItemHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Helpers.SessionHelpers" Collapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Helpers\SessionHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Classes.Helpers.WarehouseHelpers" Collapsed="true">
+    <Position X="28.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAEAAAIAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Helpers\WarehouseHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.ContactPageController" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ContactPageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.EditProductController" Collapsed="true">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\EditProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.FrontPageController" Collapsed="true">
+    <Position X="17.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\FrontPageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.IntranetHomeController" Collapsed="true">
+    <Position X="21.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IntranetHomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.MasterController" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MasterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.NewProductController" Collapsed="true">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NewProductController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.NewsItemController" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NewsItemController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.NewsSectionController" Collapsed="true">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NewsSectionController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.ProductManagementController" Collapsed="true">
+    <Position X="10.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACCAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProductManagementController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.TextPageController" Collapsed="true">
+    <Position X="15" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controllers\TextPageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.WarehouseController" Collapsed="true">
+    <Position X="19.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAACAAAA=</HashCode>
+      <FileName>Controllers\WarehouseController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.SurfaceControllers.FormsSurfaceController" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SurfaceControllers\FormsSurfaceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.SurfaceControllers.MemberLoginSurfaceController" Collapsed="true">
+    <Position X="26.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAgAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SurfaceControllers\MemberLoginSurfaceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.SurfaceControllers.ProductSurfaceController" Collapsed="true">
+    <Position X="30" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAIAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SurfaceControllers\ProductSurfaceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Controllers.SurfaceControllers.WarehouseSurfaceController" Collapsed="true">
+    <Position X="31.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\SurfaceControllers\WarehouseSurfaceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.MvcApplication" Collapsed="true">
+    <Position X="28.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Mappers.NavigationItemMapper" Collapsed="true">
+    <Position X="30" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers\NavigationItemMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.ContactFormModel" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAgAAAAEAAAAQAAAAAAAACAAAAICAAAAA=</HashCode>
+      <FileName>Models\HelperModels\ContactFormModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.GlobalModel" Collapsed="true">
+    <Position X="28.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Models\HelperModels\GlobalModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.KeypadModel" Collapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\KeypadModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.ManagementProduct" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAQAggAAAAAAAAASAAAAAAAAAAYAAEAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\ManagementProduct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.MemberLoginModel" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\HelperModels\MemberLoginModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.NavigationItem" Collapsed="true">
+    <Position X="5.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAQAACAAAAAgCAAAAAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\NavigationItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.NavigationItemWithTeaser" Collapsed="true">
+    <Position X="5.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\NavigationItemWithTeaser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.NewsItemTeaser" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAgAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\NewsItemTeaser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.HelperModels.WarehouseDoor" Collapsed="true">
+    <Position X="26.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\HelperModels\WarehouseDoor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.ContactPageModel" Collapsed="true">
+    <Position X="28.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\ContactPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.EditProductModel" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\EditProductModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.FrontPageModel" Collapsed="true">
+    <Position X="26.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\FrontPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.IntranetHomeModel" Collapsed="true">
+    <Position X="30" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\IntranetHomeModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.NewProductModel" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\NewProductModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.NewsItemModel" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\NewsItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.NewsSectionModel" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\NewsSectionModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.ProductManagementModel" Collapsed="true">
+    <Position X="28.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAACAAAAAAAQ=</HashCode>
+      <FileName>Models\ViewModels\ProductManagementModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.TextPageModel" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\ViewModels\TextPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RhinoTech.App.Models.ViewModels.WarehouseModel" Collapsed="true">
+    <Position X="30" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ViewModels\WarehouseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
