@@ -111,11 +111,13 @@ namespace RhinoCRM.Forms
         // TSMI Generation Methods
         // -----------------------------------------------------------------------
         private ToolStripMenuItem MenuWarehouese()
-        {   // main menu item, the root.
+        {   
+            // main menu item, the root.
             ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
             // Menu items
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
-            tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
+            // tsmiMain.DropDownItems.Add();
             return tsmiMain;
         }
         private ToolStripMenuItem MenuSales()
@@ -126,8 +128,8 @@ namespace RhinoCRM.Forms
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
             tsmiMain.DropDownItems.Add(MenuItemOpenCompanyes());
-            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
             tsmiMain.DropDownItems.Add(MenuItemOpenOrders());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
             return tsmiMain;
         }
         private ToolStripMenuItem MenuAdmin()
@@ -136,12 +138,6 @@ namespace RhinoCRM.Forms
             // Menu items
             tsmiMain.DropDownItems.Add(MenuItemAddOpenUsers());       
             return tsmiMain;
-        }
-        private ToolStripMenuItem MenuItemAddOpenOrders()
-        {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Stock");
-            tsmi.Click += OpenStock_Click;
-            return tsmi;
         }
         private ToolStripMenuItem MenuItemAddOpenStock()
         {
@@ -179,8 +175,6 @@ namespace RhinoCRM.Forms
             tsmi.Click += NewOrder_Click;
             return tsmi;
         }
-
-
         // MDI Methods
         // -----------------------------------------------------------------------
         private void AddChildMdi(Form form)
@@ -198,23 +192,13 @@ namespace RhinoCRM.Forms
         private void OpenStock_Click(object sender, EventArgs e)
         {
             Log.System("Opening Orders Administration Form");
-            AddChildMdi(new WareHouse());
+            AddChildMdi(new WareHouse(_Credentials.SecurityToken));
         }
         private void NewOrder_Click(object sender, EventArgs e)
         {
             Log.System("Opening Orders Administration Form");
-            AddChildMdi(new NewOrder());
+            AddChildMdi(new NewOrder(_Credentials));
         }
-        private void NewCustomer_Click(object sender, EventArgs e)
-        {
-            Log.System("Opening Orders Administration Form");
-            AddChildMdi(new CustomersAdministration());
-        }
-        private void NewCompany_Click(object sender, EventArgs e)
-        {
-            Log.System("Opening Company Administration Form");
-            AddChildMdi(new CompanysAdministration());
-        } 
         private void OpenCustomers_Click(object sender, EventArgs e)
         {
             Log.System("Opening Customers Administration Form");
@@ -227,8 +211,8 @@ namespace RhinoCRM.Forms
         }
         private void OpenCurrentActiveOrders_Click(object sender, EventArgs e)
         {
-            Log.System("Opening Customers Administration Form");
-            AddChildMdi(new CustomersAdministration());
+            Log.System("Opening Orders Administration Form");
+            AddChildMdi(new OrderAdministration());
         }
         private void OpenUsers_Click(object sender, EventArgs e)
         {

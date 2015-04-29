@@ -79,11 +79,25 @@ namespace RhinoCRM.Core.Entityframework
         {
             try
             {
-                List<Companys> Companies = null;
                 using (var context = new RCMSEntities())
                 {
                     return context.Companys.ToList();
-                    return Companies;
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static List<OrdersItems> GetOrderItemsForOrder(int ID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.OrdersItems.Where(x => x.OrderID == ID).ToList();
+
                 }
             }
             catch (Exception e)
@@ -126,20 +140,35 @@ namespace RhinoCRM.Core.Entityframework
             }
             return null;
         }
-        internal static string GetShelfByProductID(int ID)
+        internal static string GetShelfByProductID(int productID)
         {
             try
             {
                 using (var context = new RCMSEntities())
                 {
-                    return context.WarehouseShelfs.FirstOrDefault(x => x.ProductID == ID).Shelf;
+                    return context.WarehouseShelfs.FirstOrDefault(x => x.ProductID == productID).Shelf;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Log.Error(e.Message);
+                //Making sure app doesn't crash if connection fails.
             }
             return null;
+        }
+        internal static int GetShelfAmountByProductID(int productID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.WarehouseShelfs.FirstOrDefault(x => x.ProductID == productID).Amount;
+                }
+            }
+            catch (Exception)
+            {
+                //Making sure app doesn't crash if connection fails.
+            }
+            return 0;
         }
         internal static Users GetUserByID(int ID)
         {
@@ -164,6 +193,22 @@ namespace RhinoCRM.Core.Entityframework
                 using (var context = new RCMSEntities())
                 {
                     return context.Customers.FirstOrDefault(x => x.ID == ID);
+
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+            }
+            return null;
+        }
+        internal static Orders GetOrderByID(int ID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    return context.Orders.FirstOrDefault(x => x.ID == ID);
 
                 }
             }
@@ -200,21 +245,51 @@ namespace RhinoCRM.Core.Entityframework
                 throw e;
             }
         }
+        internal static void UpdateProduct(Products product)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    Products dbProduct = context.Products.FirstOrDefault(x => x.ID == product.ID);
+                    //Map the editted product to the dbProduct
+                    dbProduct.Name= product.Name;
+                    dbProduct.SKU = product.SKU;
+                    dbProduct.Type = product.Type;
+                    dbProduct.Description = product.Description;
+                    //Technically, a product can have many shelf locations. For this exercise though, we always have 1. Select the first and update the values.
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = product.WarehouseShelfs.FirstOrDefault().Amount;
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = product.WarehouseShelfs.FirstOrDefault().Shelf;
+                    /*
+                    dbProduct.isSalesPerson = product.isSalesPerson;
+                    dbProduct.isWorker = product.isWorker;*/
+
+                    context.Entry(dbProduct).State = System.Data.Entity.EntityState.Modified;
+
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+                throw e;
+            }
+        }
         internal static void UpdateCustomer(Customers customer)
         {
             try
             {
                 using (var context = new RCMSEntities())
                 {
-                    Customers dbUser = context.Customers.FirstOrDefault(x => x.ID == customer.ID);
+                    Customers dbCustomer = context.Customers.FirstOrDefault(x => x.ID == customer.ID);
                     //Map the editted product to the dbProduct
-                    dbUser.CompanyID = customer.CompanyID;
-                    dbUser.Date = customer.Date;
-                    dbUser.FirstName = customer.FirstName;
-                    dbUser.LastName = customer.LastName;
-                    dbUser.PhoneAreaCode = customer.PhoneAreaCode;
-                    dbUser.PhonenNumber = customer.PhonenNumber;
-                    context.Entry(dbUser).State = System.Data.Entity.EntityState.Modified;
+                    dbCustomer.CompanyID = customer.CompanyID;
+                    dbCustomer.Date = customer.Date;
+                    dbCustomer.FirstName = customer.FirstName;
+                    dbCustomer.LastName = customer.LastName;
+                    dbCustomer.PhoneAreaCode = customer.PhoneAreaCode;
+                    dbCustomer.PhonenNumber = customer.PhonenNumber;
+                    context.Entry(dbCustomer).State = System.Data.Entity.EntityState.Modified;
                     context.SaveChanges();
                 }
             }
@@ -248,6 +323,25 @@ namespace RhinoCRM.Core.Entityframework
                 throw e;
             }
         }
+        internal static void UpdateOrderItemShipped(bool shipped,int ID)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    OrdersItems dbOrderitem = context.OrdersItems.FirstOrDefault(x => x.ID == ID);
+                    //Map the editted product to the dbProduct
+                    dbOrderitem.isShipped = shipped;
+                    context.Entry(dbOrderitem).State = System.Data.Entity.EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+                throw e;
+            }
+        }
         internal static void AddUser(Users user)
         {
             try
@@ -256,6 +350,24 @@ namespace RhinoCRM.Core.Entityframework
                 {
                     // add the new user 
                     context.Users.Add(user);
+                    // Then save the changes
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+                throw e;
+            }
+        }
+        internal static void AddCustomer(Customers customers)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    // add the new user 
+                    context.Customers.Add(customers);
                     // Then save the changes
                     context.SaveChanges();
                 }
@@ -283,7 +395,26 @@ namespace RhinoCRM.Core.Entityframework
                 Log.Error(e.Message);
                 throw e;
             }
-        } 
+        }
+        internal static void AddOrder(Orders order)
+        {
+            try
+            {
+                using (var context = new RCMSEntities())
+                {
+                    // add the new user 
+                    context.Orders.Add(order);
+                    context.OrdersItems.AddRange(order.OrdersItems);
+                    // Then save the changes
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e.Message);
+                throw e;
+            }
+        }
         internal static Users VerifySQLUserByLogin(string Init, string pswrd)
         {
             try

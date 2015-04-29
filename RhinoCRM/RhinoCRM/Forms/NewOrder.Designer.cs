@@ -30,43 +30,50 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOrder));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAddOrderItem = new System.Windows.Forms.Button();
+            this.dgvOrderItems = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.spcCompanyInfo = new System.Windows.Forms.SplitContainer();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbAddress = new System.Windows.Forms.TextBox();
+            this.tbPostalCode = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbCountry = new System.Windows.Forms.TextBox();
+            this.tbState = new System.Windows.Forms.TextBox();
+            this.tbCity = new System.Windows.Forms.TextBox();
             this.spcCostumerInfo = new System.Windows.Forms.SplitContainer();
             this.cbCustomerID = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnNewCustomer = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbLastname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbPhoneACode = new System.Windows.Forms.TextBox();
+            this.tbPhoneNumber = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.spcCompanyInfo = new System.Windows.Forms.SplitContainer();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbCompanyName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).BeginInit();
+            this.spcCompanyInfo.Panel1.SuspendLayout();
+            this.spcCompanyInfo.Panel2.SuspendLayout();
+            this.spcCompanyInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcCostumerInfo)).BeginInit();
             this.spcCostumerInfo.Panel1.SuspendLayout();
             this.spcCostumerInfo.Panel2.SuspendLayout();
             this.spcCostumerInfo.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).BeginInit();
-            this.spcCompanyInfo.Panel1.SuspendLayout();
-            this.spcCompanyInfo.Panel2.SuspendLayout();
-            this.spcCompanyInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -74,39 +81,189 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 223);
+            this.groupBox2.Controls.Add(this.btnRemove);
+            this.groupBox2.Controls.Add(this.btnAddOrderItem);
+            this.groupBox2.Controls.Add(this.dgvOrderItems);
+            this.groupBox2.Location = new System.Drawing.Point(12, 260);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 387);
+            this.groupBox2.Size = new System.Drawing.Size(493, 323);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Productes";
             // 
-            // dataGridView1
+            // btnRemove
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnRemove.Location = new System.Drawing.Point(75, 19);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(62, 21);
+            this.btnRemove.TabIndex = 8;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnAddOrderItem
+            // 
+            this.btnAddOrderItem.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAddOrderItem.Location = new System.Drawing.Point(7, 19);
+            this.btnAddOrderItem.Name = "btnAddOrderItem";
+            this.btnAddOrderItem.Size = new System.Drawing.Size(62, 21);
+            this.btnAddOrderItem.TabIndex = 7;
+            this.btnAddOrderItem.Text = "Add";
+            this.btnAddOrderItem.UseVisualStyleBackColor = true;
+            this.btnAddOrderItem.Click += new System.EventHandler(this.btnAddOrderItem_Click);
+            // 
+            // dgvOrderItems
+            // 
+            this.dgvOrderItems.AllowUserToAddRows = false;
+            this.dgvOrderItems.AllowUserToDeleteRows = false;
+            this.dgvOrderItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 327);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvOrderItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderItems.Location = new System.Drawing.Point(7, 46);
+            this.dgvOrderItems.Name = "dgvOrderItems";
+            this.dgvOrderItems.ReadOnly = true;
+            this.dgvOrderItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrderItems.Size = new System.Drawing.Size(480, 269);
+            this.dgvOrderItems.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.spcCompanyInfo);
             this.groupBox1.Controls.Add(this.spcCostumerInfo);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(12, -1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 218);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(493, 242);
+            this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
+            // 
+            // spcCompanyInfo
+            // 
+            this.spcCompanyInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spcCompanyInfo.IsSplitterFixed = true;
+            this.spcCompanyInfo.Location = new System.Drawing.Point(7, 150);
+            this.spcCompanyInfo.Name = "spcCompanyInfo";
+            // 
+            // spcCompanyInfo.Panel1
+            // 
+            this.spcCompanyInfo.Panel1.Controls.Add(this.label11);
+            this.spcCompanyInfo.Panel1.Controls.Add(this.label10);
+            this.spcCompanyInfo.Panel1.Controls.Add(this.tbAddress);
+            this.spcCompanyInfo.Panel1.Controls.Add(this.tbPostalCode);
+            // 
+            // spcCompanyInfo.Panel2
+            // 
+            this.spcCompanyInfo.Panel2.Controls.Add(this.label8);
+            this.spcCompanyInfo.Panel2.Controls.Add(this.label4);
+            this.spcCompanyInfo.Panel2.Controls.Add(this.label5);
+            this.spcCompanyInfo.Panel2.Controls.Add(this.tbCountry);
+            this.spcCompanyInfo.Panel2.Controls.Add(this.tbState);
+            this.spcCompanyInfo.Panel2.Controls.Add(this.tbCity);
+            this.spcCompanyInfo.Size = new System.Drawing.Size(479, 80);
+            this.spcCompanyInfo.SplitterDistance = 238;
+            this.spcCompanyInfo.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Address";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Postal Code";
+            // 
+            // tbAddress
+            // 
+            this.tbAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAddress.Location = new System.Drawing.Point(76, 7);
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.ReadOnly = true;
+            this.tbAddress.Size = new System.Drawing.Size(158, 20);
+            this.tbAddress.TabIndex = 13;
+            // 
+            // tbPostalCode
+            // 
+            this.tbPostalCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPostalCode.Location = new System.Drawing.Point(76, 33);
+            this.tbPostalCode.Name = "tbPostalCode";
+            this.tbPostalCode.ReadOnly = true;
+            this.tbPostalCode.Size = new System.Drawing.Size(158, 20);
+            this.tbPostalCode.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 62);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Country";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "State";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "City";
+            // 
+            // tbCountry
+            // 
+            this.tbCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCountry.Location = new System.Drawing.Point(67, 59);
+            this.tbCountry.Name = "tbCountry";
+            this.tbCountry.ReadOnly = true;
+            this.tbCountry.Size = new System.Drawing.Size(165, 20);
+            this.tbCountry.TabIndex = 17;
+            // 
+            // tbState
+            // 
+            this.tbState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbState.Location = new System.Drawing.Point(67, 33);
+            this.tbState.Name = "tbState";
+            this.tbState.ReadOnly = true;
+            this.tbState.Size = new System.Drawing.Size(165, 20);
+            this.tbState.TabIndex = 16;
+            // 
+            // tbCity
+            // 
+            this.tbCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCity.Location = new System.Drawing.Point(67, 7);
+            this.tbCity.Name = "tbCity";
+            this.tbCity.ReadOnly = true;
+            this.tbCity.Size = new System.Drawing.Size(165, 20);
+            this.tbCity.TabIndex = 15;
             // 
             // spcCostumerInfo
             // 
@@ -119,255 +276,207 @@
             // spcCostumerInfo.Panel1
             // 
             this.spcCostumerInfo.Panel1.Controls.Add(this.cbCustomerID);
+            this.spcCostumerInfo.Panel1.Controls.Add(this.label6);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label1);
-            this.spcCostumerInfo.Panel1.Controls.Add(this.textBox6);
+            this.spcCostumerInfo.Panel1.Controls.Add(this.tbLastname);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label2);
-            this.spcCostumerInfo.Panel1.Controls.Add(this.textBox1);
-            this.spcCostumerInfo.Panel1.Controls.Add(this.label7);
+            this.spcCostumerInfo.Panel1.Controls.Add(this.tbFirstName);
             // 
             // spcCostumerInfo.Panel2
             // 
             this.spcCostumerInfo.Panel2.Controls.Add(this.btnNewCustomer);
-            this.spcCostumerInfo.Panel2.Controls.Add(this.label6);
-            this.spcCostumerInfo.Panel2.Controls.Add(this.textBox5);
+            this.spcCostumerInfo.Panel2.Controls.Add(this.label9);
+            this.spcCostumerInfo.Panel2.Controls.Add(this.label7);
+            this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneACode);
+            this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneNumber);
             this.spcCostumerInfo.Size = new System.Drawing.Size(480, 85);
-            this.spcCostumerInfo.SplitterDistance = 216;
-            this.spcCostumerInfo.TabIndex = 5;
+            this.spcCostumerInfo.SplitterDistance = 240;
+            this.spcCostumerInfo.TabIndex = 2;
             // 
             // cbCustomerID
             // 
             this.cbCustomerID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCustomerID.FormattingEnabled = true;
-            this.cbCustomerID.Location = new System.Drawing.Point(87, 3);
+            this.cbCustomerID.ItemHeight = 13;
+            this.cbCustomerID.Location = new System.Drawing.Point(109, 4);
             this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(126, 21);
-            this.cbCustomerID.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Customer ID";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(87, 55);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(126, 20);
-            this.textBox6.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "First Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(87, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 58);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Phone Number";
-            // 
-            // btnNewCustomer
-            // 
-            this.btnNewCustomer.Location = new System.Drawing.Point(6, 3);
-            this.btnNewCustomer.Name = "btnNewCustomer";
-            this.btnNewCustomer.Size = new System.Drawing.Size(62, 21);
-            this.btnNewCustomer.TabIndex = 6;
-            this.btnNewCustomer.Text = "New";
-            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.cbCustomerID.Size = new System.Drawing.Size(128, 21);
+            this.cbCustomerID.TabIndex = 3;
+            this.cbCustomerID.SelectedIndexChanged += new System.EventHandler(this.cbCustomerID_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 33);
+            this.label6.Location = new System.Drawing.Point(12, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Last Name";
             // 
-            // textBox5
+            // label1
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Customer Number";
+            // 
+            // tbLastname
+            // 
+            this.tbLastname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(67, 30);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 20);
-            this.textBox5.TabIndex = 3;
+            this.tbLastname.Location = new System.Drawing.Point(77, 56);
+            this.tbLastname.Name = "tbLastname";
+            this.tbLastname.ReadOnly = true;
+            this.tbLastname.Size = new System.Drawing.Size(160, 20);
+            this.tbLastname.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "First Name";
+            // 
+            // tbFirstName
+            // 
+            this.tbFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFirstName.Location = new System.Drawing.Point(77, 30);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.ReadOnly = true;
+            this.tbFirstName.Size = new System.Drawing.Size(160, 20);
+            this.tbFirstName.TabIndex = 5;
+            // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Location = new System.Drawing.Point(0, 4);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(62, 21);
+            this.btnNewCustomer.TabIndex = 4;
+            this.btnNewCustomer.Text = "New";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 33);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Phone AreaCode";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Phone Number";
+            // 
+            // tbPhoneACode
+            // 
+            this.tbPhoneACode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPhoneACode.Location = new System.Drawing.Point(104, 30);
+            this.tbPhoneACode.Name = "tbPhoneACode";
+            this.tbPhoneACode.ReadOnly = true;
+            this.tbPhoneACode.Size = new System.Drawing.Size(127, 20);
+            this.tbPhoneACode.TabIndex = 7;
+            // 
+            // tbPhoneNumber
+            // 
+            this.tbPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPhoneNumber.Location = new System.Drawing.Point(104, 56);
+            this.tbPhoneNumber.Name = "tbPhoneNumber";
+            this.tbPhoneNumber.ReadOnly = true;
+            this.tbPhoneNumber.Size = new System.Drawing.Size(127, 20);
+            this.tbPhoneNumber.TabIndex = 8;
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.comboBox2);
-            this.groupBox3.Controls.Add(this.spcCompanyInfo);
+            this.groupBox3.Controls.Add(this.tbCompanyName);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(7, 110);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(480, 100);
-            this.groupBox3.TabIndex = 4;
+            this.groupBox3.Size = new System.Drawing.Size(480, 126);
+            this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
-            // button1
+            // tbCompanyName
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(418, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 21);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbCompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(99, 13);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(315, 21);
-            this.comboBox2.TabIndex = 7;
-            // 
-            // spcCompanyInfo
-            // 
-            this.spcCompanyInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.spcCompanyInfo.IsSplitterFixed = true;
-            this.spcCompanyInfo.Location = new System.Drawing.Point(3, 36);
-            this.spcCompanyInfo.Name = "spcCompanyInfo";
-            // 
-            // spcCompanyInfo.Panel1
-            // 
-            this.spcCompanyInfo.Panel1.Controls.Add(this.label4);
-            this.spcCompanyInfo.Panel1.Controls.Add(this.label8);
-            this.spcCompanyInfo.Panel1.Controls.Add(this.textBox3);
-            this.spcCompanyInfo.Panel1.Controls.Add(this.textBox7);
-            // 
-            // spcCompanyInfo.Panel2
-            // 
-            this.spcCompanyInfo.Panel2.Controls.Add(this.label5);
-            this.spcCompanyInfo.Panel2.Controls.Add(this.textBox4);
-            this.spcCompanyInfo.Size = new System.Drawing.Size(474, 58);
-            this.spcCompanyInfo.SplitterDistance = 214;
-            this.spcCompanyInfo.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Address";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Phone Number";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(96, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(114, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Location = new System.Drawing.Point(96, 29);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(114, 20);
-            this.textBox7.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-2, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Postal Code";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(68, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 20);
-            this.textBox4.TabIndex = 5;
+            this.tbCompanyName.Location = new System.Drawing.Point(76, 13);
+            this.tbCompanyName.Name = "tbCompanyName";
+            this.tbCompanyName.ReadOnly = true;
+            this.tbCompanyName.Size = new System.Drawing.Size(398, 20);
+            this.tbCompanyName.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 16);
+            this.label3.Location = new System.Drawing.Point(35, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Company Name";
+            this.label3.Text = "Name";
             // 
-            // button2
+            // btnAddOrder
             // 
-            this.button2.Location = new System.Drawing.Point(7, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 21);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Location = new System.Drawing.Point(379, 589);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(62, 21);
+            this.btnAddOrder.TabIndex = 11;
+            this.btnAddOrder.Text = "Add";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(75, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 21);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "New";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(447, 589);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(62, 21);
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // OrderAdministration
+            // NewOrder
             // 
+            this.AcceptButton = this.btnAddOrder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(517, 622);
+            this.Controls.Add(this.btnAddOrder);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "OrderAdministration";
+            this.Name = "NewOrder";
             this.Text = "NewOrder";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.spcCompanyInfo.Panel1.ResumeLayout(false);
+            this.spcCompanyInfo.Panel1.PerformLayout();
+            this.spcCompanyInfo.Panel2.ResumeLayout(false);
+            this.spcCompanyInfo.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).EndInit();
+            this.spcCompanyInfo.ResumeLayout(false);
             this.spcCostumerInfo.Panel1.ResumeLayout(false);
             this.spcCostumerInfo.Panel1.PerformLayout();
             this.spcCostumerInfo.Panel2.ResumeLayout(false);
@@ -376,12 +485,6 @@
             this.spcCostumerInfo.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.spcCompanyInfo.Panel1.ResumeLayout(false);
-            this.spcCompanyInfo.Panel1.PerformLayout();
-            this.spcCompanyInfo.Panel2.ResumeLayout(false);
-            this.spcCompanyInfo.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).EndInit();
-            this.spcCompanyInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -389,31 +492,38 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnAddOrderItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.SplitContainer spcCostumerInfo;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.SplitContainer spcCompanyInfo;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbAddress;
+        private System.Windows.Forms.TextBox tbPostalCode;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbCountry;
+        private System.Windows.Forms.TextBox tbState;
+        private System.Windows.Forms.TextBox tbCity;
+        private System.Windows.Forms.SplitContainer spcCostumerInfo;
         private System.Windows.Forms.ComboBox cbCustomerID;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbLastname;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbFirstName;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbPhoneACode;
+        private System.Windows.Forms.TextBox tbPhoneNumber;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbCompanyName;
+        private System.Windows.Forms.DataGridView dgvOrderItems;
+        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.Button btnCancel;
 
     }
 }

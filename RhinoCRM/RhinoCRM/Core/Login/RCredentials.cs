@@ -6,26 +6,29 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RhinoCRM.Core.Login
-{      
+{
 
-   internal class RCredentials
-    {   
-       internal enum securitytoken
-       {
-           isWorker,
-           isSales,
-           isAdmin
-       }
-        public RCredentials(string Usr, string Pswrd,securitytoken secure)
+    public class RCredentials
+    {
+        public enum securitytoken
         {
-            Username = Usr;
-            Password = Pswrd;
-            SecurityToken = secure;
+            isWorker,
+            isSales,
+            isAdmin
         }
+        public RCredentials(string usr, string pswrd, securitytoken secure, int userID)
+        {
+            Username = usr;
+            Password = pswrd;
+            SecurityToken = secure;
+            UserID = userID;
+        }
+
         internal securitytoken SecurityToken { get; set; }
         internal string Username { get; set; }
         [Obsolete("Should be incrypted")]
         internal string Password { get; set; }
+        internal int UserID { get; set; }
         // ------------------------------------
         // Test Code to get Grupes for a user.
         // --------------------------------------

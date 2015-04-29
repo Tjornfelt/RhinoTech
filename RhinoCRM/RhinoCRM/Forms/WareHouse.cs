@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RhinoCRM.Core.Login;
+using SHUtils.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,35 +12,40 @@ using System.Windows.Forms;
 
 namespace RhinoCRM.Forms
 {
-    public partial class WareHouse : Form
+    public partial class WareHouse : BaseRWindow
     {
-        
-        public WareHouse()
+        RCredentials.securitytoken _ST;
+        public WareHouse(RCredentials.securitytoken st)
         {
             InitializeComponent();
-        }
-        private void WareHouse_Leave(object sender, EventArgs e)
-        {
-            this.Icon = Properties.Resources.Closedbook;
-        }
-
-        private void WareHouse_Activated(object sender, EventArgs e)
-        {
-            this.Icon = Properties.Resources.Openbook;
+            _ST = st;
         }
         private void WareHouse_Load(object sender, EventArgs e)
         {
+            FillTable();        
+        }
+        private void FillTable()
+        {
             // TODO: This line of code loads data into the 'rCMSDataSet.GetTotalProductInfo' table. You can move, or remove it, as needed.
             this.TableAddabter.Fill(this.rCMSDataSet.GetTotalProductInfo);
-        
         }
         private void EditProduct(int id)
         {
-            EditProduct ep = new EditProduct();
-            ep.MdiParent = this.MdiParent;
-            ep.Show();
+            Log.System("Opening edit product page.");
+            DialogResult dr = new EditProduct (id,_ST).ShowDialog();
+            if (dr == System.Windows.Forms.DialogResult.Cancel)
+            {
+                Log.System("user canceled the action");
+            }
+            else if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                FillTable();
+            }
+            else
+            {
+                Log.System("Do not reconice the action");
+            }
         }
-
         private void tsmiEdit_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvData.SelectedRows)
@@ -47,11 +54,6 @@ namespace RhinoCRM.Forms
                 int.TryParse(row.Cells[0].Value.ToString(), out id);
                 EditProduct(id);
             }
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -36,7 +36,7 @@ namespace RhinoCRM.Forms
                 {
                     Log.System(string.Format("User typed in correct Creds"));
                     // Creates the Credentials class that will be used to grant user acces to the dynamic menu.
-                    _Credentials = new RCredentials(Username, Password, GetSQLCredentials(u.ID));
+                    _Credentials = new RCredentials(Username, Password, GetSQLCredentials(u.ID), u.ID);
                     Log.System(string.Format("Logging in as {0} with {1} credentials",_Credentials.Username,_Credentials.SecurityToken));
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     return;

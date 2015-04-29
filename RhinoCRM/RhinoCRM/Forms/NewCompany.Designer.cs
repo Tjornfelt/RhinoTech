@@ -238,7 +238,7 @@
             this.Controls.Add(this.btnCancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewCompany";
-            this.Text = "New Cutomer";
+            this.Text = "New Company";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.spcCompanyInfo.Panel1.ResumeLayout(false);

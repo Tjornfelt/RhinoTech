@@ -35,10 +35,7 @@
             this.rCMSDataSet = new RhinoCRM.RCMSDataSet();
             this.DataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TableAddabter = new RhinoCRM.RCMSDataSetTableAdapters.GetTotalProductInfoTableAdapter();
-            this.tbProducts = new System.Windows.Forms.TabPage();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tpTemplate = new System.Windows.Forms.TabPage();
             this.iDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sKUColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +48,7 @@
             this.RigthClickMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataBindingSource)).BeginInit();
-            this.tbProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // RigthClickMenu
@@ -84,18 +79,6 @@
             // 
             this.TableAddabter.ClearBeforeFill = true;
             // 
-            // tbProducts
-            // 
-            this.tbProducts.AutoScroll = true;
-            this.tbProducts.Controls.Add(this.dgvData);
-            this.tbProducts.Location = new System.Drawing.Point(4, 22);
-            this.tbProducts.Name = "tbProducts";
-            this.tbProducts.Padding = new System.Windows.Forms.Padding(3);
-            this.tbProducts.Size = new System.Drawing.Size(731, 345);
-            this.tbProducts.TabIndex = 0;
-            this.tbProducts.Text = "Products";
-            this.tbProducts.UseVisualStyleBackColor = true;
-            // 
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
@@ -117,35 +100,12 @@
             this.discontinuedColumn});
             this.dgvData.ContextMenuStrip = this.RigthClickMenu;
             this.dgvData.DataSource = this.DataBindingSource;
-            this.dgvData.Location = new System.Drawing.Point(7, 7);
+            this.dgvData.Location = new System.Drawing.Point(12, 12);
             this.dgvData.Name = "dgvData";
             this.dgvData.RowHeadersWidth = 20;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(718, 332);
+            this.dgvData.Size = new System.Drawing.Size(717, 371);
             this.dgvData.TabIndex = 0;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tbProducts);
-            this.tabControl1.Controls.Add(this.tpTemplate);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(739, 371);
-            this.tabControl1.TabIndex = 3;
-            // 
-            // tpTemplate
-            // 
-            this.tpTemplate.Location = new System.Drawing.Point(4, 22);
-            this.tpTemplate.Name = "tpTemplate";
-            this.tpTemplate.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTemplate.Size = new System.Drawing.Size(731, 345);
-            this.tpTemplate.TabIndex = 1;
-            this.tpTemplate.Text = "tpTemplate";
-            this.tpTemplate.UseVisualStyleBackColor = true;
             // 
             // iDColumn
             // 
@@ -211,20 +171,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 395);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(741, 395);
+            this.Controls.Add(this.dgvData);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WareHouse";
             this.Text = "WareHouse";
-            this.Activated += new System.EventHandler(this.WareHouse_Activated);
             this.Load += new System.EventHandler(this.WareHouse_Load);
-            this.Leave += new System.EventHandler(this.WareHouse_Leave);
             this.RigthClickMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataBindingSource)).EndInit();
-            this.tbProducts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,10 +193,7 @@
         private RCMSDataSet rCMSDataSet;
         private System.Windows.Forms.BindingSource DataBindingSource;
         private RCMSDataSetTableAdapters.GetTotalProductInfoTableAdapter TableAddabter;
-        private System.Windows.Forms.TabPage tbProducts;
         private System.Windows.Forms.DataGridView dgvData;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tpTemplate;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sKUColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;

@@ -81,8 +81,8 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Location = new System.Drawing.Point(5, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 239);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(466, 245);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
@@ -110,9 +110,9 @@
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbCountry);
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbState);
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbCity);
-            this.spcCompanyInfo.Size = new System.Drawing.Size(429, 77);
-            this.spcCompanyInfo.SplitterDistance = 214;
-            this.spcCompanyInfo.TabIndex = 8;
+            this.spcCompanyInfo.Size = new System.Drawing.Size(452, 83);
+            this.spcCompanyInfo.SplitterDistance = 225;
+            this.spcCompanyInfo.TabIndex = 12;
             // 
             // label11
             // 
@@ -131,7 +131,6 @@
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 4;
             this.label10.Text = "Postal Code";
-
             // 
             // tbAddress
             // 
@@ -140,9 +139,8 @@
             this.tbAddress.Location = new System.Drawing.Point(73, 7);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.ReadOnly = true;
-            this.tbAddress.Size = new System.Drawing.Size(137, 20);
-            this.tbAddress.TabIndex = 5;
-            this.tbAddress.TabStop = false;
+            this.tbAddress.Size = new System.Drawing.Size(148, 20);
+            this.tbAddress.TabIndex = 13;
             // 
             // tbPostalCode
             // 
@@ -151,13 +149,13 @@
             this.tbPostalCode.Location = new System.Drawing.Point(73, 33);
             this.tbPostalCode.Name = "tbPostalCode";
             this.tbPostalCode.ReadOnly = true;
-            this.tbPostalCode.Size = new System.Drawing.Size(137, 20);
-            this.tbPostalCode.TabIndex = 5;
+            this.tbPostalCode.Size = new System.Drawing.Size(148, 20);
+            this.tbPostalCode.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 59);
+            this.label8.Location = new System.Drawing.Point(9, 62);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 4;
@@ -185,12 +183,11 @@
             // 
             this.tbCountry.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCountry.Location = new System.Drawing.Point(67, 56);
+            this.tbCountry.Location = new System.Drawing.Point(67, 59);
             this.tbCountry.Name = "tbCountry";
             this.tbCountry.ReadOnly = true;
-            this.tbCountry.Size = new System.Drawing.Size(141, 20);
-            this.tbCountry.TabIndex = 5;
-            this.tbCountry.TabStop = false;
+            this.tbCountry.Size = new System.Drawing.Size(153, 20);
+            this.tbCountry.TabIndex = 17;
             // 
             // tbState
             // 
@@ -199,9 +196,8 @@
             this.tbState.Location = new System.Drawing.Point(67, 33);
             this.tbState.Name = "tbState";
             this.tbState.ReadOnly = true;
-            this.tbState.Size = new System.Drawing.Size(141, 20);
-            this.tbState.TabIndex = 5;
-            this.tbState.TabStop = false;
+            this.tbState.Size = new System.Drawing.Size(153, 20);
+            this.tbState.TabIndex = 16;
             // 
             // tbCity
             // 
@@ -210,9 +206,8 @@
             this.tbCity.Location = new System.Drawing.Point(67, 7);
             this.tbCity.Name = "tbCity";
             this.tbCity.ReadOnly = true;
-            this.tbCity.Size = new System.Drawing.Size(141, 20);
-            this.tbCity.TabIndex = 5;
-            this.tbCity.TabStop = false;
+            this.tbCity.Size = new System.Drawing.Size(153, 20);
+            this.tbCity.TabIndex = 15;
             // 
             // spcCostumerInfo
             // 
@@ -230,7 +225,6 @@
             this.spcCostumerInfo.Panel1.Controls.Add(this.tbLastname);
             this.spcCostumerInfo.Panel1.Controls.Add(this.label2);
             this.spcCostumerInfo.Panel1.Controls.Add(this.tbFirstName);
-            this.spcCostumerInfo.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // spcCostumerInfo.Panel2
             // 
@@ -239,9 +233,9 @@
             this.spcCostumerInfo.Panel2.Controls.Add(this.label7);
             this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneACode);
             this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneNumber);
-            this.spcCostumerInfo.Size = new System.Drawing.Size(430, 85);
-            this.spcCostumerInfo.SplitterDistance = 215;
-            this.spcCostumerInfo.TabIndex = 5;
+            this.spcCostumerInfo.Size = new System.Drawing.Size(453, 85);
+            this.spcCostumerInfo.SplitterDistance = 226;
+            this.spcCostumerInfo.TabIndex = 2;
             // 
             // cbCustomerID
             // 
@@ -251,8 +245,8 @@
             this.cbCustomerID.ItemHeight = 13;
             this.cbCustomerID.Location = new System.Drawing.Point(109, 4);
             this.cbCustomerID.Name = "cbCustomerID";
-            this.cbCustomerID.Size = new System.Drawing.Size(103, 21);
-            this.cbCustomerID.TabIndex = 1;
+            this.cbCustomerID.Size = new System.Drawing.Size(114, 21);
+            this.cbCustomerID.TabIndex = 3;
             this.cbCustomerID.SelectedIndexChanged += new System.EventHandler(this.cbCustomerID_SelectedIndexChanged);
             // 
             // label6
@@ -279,8 +273,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLastname.Location = new System.Drawing.Point(77, 56);
             this.tbLastname.Name = "tbLastname";
-            this.tbLastname.Size = new System.Drawing.Size(135, 20);
-            this.tbLastname.TabIndex = 3;
+            this.tbLastname.Size = new System.Drawing.Size(146, 20);
+            this.tbLastname.TabIndex = 6;
             // 
             // label2
             // 
@@ -297,16 +291,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFirstName.Location = new System.Drawing.Point(77, 30);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(135, 20);
-            this.tbFirstName.TabIndex = 2;
+            this.tbFirstName.Size = new System.Drawing.Size(146, 20);
+            this.tbFirstName.TabIndex = 5;
             // 
             // btnNewCustomer
             // 
             this.btnNewCustomer.Location = new System.Drawing.Point(0, 2);
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Size = new System.Drawing.Size(62, 22);
-            this.btnNewCustomer.TabIndex = 2;
-            this.btnNewCustomer.TabStop = false;
+            this.btnNewCustomer.TabIndex = 4;
             this.btnNewCustomer.Text = "New";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
             this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
@@ -335,17 +328,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPhoneACode.Location = new System.Drawing.Point(104, 30);
             this.tbPhoneACode.Name = "tbPhoneACode";
-            this.tbPhoneACode.Size = new System.Drawing.Size(102, 20);
-            this.tbPhoneACode.TabIndex = 4;
+            this.tbPhoneACode.Size = new System.Drawing.Size(114, 20);
+            this.tbPhoneACode.TabIndex = 7;
             // 
             // tbPhoneNumber
             // 
             this.tbPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPhoneNumber.Location = new System.Drawing.Point(94, 56);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(104, 56);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
-            this.tbPhoneNumber.Size = new System.Drawing.Size(112, 20);
-            this.tbPhoneNumber.TabIndex = 5;
+            this.tbPhoneNumber.Size = new System.Drawing.Size(114, 20);
+            this.tbPhoneNumber.TabIndex = 8;
             // 
             // groupBox3
             // 
@@ -357,19 +350,18 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(7, 110);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(430, 123);
-            this.groupBox3.TabIndex = 0;
+            this.groupBox3.Size = new System.Drawing.Size(453, 129);
+            this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
             // btnNewCompany
             // 
             this.btnNewCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewCompany.Location = new System.Drawing.Point(368, 13);
+            this.btnNewCompany.Location = new System.Drawing.Point(391, 13);
             this.btnNewCompany.Name = "btnNewCompany";
             this.btnNewCompany.Size = new System.Drawing.Size(56, 21);
-            this.btnNewCompany.TabIndex = 7;
-            this.btnNewCompany.TabStop = false;
+            this.btnNewCompany.TabIndex = 11;
             this.btnNewCompany.Text = "New";
             this.btnNewCompany.UseVisualStyleBackColor = true;
             this.btnNewCompany.Click += new System.EventHandler(this.btnNewCompany_Click);
@@ -379,28 +371,28 @@
             this.cbCompany.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbCompany.FormattingEnabled = true;
-            this.cbCompany.Location = new System.Drawing.Point(99, 13);
+            this.cbCompany.Location = new System.Drawing.Point(73, 13);
             this.cbCompany.Name = "cbCompany";
-            this.cbCompany.Size = new System.Drawing.Size(265, 21);
-            this.cbCompany.TabIndex = 7;
+            this.cbCompany.Size = new System.Drawing.Size(314, 21);
+            this.cbCompany.TabIndex = 10;
             this.cbCompany.SelectedIndexChanged += new System.EventHandler(this.cbCompany_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 16);
+            this.label3.Location = new System.Drawing.Point(32, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Company Name";
+            this.label3.Text = "Name";
             // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(298, 257);
+            this.btnUpdate.Location = new System.Drawing.Point(328, 263);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(69, 21);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -409,10 +401,10 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(373, 257);
+            this.btnCancel.Location = new System.Drawing.Point(403, 263);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(69, 21);
-            this.btnCancel.TabIndex = 14;
+            this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -421,7 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 290);
+            this.ClientSize = new System.Drawing.Size(476, 296);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
