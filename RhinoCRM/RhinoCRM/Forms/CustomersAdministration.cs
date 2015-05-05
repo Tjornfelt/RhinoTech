@@ -49,7 +49,7 @@ namespace RhinoCRM.Forms
             Customers[] customers = Entities.GetCustomers().ToArray();
             foreach (Customers customer in customers)
             {
-                cbCustomerID.Items.Add(string.Format("{0}", customer.ID));
+                cbCustomerID.Items.Add(string.Format("{0:0000}", customer.ID));
             }
         }
         private void LoadCompanies()

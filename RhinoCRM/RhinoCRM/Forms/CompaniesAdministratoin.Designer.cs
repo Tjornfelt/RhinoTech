@@ -28,7 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanysAdministration));
+            this.getCustomersByCompanyIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rCMSDataSet = new RhinoCRM.RCMSDataSet();
+            this.getCustomersByCompanyIDTableAdapter = new RhinoCRM.RCMSDataSetTableAdapters.GetCustomersByCompanyIDTableAdapter();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneAreaCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phonenNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.spcCompanyInfo = new System.Windows.Forms.SplitContainer();
             this.label11 = new System.Windows.Forms.Label();
@@ -44,17 +55,103 @@
             this.btnNewCompany = new System.Windows.Forms.Button();
             this.cbCompany = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.getCustomersByCompanyIDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).BeginInit();
             this.spcCompanyInfo.Panel1.SuspendLayout();
             this.spcCompanyInfo.Panel2.SuspendLayout();
             this.spcCompanyInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // getCustomersByCompanyIDBindingSource
+            // 
+            this.getCustomersByCompanyIDBindingSource.DataMember = "GetCustomersByCompanyID";
+            this.getCustomersByCompanyIDBindingSource.DataSource = this.rCMSDataSet;
+            // 
+            // rCMSDataSet
+            // 
+            this.rCMSDataSet.DataSetName = "RCMSDataSet";
+            this.rCMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // getCustomersByCompanyIDTableAdapter
+            // 
+            this.getCustomersByCompanyIDTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.Location = new System.Drawing.Point(395, 386);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(69, 21);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 141);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(452, 239);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Customers within the company";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.phoneAreaCodeDataGridViewTextBoxColumn,
+            this.phonenNumberDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.getCustomersByCompanyIDBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(440, 214);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneAreaCodeDataGridViewTextBoxColumn
+            // 
+            this.phoneAreaCodeDataGridViewTextBoxColumn.DataPropertyName = "PhoneAreaCode";
+            this.phoneAreaCodeDataGridViewTextBoxColumn.HeaderText = "PhoneAreaCode";
+            this.phoneAreaCodeDataGridViewTextBoxColumn.Name = "phoneAreaCodeDataGridViewTextBoxColumn";
+            this.phoneAreaCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phonenNumberDataGridViewTextBoxColumn
+            // 
+            this.phonenNumberDataGridViewTextBoxColumn.DataPropertyName = "PhonenNumber";
+            this.phonenNumberDataGridViewTextBoxColumn.HeaderText = "PhonenNumber";
+            this.phonenNumberDataGridViewTextBoxColumn.Name = "phonenNumberDataGridViewTextBoxColumn";
+            this.phonenNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -221,40 +318,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Company Name";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 214);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 141);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 239);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customers within the company";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(395, 386);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(69, 21);
-            this.btnUpdate.TabIndex = 14;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // CompanysAdministration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +329,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CompanysAdministration";
             this.Text = "Companys";
+            ((System.ComponentModel.ISupportInitialize)(this.getCustomersByCompanyIDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rCMSDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.spcCompanyInfo.Panel1.ResumeLayout(false);
@@ -274,8 +341,6 @@
             this.spcCompanyInfo.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spcCompanyInfo)).EndInit();
             this.spcCompanyInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,5 +365,12 @@
         private System.Windows.Forms.TextBox tbState;
         private System.Windows.Forms.TextBox tbCity;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneAreaCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phonenNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource getCustomersByCompanyIDBindingSource;
+        private RCMSDataSet rCMSDataSet;
+        private RCMSDataSetTableAdapters.GetCustomersByCompanyIDTableAdapter getCustomersByCompanyIDTableAdapter;
     }
 }

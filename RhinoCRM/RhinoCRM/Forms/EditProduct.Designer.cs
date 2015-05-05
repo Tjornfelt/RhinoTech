@@ -254,11 +254,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 6);
+            this.label4.Location = new System.Drawing.Point(16, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Address";
+            this.label4.Text = "Amount";
             // 
             // tbAmount
             // 

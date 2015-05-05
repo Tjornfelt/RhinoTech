@@ -28,6 +28,7 @@ namespace RhinoCRM.Forms
             tbCountry.Text = _CurrentCompany.Country;
             tbPostalCode.Text = _CurrentCompany.Postalcode.ToString();
             tbState.Text = _CurrentCompany.State;
+            this.getCustomersByCompanyIDTableAdapter.Fill(this.rCMSDataSet.GetCustomersByCompanyID, _CurrentCompany.ID);
         }
         private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -43,6 +44,7 @@ namespace RhinoCRM.Forms
             {
                 cbCompany.Items.Add(string.Format("{0}", company.CompanyName));
             }
+            if(Companies.Length >0) cbCompany.SelectedIndex = 0;
         }
         private void btnNewCompany_Click(object sender, EventArgs e)
         {
@@ -71,7 +73,7 @@ namespace RhinoCRM.Forms
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Companys _CurrentCompany = new Companys();
+            Log.System(string.Format("Updating company : {0}",_CurrentCompany.CompanyName));
             // check for holes in the data. cant have a user without initials.
             if (
                  !string.IsNullOrWhiteSpace(cbCompany.Text) &&

@@ -9,7 +9,7 @@ namespace RhinoCRM.Core.Entityframework
     internal class Entities
     {
         // 10.13.37.151 - sa/radmin - Rhino2015
-
+        //TODO: MOVE THIS TO LOG IN
         internal static RCredentials.securitytoken GetUserSecuretokenbyID(int ID)
         {
 

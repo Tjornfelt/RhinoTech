@@ -22,15 +22,19 @@ namespace RhinoCRM.Forms
         }
         private void InitializeLog()
         {
-            Log.AddLapsTimesInSysLog = false;
-            Log.AddTimeStampsToSyslog = true;
-            Log.ReturnTagsInMethods = false;
-            Log.LogPrefix = "RCMR";
-            Log.PathSysLog = Log.PathLapstimeLog = @"C:\Temp\Log";
-            Log.ReturnTagsInMethods = false;
-            Log.SpacerWidth = 32;
-            Log.Spacer();
-            Log.System("Log Initialized");
+            Log.AddLapsTimesInSysLog = false; // skal der logges i system loggen når der  
+                                              // laves en tids tagening.
+            Log.AddTimeStampsToSyslog = true; // skal der skrives klokkeslæt i systemloggen
+            Log.ReturnTagsInMethods = false;  // skal de forskellige tags sendes retur så de 
+                                              // kan bruges directe i en brugerflade
+            Log.LogPrefix = "RCMR";           // predix til lognavn
+            Log.PathSysLog = @"C:\Temp\Log";  // Stigen til systemloggen 
+            Log.PathLapstimeLog = @"C:\Temp\Log"; // Stigen til tidstagningloggen
+            Log.SpacerWidth = 32;             // spacer width er for grafisk hvis der                               
+                                              // skrives bred tekst i loggen er det rart med 
+                                              // bred streg til separering
+            Log.Spacer();                     // skriv seperering til loggen 
+            Log.System("Log Initialized");    // skriv Log Initialized med SystemTag 
             Log.Spacer();
         }   
         // General Methods
