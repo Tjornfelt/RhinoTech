@@ -82,17 +82,15 @@ namespace RhinoCRM.Forms
                     catch { MessageBox.Show(Log.Error("Price is not a number numbnuts!")); return; }
 
                     // Ware house 
-
-                    List<WarehouseShelfs> shelves = new List<WarehouseShelfs>();
                     WarehouseShelfs whs = new WarehouseShelfs(); 
                     try { whs.Amount = Convert.ToInt32(tbAmount.Text); }
                     catch { MessageBox.Show(Log.Error("Amount is not a number numbnuts!")); return; }
                     whs.Shelf = tbShelf.Text;
-                    shelves.Add(whs);
-                    _CurrentProduct.WarehouseShelfs = shelves;
+
+
                     try
                     {
-                        Entities.UpdateProduct(_CurrentProduct);
+                        Entities.UpdateProduct(_CurrentProduct, whs);
                         DialogResult = System.Windows.Forms.DialogResult.OK;
                         this.Close();
                     }

@@ -93,7 +93,7 @@ namespace RhinoCRM.Forms
                         iid++;
                     }
 
-                    table.Rows.Add(null, "VAT", "Sorry bro.", "", string.Format("VAT: {0}%", VAT), grandtotal * VAT);
+                    table.Rows.Add(null, "VAT", "", "", string.Format("VAT: {0}%", VAT), grandtotal * VAT);
                     table.Rows.Add(null, "Grand Total", "", "", "", grandtotal + (grandtotal * VAT));
                     dgvOrderItems.DataSource = table;
 

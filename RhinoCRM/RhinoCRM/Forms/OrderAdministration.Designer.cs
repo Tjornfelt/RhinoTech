@@ -138,7 +138,7 @@
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbState);
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbCity);
             this.spcCompanyInfo.Size = new System.Drawing.Size(638, 80);
-            this.spcCompanyInfo.SplitterDistance = 314;
+            this.spcCompanyInfo.SplitterDistance = 313;
             this.spcCompanyInfo.TabIndex = 12;
             // 
             // label11
@@ -166,7 +166,7 @@
             this.tbAddress.Location = new System.Drawing.Point(76, 7);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.ReadOnly = true;
-            this.tbAddress.Size = new System.Drawing.Size(234, 20);
+            this.tbAddress.Size = new System.Drawing.Size(233, 20);
             this.tbAddress.TabIndex = 13;
             // 
             // tbPostalCode
@@ -176,7 +176,7 @@
             this.tbPostalCode.Location = new System.Drawing.Point(76, 33);
             this.tbPostalCode.Name = "tbPostalCode";
             this.tbPostalCode.ReadOnly = true;
-            this.tbPostalCode.Size = new System.Drawing.Size(234, 20);
+            this.tbPostalCode.Size = new System.Drawing.Size(233, 20);
             this.tbPostalCode.TabIndex = 14;
             // 
             // label8
@@ -213,7 +213,7 @@
             this.tbCountry.Location = new System.Drawing.Point(67, 59);
             this.tbCountry.Name = "tbCountry";
             this.tbCountry.ReadOnly = true;
-            this.tbCountry.Size = new System.Drawing.Size(248, 20);
+            this.tbCountry.Size = new System.Drawing.Size(249, 20);
             this.tbCountry.TabIndex = 17;
             // 
             // tbState
@@ -223,7 +223,7 @@
             this.tbState.Location = new System.Drawing.Point(67, 33);
             this.tbState.Name = "tbState";
             this.tbState.ReadOnly = true;
-            this.tbState.Size = new System.Drawing.Size(248, 20);
+            this.tbState.Size = new System.Drawing.Size(249, 20);
             this.tbState.TabIndex = 16;
             // 
             // tbCity
@@ -233,7 +233,7 @@
             this.tbCity.Location = new System.Drawing.Point(67, 7);
             this.tbCity.Name = "tbCity";
             this.tbCity.ReadOnly = true;
-            this.tbCity.Size = new System.Drawing.Size(248, 20);
+            this.tbCity.Size = new System.Drawing.Size(249, 20);
             this.tbCity.TabIndex = 15;
             // 
             // spcCostumerInfo
@@ -260,7 +260,7 @@
             this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneACode);
             this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneNumber);
             this.spcCostumerInfo.Size = new System.Drawing.Size(642, 85);
-            this.spcCostumerInfo.SplitterDistance = 318;
+            this.spcCostumerInfo.SplitterDistance = 317;
             this.spcCostumerInfo.TabIndex = 2;
             // 
             // label6
@@ -288,7 +288,7 @@
             this.tbLastname.Location = new System.Drawing.Point(77, 56);
             this.tbLastname.Name = "tbLastname";
             this.tbLastname.ReadOnly = true;
-            this.tbLastname.Size = new System.Drawing.Size(238, 20);
+            this.tbLastname.Size = new System.Drawing.Size(237, 20);
             this.tbLastname.TabIndex = 6;
             // 
             // label2
@@ -307,7 +307,7 @@
             this.tbCustomerNumber.Location = new System.Drawing.Point(109, 4);
             this.tbCustomerNumber.Name = "tbCustomerNumber";
             this.tbCustomerNumber.ReadOnly = true;
-            this.tbCustomerNumber.Size = new System.Drawing.Size(206, 20);
+            this.tbCustomerNumber.Size = new System.Drawing.Size(205, 20);
             this.tbCustomerNumber.TabIndex = 5;
             // 
             // tbFirstName
@@ -317,7 +317,7 @@
             this.tbFirstName.Location = new System.Drawing.Point(77, 30);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.ReadOnly = true;
-            this.tbFirstName.Size = new System.Drawing.Size(238, 20);
+            this.tbFirstName.Size = new System.Drawing.Size(237, 20);
             this.tbFirstName.TabIndex = 5;
             // 
             // label9
@@ -345,7 +345,7 @@
             this.tbPhoneACode.Location = new System.Drawing.Point(104, 30);
             this.tbPhoneACode.Name = "tbPhoneACode";
             this.tbPhoneACode.ReadOnly = true;
-            this.tbPhoneACode.Size = new System.Drawing.Size(211, 20);
+            this.tbPhoneACode.Size = new System.Drawing.Size(212, 20);
             this.tbPhoneACode.TabIndex = 7;
             // 
             // tbPhoneNumber
@@ -355,7 +355,7 @@
             this.tbPhoneNumber.Location = new System.Drawing.Point(104, 56);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.ReadOnly = true;
-            this.tbPhoneNumber.Size = new System.Drawing.Size(211, 20);
+            this.tbPhoneNumber.Size = new System.Drawing.Size(212, 20);
             this.tbPhoneNumber.TabIndex = 8;
             // 
             // groupBox3
@@ -584,6 +584,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderAdministration";
             this.Text = "ActiveOrders";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrderAdministration_FormClosed);
             this.Load += new System.EventHandler(this.OrderAdministration_Load);
             this.groupBox1.ResumeLayout(false);
             this.spcCompanyInfo.Panel1.ResumeLayout(false);

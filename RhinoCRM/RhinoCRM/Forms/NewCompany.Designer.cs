@@ -63,7 +63,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(452, 123);
-            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
@@ -74,7 +74,7 @@
             this.tbCompanyName.Location = new System.Drawing.Point(99, 13);
             this.tbCompanyName.Name = "tbCompanyName";
             this.tbCompanyName.Size = new System.Drawing.Size(347, 20);
-            this.tbCompanyName.TabIndex = 7;
+            this.tbCompanyName.TabIndex = 2;
             // 
             // spcCompanyInfo
             // 
@@ -102,7 +102,7 @@
             this.spcCompanyInfo.Panel2.Controls.Add(this.tbCity);
             this.spcCompanyInfo.Size = new System.Drawing.Size(438, 77);
             this.spcCompanyInfo.SplitterDistance = 219;
-            this.spcCompanyInfo.TabIndex = 6;
+            this.spcCompanyInfo.TabIndex = 3;
             // 
             // label11
             // 
@@ -129,7 +129,7 @@
             this.tbAddress.Location = new System.Drawing.Point(73, 7);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(142, 20);
-            this.tbAddress.TabIndex = 5;
+            this.tbAddress.TabIndex = 4;
             // 
             // tbPostalCode
             // 
@@ -174,7 +174,7 @@
             this.tbCountry.Location = new System.Drawing.Point(67, 56);
             this.tbCountry.Name = "tbCountry";
             this.tbCountry.Size = new System.Drawing.Size(145, 20);
-            this.tbCountry.TabIndex = 5;
+            this.tbCountry.TabIndex = 8;
             // 
             // tbState
             // 
@@ -183,7 +183,7 @@
             this.tbState.Location = new System.Drawing.Point(67, 30);
             this.tbState.Name = "tbState";
             this.tbState.Size = new System.Drawing.Size(145, 20);
-            this.tbState.TabIndex = 5;
+            this.tbState.TabIndex = 7;
             // 
             // tbCity
             // 
@@ -192,7 +192,7 @@
             this.tbCity.Location = new System.Drawing.Point(67, 4);
             this.tbCity.Name = "tbCity";
             this.tbCity.Size = new System.Drawing.Size(145, 20);
-            this.tbCity.TabIndex = 5;
+            this.tbCity.TabIndex = 6;
             // 
             // label3
             // 
@@ -209,7 +209,7 @@
             this.btnCreate.Location = new System.Drawing.Point(320, 141);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(69, 21);
-            this.btnCreate.TabIndex = 13;
+            this.btnCreate.TabIndex = 10;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -221,7 +221,7 @@
             this.btnCancel.Location = new System.Drawing.Point(395, 141);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(69, 21);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

@@ -245,7 +245,7 @@ namespace RhinoCRM.Core.Entityframework
                 throw e;
             }
         }
-        internal static void UpdateProduct(Products product)
+        internal static void UpdateProduct(Products product,WarehouseShelfs shelfs)
         {
             try
             {
@@ -257,9 +257,10 @@ namespace RhinoCRM.Core.Entityframework
                     dbProduct.SKU = product.SKU;
                     dbProduct.Type = product.Type;
                     dbProduct.Description = product.Description;
+                    dbProduct.Discontinued = product.Discontinued;
                     //Technically, a product can have many shelf locations. For this exercise though, we always have 1. Select the first and update the values.
-                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = product.WarehouseShelfs.FirstOrDefault().Amount;
-                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = product.WarehouseShelfs.FirstOrDefault().Shelf;
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Amount = shelfs.Amount;
+                    dbProduct.WarehouseShelfs.FirstOrDefault().Shelf = shelfs.Shelf;
                     /*
                     dbProduct.isSalesPerson = product.isSalesPerson;
                     dbProduct.isWorker = product.isWorker;*/

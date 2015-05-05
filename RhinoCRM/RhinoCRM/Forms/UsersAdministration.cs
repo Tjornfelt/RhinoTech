@@ -45,6 +45,7 @@ namespace RhinoCRM.Forms
             InitializeComponent();
             NewMode = false;
             LoadUser();
+            cbUserID.SelectedIndex = 0;
         }
         private void LoadUser()
         {
@@ -166,6 +167,16 @@ namespace RhinoCRM.Forms
         private void btnNewUser_Click(object sender, EventArgs e)
         {
             NewMode = true;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (NewMode)
+            {
+                NewMode = false;
+                cbUserID.SelectedIndex = 0;
+            }
+            else { this.Close(); }
         }
     }
 }

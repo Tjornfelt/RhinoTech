@@ -120,6 +120,7 @@ namespace RhinoCRM.Forms
             ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
             // Menu items
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
             // tsmiMain.DropDownItems.Add();
             return tsmiMain;
@@ -128,12 +129,14 @@ namespace RhinoCRM.Forms
         {   
             // main menu item, the root.
             ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Sales");
-            // Menu items
+            // Menu items  
+            tsmiMain.DropDownItems.Add(MenuItemNewOrders());   
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
             tsmiMain.DropDownItems.Add(MenuItemOpenCompanyes());
-            tsmiMain.DropDownItems.Add(MenuItemOpenOrders());
-            tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
             return tsmiMain;
         }
         private ToolStripMenuItem MenuAdmin()
@@ -173,9 +176,9 @@ namespace RhinoCRM.Forms
             tsmi.Click += OpenCompanies_Click;
             return tsmi;
         }
-        private ToolStripMenuItem MenuItemOpenOrders()
+        private ToolStripMenuItem MenuItemNewOrders()
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Orders");
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("New Order");
             tsmi.Click += NewOrder_Click;
             return tsmi;
         }

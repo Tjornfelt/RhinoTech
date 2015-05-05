@@ -62,8 +62,8 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Location = new System.Drawing.Point(5, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(466, 133);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(466, 131);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
@@ -90,7 +90,7 @@
             this.spcCostumerInfo.Panel2.Controls.Add(this.tbPhoneNumber);
             this.spcCostumerInfo.Size = new System.Drawing.Size(453, 61);
             this.spcCostumerInfo.SplitterDistance = 226;
-            this.spcCostumerInfo.TabIndex = 5;
+            this.spcCostumerInfo.TabIndex = 2;
             // 
             // label6
             // 
@@ -108,7 +108,7 @@
             this.tbLastname.Location = new System.Drawing.Point(67, 32);
             this.tbLastname.Name = "tbLastname";
             this.tbLastname.Size = new System.Drawing.Size(156, 20);
-            this.tbLastname.TabIndex = 2;
+            this.tbLastname.TabIndex = 4;
             // 
             // label2
             // 
@@ -126,7 +126,7 @@
             this.tbFirstName.Location = new System.Drawing.Point(66, 6);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(157, 20);
-            this.tbFirstName.TabIndex = 1;
+            this.tbFirstName.TabIndex = 3;
             // 
             // label9
             // 
@@ -153,7 +153,7 @@
             this.tbPhoneACode.Location = new System.Drawing.Point(97, 6);
             this.tbPhoneACode.Name = "tbPhoneACode";
             this.tbPhoneACode.Size = new System.Drawing.Size(123, 20);
-            this.tbPhoneACode.TabIndex = 3;
+            this.tbPhoneACode.TabIndex = 5;
             // 
             // tbPhoneNumber
             // 
@@ -162,7 +162,7 @@
             this.tbPhoneNumber.Location = new System.Drawing.Point(87, 32);
             this.tbPhoneNumber.Name = "tbPhoneNumber";
             this.tbPhoneNumber.Size = new System.Drawing.Size(133, 20);
-            this.tbPhoneNumber.TabIndex = 4;
+            this.tbPhoneNumber.TabIndex = 6;
             // 
             // groupBox3
             // 
@@ -174,8 +174,8 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(7, 86);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(453, 41);
-            this.groupBox3.TabIndex = 0;
+            this.groupBox3.Size = new System.Drawing.Size(453, 39);
+            this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
@@ -185,8 +185,7 @@
             this.btnNewCompany.Location = new System.Drawing.Point(391, 13);
             this.btnNewCompany.Name = "btnNewCompany";
             this.btnNewCompany.Size = new System.Drawing.Size(56, 22);
-            this.btnNewCompany.TabIndex = 6;
-            this.btnNewCompany.TabStop = false;
+            this.btnNewCompany.TabIndex = 9;
             this.btnNewCompany.Text = "New";
             this.btnNewCompany.UseVisualStyleBackColor = true;
             this.btnNewCompany.Click += new System.EventHandler(this.btnNewCompany_Click);
@@ -199,7 +198,7 @@
             this.cbCompany.Location = new System.Drawing.Point(99, 13);
             this.cbCompany.Name = "cbCompany";
             this.cbCompany.Size = new System.Drawing.Size(288, 21);
-            this.cbCompany.TabIndex = 5;
+            this.cbCompany.TabIndex = 8;
             this.cbCompany.SelectedIndexChanged += new System.EventHandler(this.cbCompany_SelectedIndexChanged);
             // 
             // label3
@@ -214,10 +213,10 @@
             // btnCreate
             // 
             this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreate.Location = new System.Drawing.Point(321, 151);
+            this.btnCreate.Location = new System.Drawing.Point(321, 149);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(69, 21);
-            this.btnCreate.TabIndex = 7;
+            this.btnCreate.TabIndex = 15;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -226,10 +225,10 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(396, 151);
+            this.btnCancel.Location = new System.Drawing.Point(396, 149);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(69, 21);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -238,11 +237,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 184);
+            this.ClientSize = new System.Drawing.Size(476, 182);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(961, 221);
+            this.MinimumSize = new System.Drawing.Size(492, 221);
             this.Name = "NewCustomer";
             this.Text = "New Customers";
             this.groupBox1.ResumeLayout(false);

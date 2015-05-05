@@ -178,6 +178,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTotalPrice.Location = new System.Drawing.Point(60, 58);
             this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.ReadOnly = true;
             this.tbTotalPrice.Size = new System.Drawing.Size(75, 20);
             this.tbTotalPrice.TabIndex = 7;
             this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

@@ -77,7 +77,7 @@ namespace RhinoCRM.Forms
                                int itemid;
                                int.TryParse(itemrow.Cells[0].Value.ToString(), out itemid);
                                bool itemValue;
-                               bool.TryParse(itemrow.Cells[5].Value.ToString(), out itemValue);
+                               bool.TryParse(itemrow.Cells[4].Value.ToString(), out itemValue);
                                Entities.UpdateOrderItemShipped(itemValue, itemid);
                            }
                        }
@@ -90,6 +90,14 @@ namespace RhinoCRM.Forms
         private void dgvOrderItems_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             OrderItemsEdited = true;
+        }
+
+        private void OrderAdministration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(OrderItemsEdited)
+            {
+                dgvOrdersOverview_SelectionChanged(sender, e);
+            }
         }
     }
 }
