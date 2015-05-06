@@ -23,10 +23,6 @@ namespace RhinoCRM.Forms
             LoadCompanies();
             LoadCustomers();
         }
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void LoadSelectedCustomer(int ID)
         {
             _CurrentCustomer = Entities.GetCustomersByID(ID);
@@ -53,7 +49,7 @@ namespace RhinoCRM.Forms
             Customers[] customers = Entities.GetCustomers().ToArray();
             foreach (Customers customer in customers)
             {
-                cbCustomerID.Items.Add(string.Format("{0}", customer.ID));
+                cbCustomerID.Items.Add(string.Format("{0:0000}", customer.ID));
             }
         }
         private void LoadCompanies()
@@ -120,6 +116,10 @@ namespace RhinoCRM.Forms
                     MessageBox.Show("Fill out the form numbnuts!");
                 }
 
+            }                        
+            else
+            {
+                Log.Error("Current customer is not set!");
             }
         }
         private void cbCustomerID_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,6 +157,7 @@ namespace RhinoCRM.Forms
             {
                 Log.System("Do not reconice the action");
             }
-        }  
+        }
+      
     }
 }

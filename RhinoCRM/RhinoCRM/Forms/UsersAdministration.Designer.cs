@@ -56,7 +56,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(250, 188);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(69, 21);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Up/new";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -67,9 +67,10 @@
             this.btnCancel.Location = new System.Drawing.Point(325, 188);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(69, 21);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // groupBox1
             // 
@@ -90,7 +91,7 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 170);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User details";
             // 
@@ -102,7 +103,7 @@
             this.groupBox2.Location = new System.Drawing.Point(6, 117);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(370, 47);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Security";
             // 
@@ -112,7 +113,7 @@
             this.rbtnIsSales.Location = new System.Drawing.Point(147, 19);
             this.rbtnIsSales.Name = "rbtnIsSales";
             this.rbtnIsSales.Size = new System.Drawing.Size(61, 17);
-            this.rbtnIsSales.TabIndex = 0;
+            this.rbtnIsSales.TabIndex = 10;
             this.rbtnIsSales.TabStop = true;
             this.rbtnIsSales.Text = "is Sales";
             this.rbtnIsSales.UseVisualStyleBackColor = true;
@@ -123,7 +124,7 @@
             this.rbtnIsWorker.Location = new System.Drawing.Point(279, 19);
             this.rbtnIsWorker.Name = "rbtnIsWorker";
             this.rbtnIsWorker.Size = new System.Drawing.Size(70, 17);
-            this.rbtnIsWorker.TabIndex = 5;
+            this.rbtnIsWorker.TabIndex = 11;
             this.rbtnIsWorker.TabStop = true;
             this.rbtnIsWorker.Text = "is Worker";
             this.rbtnIsWorker.UseVisualStyleBackColor = true;
@@ -134,7 +135,7 @@
             this.rbtnIsAdmin.Location = new System.Drawing.Point(6, 19);
             this.rbtnIsAdmin.Name = "rbtnIsAdmin";
             this.rbtnIsAdmin.Size = new System.Drawing.Size(64, 17);
-            this.rbtnIsAdmin.TabIndex = 5;
+            this.rbtnIsAdmin.TabIndex = 9;
             this.rbtnIsAdmin.TabStop = true;
             this.rbtnIsAdmin.Text = "is Admin";
             this.rbtnIsAdmin.UseVisualStyleBackColor = true;
@@ -144,7 +145,7 @@
             this.btnNewUser.Location = new System.Drawing.Point(307, 13);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(69, 21);
-            this.btnNewUser.TabIndex = 4;
+            this.btnNewUser.TabIndex = 3;
             this.btnNewUser.Text = "New";
             this.btnNewUser.UseVisualStyleBackColor = true;
             this.btnNewUser.Click += new System.EventHandler(this.btnNewUser_Click);
@@ -175,7 +176,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(161, 20);
-            this.tbPassword.TabIndex = 3;
+            this.tbPassword.TabIndex = 7;
             // 
             // tbLastName
             // 
@@ -184,7 +185,7 @@
             this.tbLastName.Location = new System.Drawing.Point(96, 65);
             this.tbLastName.Name = "tbLastName";
             this.tbLastName.Size = new System.Drawing.Size(280, 20);
-            this.tbLastName.TabIndex = 3;
+            this.tbLastName.TabIndex = 5;
             // 
             // label4
             // 
@@ -227,7 +228,7 @@
             this.tbInitias.Location = new System.Drawing.Point(96, 91);
             this.tbInitias.Name = "tbInitias";
             this.tbInitias.Size = new System.Drawing.Size(49, 20);
-            this.tbInitias.TabIndex = 3;
+            this.tbInitias.TabIndex = 6;
             // 
             // tbFirstName
             // 
@@ -236,7 +237,7 @@
             this.tbFirstName.Location = new System.Drawing.Point(96, 40);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(280, 20);
-            this.tbFirstName.TabIndex = 3;
+            this.tbFirstName.TabIndex = 4;
             // 
             // UsersAdministration
             // 

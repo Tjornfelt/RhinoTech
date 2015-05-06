@@ -22,15 +22,19 @@ namespace RhinoCRM.Forms
         }
         private void InitializeLog()
         {
-            Log.AddLapsTimesInSysLog = false;
-            Log.AddTimeStampsToSyslog = true;
-            Log.ReturnTagsInMethods = false;
-            Log.LogPrefix = "RCMR";
-            Log.PathSysLog = Log.PathLapstimeLog = @"C:\Temp\Log";
-            Log.ReturnTagsInMethods = false;
-            Log.SpacerWidth = 32;
-            Log.Spacer();
-            Log.System("Log Initialized");
+            Log.AddLapsTimesInSysLog = false; // skal der logges i system loggen når der  
+                                              // laves en tids tagening.
+            Log.AddTimeStampsToSyslog = true; // skal der skrives klokkeslæt i systemloggen
+            Log.ReturnTagsInMethods = false;  // skal de forskellige tags sendes retur så de 
+                                              // kan bruges directe i en brugerflade
+            Log.LogPrefix = "RCMR";           // predix til lognavn
+            Log.PathSysLog = @"C:\Temp\Log";  // Stigen til systemloggen 
+            Log.PathLapstimeLog = @"C:\Temp\Log"; // Stigen til tidstagningloggen
+            Log.SpacerWidth = 32;             // spacer width er for grafisk hvis der                               
+                                              // skrives bred tekst i loggen er det rart med 
+                                              // bred streg til separering
+            Log.Spacer();                     // skriv seperering til loggen 
+            Log.System("Log Initialized");    // skriv Log Initialized med SystemTag 
             Log.Spacer();
         }   
         // General Methods
@@ -111,23 +115,28 @@ namespace RhinoCRM.Forms
         // TSMI Generation Methods
         // -----------------------------------------------------------------------
         private ToolStripMenuItem MenuWarehouese()
-        {   // main menu item, the root.
+        {   
+            // main menu item, the root.
             ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Warehouse");
             // Menu items
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
-            tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
+            // tsmiMain.DropDownItems.Add();
             return tsmiMain;
         }
         private ToolStripMenuItem MenuSales()
         {   
             // main menu item, the root.
             ToolStripMenuItem tsmiMain = new ToolStripMenuItem("Sales");
-            // Menu items
+            // Menu items  
+            tsmiMain.DropDownItems.Add(MenuItemNewOrders());   
+            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenStock());
+            tsmiMain.DropDownItems.Add(new ToolStripSeparator());
             tsmiMain.DropDownItems.Add(MenuItemAddOpenCustomers());
             tsmiMain.DropDownItems.Add(MenuItemOpenCompanyes());
-            tsmiMain.DropDownItems.Add(MenuItemAddOpenCurrentActiveOrders());
-            tsmiMain.DropDownItems.Add(MenuItemOpenOrders());
             return tsmiMain;
         }
         private ToolStripMenuItem MenuAdmin()
@@ -136,12 +145,6 @@ namespace RhinoCRM.Forms
             // Menu items
             tsmiMain.DropDownItems.Add(MenuItemAddOpenUsers());       
             return tsmiMain;
-        }
-        private ToolStripMenuItem MenuItemAddOpenOrders()
-        {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Stock");
-            tsmi.Click += OpenStock_Click;
-            return tsmi;
         }
         private ToolStripMenuItem MenuItemAddOpenStock()
         {
@@ -173,14 +176,12 @@ namespace RhinoCRM.Forms
             tsmi.Click += OpenCompanies_Click;
             return tsmi;
         }
-        private ToolStripMenuItem MenuItemOpenOrders()
+        private ToolStripMenuItem MenuItemNewOrders()
         {
-            ToolStripMenuItem tsmi = new ToolStripMenuItem("Open Orders");
+            ToolStripMenuItem tsmi = new ToolStripMenuItem("New Order");
             tsmi.Click += NewOrder_Click;
             return tsmi;
         }
-
-
         // MDI Methods
         // -----------------------------------------------------------------------
         private void AddChildMdi(Form form)
@@ -198,23 +199,13 @@ namespace RhinoCRM.Forms
         private void OpenStock_Click(object sender, EventArgs e)
         {
             Log.System("Opening Orders Administration Form");
-            AddChildMdi(new WareHouse());
+            AddChildMdi(new WareHouse(_Credentials.SecurityToken));
         }
         private void NewOrder_Click(object sender, EventArgs e)
         {
             Log.System("Opening Orders Administration Form");
-            AddChildMdi(new NewOrder());
+            AddChildMdi(new NewOrder(_Credentials));
         }
-        private void NewCustomer_Click(object sender, EventArgs e)
-        {
-            Log.System("Opening Orders Administration Form");
-            AddChildMdi(new CustomersAdministration());
-        }
-        private void NewCompany_Click(object sender, EventArgs e)
-        {
-            Log.System("Opening Company Administration Form");
-            AddChildMdi(new CompanysAdministration());
-        } 
         private void OpenCustomers_Click(object sender, EventArgs e)
         {
             Log.System("Opening Customers Administration Form");
@@ -227,8 +218,8 @@ namespace RhinoCRM.Forms
         }
         private void OpenCurrentActiveOrders_Click(object sender, EventArgs e)
         {
-            Log.System("Opening Customers Administration Form");
-            AddChildMdi(new CustomersAdministration());
+            Log.System("Opening Orders Administration Form");
+            AddChildMdi(new OrderAdministration());
         }
         private void OpenUsers_Click(object sender, EventArgs e)
         {

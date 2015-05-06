@@ -15,7 +15,7 @@ namespace RhinoCRM.Forms
 {
     public partial class NewCustomer : BaseRWindow
     {
-        Customers _CurrentCustomer;
+        Customers _CurrentCustomer = new Customers();
         Companys _CurrentCompany;
         public NewCustomer()
         {
@@ -62,9 +62,10 @@ namespace RhinoCRM.Forms
         private void CreateCustomer()
         {
             Log.System(string.Format("Creating Customer: {0} {1}", tbFirstName.Text, tbLastname.Text));
-
             if (_CurrentCustomer != null)
             {
+
+
                 // check for holes in the data. cant have a user without initials.
                 if (!string.IsNullOrWhiteSpace(tbFirstName.Text) &&
                     !string.IsNullOrWhiteSpace(tbLastname.Text) &&
@@ -79,19 +80,23 @@ namespace RhinoCRM.Forms
 
                     try
                     {
-                        Entities.UpdateCustomer(_CurrentCustomer);
+                        Entities.AddCustomer(_CurrentCustomer);
                         DialogResult = System.Windows.Forms.DialogResult.OK;
+                        this.Close();
                     }
                     catch
                     {
-                         MessageBox.Show(Log.System("Failed to update Customer"));                       
+                        MessageBox.Show(Log.System("Failed to update Customer"));
                     }
                 }
                 else
                 {
                     MessageBox.Show("Fill out the form numbnuts!");
                 }
-
+            }
+            else
+            {
+                Log.Error("Current customer is not set!");
             }
         }
         private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
