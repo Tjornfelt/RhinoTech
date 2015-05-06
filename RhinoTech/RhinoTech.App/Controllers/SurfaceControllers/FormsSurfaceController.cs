@@ -16,8 +16,6 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
     {
         public JsonResult ContactFormSubmit(ContactFormModel form, string ID)
         {
-
-            
             var currentNode = Umbraco.TypedContent(ID);
             string template = currentNode.GetPropertyValue(DocTypes.ContactPage.EmailTemplate).ToHtmlString();
 
@@ -27,8 +25,8 @@ namespace RhinoTech.App.Controllers.SurfaceControllers
             MailMessage mailUser = new MailMessage(from, userEmail);
             MailMessage mailAdmin = new MailMessage(from, adminMail);
 
-            mailUser.Subject = "Subject for the user";
-            mailAdmin.Subject = "Subject for the admin";
+            mailUser.Subject = "Thanks for contacting RhinoTech!";
+            mailAdmin.Subject = "Message received from RhinoTech Web";
             mailUser.IsBodyHtml = true;
             mailAdmin.IsBodyHtml = true;
 

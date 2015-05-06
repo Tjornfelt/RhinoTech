@@ -25,7 +25,7 @@ namespace RhinoTech.App.Controllers
                 ContactForm = new ContactFormModel()
             };
             model.ContactForm.ID = CurrentPage.Id.ToString();
-            model.ContactForm.ThanksText = "Besked afsendt. Vi vender tilbage snarest muligt.";
+            model.ContactForm.ThanksText = "Message sent. We will contact you within a few days.";
 
             return View(model);
         }

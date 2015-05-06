@@ -15,9 +15,6 @@ namespace RhinoTech.App.Controllers
 {
     public class FrontPageController : MasterController
     {
-        //
-        // GET: /FrontPage/
-
         public ActionResult FrontPage()
         {
             FrontPageModel model = new FrontPageModel()
@@ -28,30 +25,6 @@ namespace RhinoTech.App.Controllers
             };
 
             return View(model);
-        }
-
-        [Obsolete("Use NewsItemHelpers.GetNewsItems(CurrentPage) instead")]
-        private IEnumerable<NewsItemTeaser> GetNewsItems()
-        {
-            var newsSection = CurrentPage.Children.FirstOrDefault(x => x.IsDocumentType(DocTypes.NewsSection));
-
-            if (newsSection != null)
-            {
-                var newsItems = newsSection.Children.Where(x => x.DocumentTypeAlias == DocTypes.NewsItem);
-
-                if(newsItems != null && newsItems.Any())
-
-                foreach (var item in newsItems.OrderBy(x => x.GetPropertyValue(DocTypes.NewsItem.Date)).Take(3))
-                {
-                    yield return new NewsItemTeaser()
-                    {
-                        Header = item.GetPropertyValue(DocTypes.NewsItem.Header),
-                        Date = item.GetPropertyValue(DocTypes.NewsItem.Date),
-                        ShortDescription = item.GetPropertyValue(DocTypes.NewsItem.ShortDescription),
-                        Url = item.Url
-                    };
-                }
-            }
         }
     }
 }

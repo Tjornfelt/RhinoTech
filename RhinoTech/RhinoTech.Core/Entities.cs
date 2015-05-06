@@ -24,8 +24,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return null;
             }
-            return null;
+            
         }
 
         public Product GetProductByID(int productID)
@@ -42,8 +43,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return null;
             }
-            return null;
+            
         }
 
         public bool UpdateProduct(Product edittedProduct)
@@ -76,8 +78,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return false;
             }
-            return false;
+            
         }
 
         public bool CreateProduct(Product product)
@@ -108,8 +111,9 @@ namespace RhinoTech.Core
             catch (Exception ex)
             {
                 //Making sure app doesn't crash if connection fails.
+                return false;
             }
-            return false;
+            
         }
 
         public string GetShelfByProductID(int productID)
@@ -124,8 +128,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return null;
             }
-            return null;
+            
         }
 
         public int GetShelfAmountByProductID(int productID)
@@ -140,8 +145,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return 0;
             }
-            return 0;
+            
         }
 
         public bool DeleteProduct(int productID)
@@ -166,8 +172,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return false;
             }
-            return false;
+            
         }
 
         public bool EnableProduct(int productID)
@@ -192,8 +199,9 @@ namespace RhinoTech.Core
             catch (Exception)
             {
                 //Making sure app doesn't crash if connection fails.
+                return false;
             }
-            return false;
+            
         }
 
         public bool AddLogEntry(string name, DateTime timestamp, string type, string message)

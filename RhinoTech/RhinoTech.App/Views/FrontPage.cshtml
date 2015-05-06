@@ -84,7 +84,7 @@
                 <h2>Latest news</h2>
                 <hr class="no-margin" />
             </div>
-            @foreach (var item in Model.NewsItems)
+            @foreach (var item in Model.NewsItems.Take(3))
             {
                 <a href="@item.Url">
                     <div class="col-sm-12 news-item">

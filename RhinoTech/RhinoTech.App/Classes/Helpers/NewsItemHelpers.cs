@@ -23,7 +23,7 @@ namespace RhinoTech.App.Classes.Helpers
 
                 if (newsItems != null && newsItems.Any())
 
-                    foreach (var item in newsItems.OrderBy(x => x.GetPropertyValue(DocTypes.NewsItem.Date)).Reverse().Take(3))
+                    foreach (var item in newsItems.OrderBy(x => x.GetPropertyValue(DocTypes.NewsItem.Date)).Reverse())
                     {
                         yield return new NewsItemTeaser()
                         {
